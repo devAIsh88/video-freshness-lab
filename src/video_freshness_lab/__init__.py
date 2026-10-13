@@ -1,1 +1,1 @@
-"""Video Freshness Lab: research scaffolding; no capture or contract API yet."""
+"""Video Freshness Lab: deterministic synthetic experiments, no RTSP capture."""

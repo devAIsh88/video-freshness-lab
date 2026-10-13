@@ -1,6 +1,7 @@
 # Stage 1 investigation and later validation gates
 
-Status: plan only. Milestone 1.1 implements no experiments. The authoritative
+The investigation plan is broader than the implemented numbered-item experiments.
+See [Milestone 1.2 observations](milestone-1.2-results.md). The authoritative
 [PRDs](../prd/README.md) progress from numbered items to contracts, synthetic
 frames, controlled faults, RTSP, external audits, and a product decision.
 This plan describes that investigation without claiming the later stages are
@@ -142,11 +143,12 @@ as a negative result rather than treated as permission to invent a new feature.
 Permitted outcomes are a validated package, upstream work, a reference recipe,
 or closure. None is selected in this milestone.
 
-## Proposed Milestone 1.2 (not started)
+## Milestone 1.2 and authorized next step
 
-Implement a deterministic numbered-item producer/consumer simulation first:
-FIFO versus a latest-item mailbox, injected-clock metrics, controlled slowdown
-and no-progress cases, and meaningful tests. Describe these as in-process source
-simulations. Preserve the PRDs' staging: epoch-oracle implementation and realistic
-disconnect/restart transport remain later gates unless the owner explicitly
-revises scope. No cameras, OpenCV, servers, or network capture are required.
+Milestone 1.2 implements deterministic numbered-item production/consumption,
+FIFO/latest-frame buffering, virtual-clock metrics, and controlled slowdown.
+The owner master task explicitly authorizes in-process session, freeze, and
+interruption experiments in Milestone 1.3 after 1.2 acceptance. This is a scope
+decision for synthetic evidence; realistic disconnect/restart transport, stamped
+images, threaded demos, external audits, and productization retain their PRD
+gates. No cameras, OpenCV, servers, or network capture are required here.

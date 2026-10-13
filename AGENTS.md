@@ -3,9 +3,9 @@
 - Read `PRD.md` and the full `Video_Freshness_Lab_PRD_v0.1.docx` before implementing.
   Read `docs/architecture/foundation.md` for differences and milestone limits.
   Preserve both originals; do not silently resolve contradictory requirements.
-- Milestone 1.1 contains packaging, an import smoke test, documentation, and CI
-  only. No producer, buffer, oracle, fault simulator, capture, or application API
-  is implemented. Do not start Milestone 1.2 without authorization.
+- Milestone 1.1 is the committed foundation. The current master task authorizes
+  transport-independent Milestones 1.2 and 1.3; implement and validate 1.2 before
+  beginning 1.3. Stop after 1.3. Do not implement real RTSP capture or later stages.
 - Use Python 3.11+, a `src/video_freshness_lab` layout, readable typed code, and
   standard-library components where possible. Do not add unnecessary dependencies.
   Document dependency purpose, version, license, and source before adoption.
@@ -28,7 +28,47 @@
 - Avoid unnecessary commits. Use milestone-based conventional Git history, with
   at most one Milestone 1.1 commit after all checks pass and owner approval of the
   staged diff. Proposed message: `chore: establish validation harness foundation`.
-- Do not force-push or rewrite history. Do not create a remote, push, publish,
-  deploy, choose a license, or change visibility without explicit owner approval.
+- Do not force-push or rewrite history. Private GitHub creation and verified
+  milestone pushes are authorized under the delivery policy below. Public
+  visibility, publishing, deployment, and license selection remain unapproved.
 - Record uncertainty and negative results. Stop at the authorized milestone and
   provide reviewable evidence instead of assuming productization is inevitable.
+
+## GitHub Repository and Milestone Delivery Policy
+
+- Intended repository: `devAIsh88/video-freshness-lab`, PRIVATE ONLY, at
+  `https://github.com/devAIsh88/video-freshness-lab`. Confirm the authenticated
+  account is `devAIsh88`, ownership, private visibility, and existing branches
+  before creation/reuse. Never overwrite unrelated remote history or initialize
+  a separate remote README, license, or ignore file.
+- Owner-authorized sequence: IMPLEMENT → TEST → SECURITY REVIEW → COMMIT → PUSH
+  → VERIFY. Use one coherent conventional commit per successful milestone.
+  Foundation commit `6ff7cb3f7aec0ee50175b22f85d0ad8642d052d0` must remain intact.
+  Do not manufacture commits, amend milestones, or force-push.
+- Before each commit run `.venv/bin/python -m ruff check .`,
+  `.venv/bin/python -m ruff format --check .`, `.venv/bin/python -m pytest -v`,
+  `.venv/bin/python -m pip check`, `git diff --check`, and
+  `git diff --cached --check`. Verify editable packaging and review the full diff
+  and staged filenames. Commit only after acceptance passes.
+- Scan tracked/staged files and all history to be pushed for secrets, private
+  connection data, media, datasets, environments, and temporary artifacts.
+  `PRD.md` and `Video_Freshness_Lab_PRD_v0.1.docx` must remain unchanged and
+  untracked, absent from every pushed commit. Sanitized `.env.example` is allowed.
+- Push verified commits only to the intended private remote. Confirm the remote
+  branch contains the exact SHA and review GitHub Actions status if accessible.
+  Record commit SHA, push outcome, remote verification, and CI status. If several
+  verified commits accumulated locally, push the existing history once; never
+  manipulate history to fabricate individual deliveries.
+- If authentication, repository creation, or network access is unavailable,
+  preserve verified local work and record PUSH PENDING. Stop the affected remote
+  action and report the blocker; continue safe local milestones. Do not request
+  credentials unattended, perform authentication workarounds, or install tools
+  requiring administrator access. Stop on a history security problem; do not
+  rewrite history to hide it.
+- CI only, never CD: Python/dependency setup, Ruff, pytest, and package validation
+  with minimal permissions. No deployment, release, package/container publishing,
+  paid runners, cloud provisioning, or paid infrastructure. Avoid unnecessary CI
+  runs. Owner spending controls must prevent unexpected Actions overage charges;
+  report any required owner configuration rather than enabling paid usage.
+- Licensing remains pending. Private synchronization does not approve a license,
+  public release, public visibility, or disclosure of the original PRDs.

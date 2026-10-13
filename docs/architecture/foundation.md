@@ -1,5 +1,10 @@
 # Foundation scope and decisions
 
+Historical Milestone 1.1 snapshot. The subsequent owner master task explicitly
+authorizes synthetic Milestones 1.2/1.3 and private milestone synchronization.
+See [current simulation architecture](simulation.md) and AGENTS.md for current
+scope/delivery policy. No broader PRD stage or external evidence gate is waived.
+
 ## Authority and confirmed objectives
 
 Read both [source PRDs](../prd/README.md). Their confirmed direction is Video
