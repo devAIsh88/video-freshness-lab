@@ -45,6 +45,11 @@ class FIFO:
     def pop(self) -> Frame:
         return self._waiting.popleft()
 
+    def clear(self) -> tuple[Frame, ...]:
+        removed = tuple(self._waiting)
+        self._waiting.clear()
+        return removed
+
 
 class LatestFrame:
     def __init__(self) -> None:
@@ -60,3 +65,8 @@ class LatestFrame:
 
     def pop(self) -> Frame:
         return self._waiting.popleft()
+
+    def clear(self) -> tuple[Frame, ...]:
+        removed = tuple(self._waiting)
+        self._waiting.clear()
+        return removed

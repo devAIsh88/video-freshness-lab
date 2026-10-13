@@ -3,6 +3,9 @@
 - Read `PRD.md` and the full `Video_Freshness_Lab_PRD_v0.1.docx` before implementing.
   Read `docs/architecture/foundation.md` for differences and milestone limits.
   Preserve both originals; do not silently resolve contradictory requirements.
+  The originals are intentionally absent from Git/GitHub. A fresh checkout must
+  receive owner-provided local copies before requirement-dependent implementation;
+  do not invent or download substitutes when they are missing.
 - Milestone 1.1 is the committed foundation. The current master task authorizes
   transport-independent Milestones 1.2 and 1.3; implement and validate 1.2 before
   beginning 1.3. Stop after 1.3. Do not implement real RTSP capture or later stages.

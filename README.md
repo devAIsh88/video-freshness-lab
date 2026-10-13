@@ -1,8 +1,9 @@
 # Video Freshness Lab
 
-Milestone 1.2: deterministic buffering experiments on numbered synthetic frames.
+Milestone 1.3: deterministic buffering and recovery experiments on numbered frames.
 This research lab implements a virtual clock, FIFO/latest-frame waiting buffers,
-one simulated consumer, explicit metrics, structured evidence, and a small CLI.
+one simulated consumer, session/fault scripts, optional session filtering,
+no-progress detection, explicit metrics, structured evidence, and a small CLI.
 No RTSP capture, decoding, images, or production reliability API is implemented.
 
 ## Problem and research status
@@ -19,6 +20,9 @@ remain unchanged at their original paths. See the [source index](docs/prd/README
 [scope decisions](docs/architecture/foundation.md), and
 [validation plan](docs/experiments/validation-plan.md). The PRDs' full Stage 1
 learning lab is broader than this in-process milestone and remains unfinished.
+The original PRDs are local, untracked source documents and are intentionally
+absent from GitHub clones. Consult the owner's local copies before new
+implementation; their linked paths resolve only where those copies are present.
 
 Run `.venv/bin/python -m video_freshness_lab` for all four buffering scenarios,
 or add `--json` for complete machine-readable evidence. Use `--help` for integer
@@ -27,6 +31,14 @@ and [measured Milestone 1.2 results](docs/experiments/milestone-1.2-results.md).
 Slow FIFO keeps all 10 frames but reaches 310 ms result age; under the identical
 workload latest-frame drops six waiting frames and reaches 70 ms. Neither result
 establishes how a real camera reader behaves.
+
+Run `.venv/bin/python -m video_freshness_lab --suite recovery` for nine interruption
+presets. Add `--policy latest --session-filter` to compare waiting-frame replacement
+with provenance checks. [Milestone 1.3 results](docs/experiments/milestone-1.3-results.md)
+document configurations and limits: latest-frame alone emits two obsolete-session
+results in the reconnect script despite passing its age budget; adding session
+checks suppresses them in this synthetic model. The same result does not establish
+any real RTSP library defect.
 
 ## Install and check
 
@@ -60,8 +72,9 @@ Current work uses numbered synthetic items and controlled event order.
 Transport comes only after pure contracts have been validated. Sequence lag
 measures distance from the source head; evidence age measures elapsed time;
 neither a nominal frame rate nor connection status substitutes for these.
-Freshness thresholds, source lineage across transport, and reconnect/session
-semantics remain proposed investigation decisions.
+The simulator defines explicit synthetic thresholds and session boundaries;
+source lineage across transport and real reconnect/session semantics remain
+unverified investigation questions.
 
 Non-goals are a capture SDK, RTSP server, NVR, dashboard, AI detection or model
 training, hosted service, safety certification, and deployment infrastructure.

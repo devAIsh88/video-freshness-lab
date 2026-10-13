@@ -5,6 +5,7 @@ import json
 from dataclasses import replace
 
 from .experiments import SCENARIOS
+from .recovery_experiments import RECOVERY_SCENARIOS
 from .simulation import Simulator
 
 
@@ -12,7 +13,12 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
         description="Deterministic synthetic freshness lab"
     )
-    parser.add_argument("--scenario", choices=["all", *SCENARIOS], default="all")
+    parser.add_argument(
+        "--suite", choices=["buffering", "recovery", "all"], default="buffering"
+    )
+    parser.add_argument(
+        "--scenario", choices=["all", *SCENARIOS, *RECOVERY_SCENARIOS], default="all"
+    )
     parser.add_argument(
         "--json", action="store_true", help="include full evidence as JSON"
     )
@@ -21,20 +27,26 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--freshness-threshold-ms", type=int)
     parser.add_argument("--queue-capacity", type=int, help="FIFO waiting capacity only")
     parser.add_argument("--overflow", choices=["drop_newest", "drop_oldest"])
+    parser.add_argument("--policy", choices=["fifo", "latest"])
+    parser.add_argument("--session-filter", action="store_true", default=None)
+    parser.add_argument("--queue-on-disconnect", choices=["retain", "invalidate"])
+    parser.add_argument("--no-progress-timeout-ms", type=int)
     args = parser.parse_args(argv)
+    available = {**SCENARIOS, **RECOVERY_SCENARIOS}
+    suites = {"buffering": SCENARIOS, "recovery": RECOVERY_SCENARIOS, "all": available}
     selected = (
-        SCENARIOS
+        suites[args.suite]
         if args.scenario == "all"
-        else {args.scenario: SCENARIOS[args.scenario]}
+        else {args.scenario: available[args.scenario]}
     )
     results = {}
     for name, config in selected.items():
         overrides = {
             key: value
             for key, value in vars(args).items()
-            if key not in ("scenario", "json") and value is not None
+            if key not in ("scenario", "suite", "json") and value is not None
         }
-        if config.policy == "latest":
+        if overrides.get("policy", config.policy) == "latest":
             overrides.pop("queue_capacity", None)
         try:
             result = Simulator(replace(config, **overrides)).run()
@@ -59,6 +71,8 @@ def main(argv: list[str] | None = None) -> int:
                 f"max_queue={m.max_queue_depth} max_start_age_ms={m.max_start_age_ms} "
                 f"max_result_age_ms={m.max_completion_age_ms} "
                 f"result_violations={m.result_freshness_violations} "
+                f"obsolete_outputs={m.obsolete_session_outputs} "
+                f"rejected={m.frames_rejected} no_progress={m.no_progress_intervals} "
                 f"finished_at_ms={m.finished_at_ms}"
             )
     return 0
