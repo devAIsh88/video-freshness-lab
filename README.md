@@ -1,9 +1,11 @@
 # Video Freshness Lab
 
-Milestone 1.3: deterministic buffering and recovery experiments on numbered frames.
+Milestone 1.4: synthetic buffering, recovery, and thread-shutdown experiments.
 This research lab implements a virtual clock, FIFO/latest-frame waiting buffers,
 one simulated consumer, session/fault scripts, optional session filtering,
 no-progress detection, explicit metrics, structured evidence, and a small CLI.
+A separate real-thread demo uses a bounded latest-frame mailbox with explicit
+drain-on-close behavior and bounded joins.
 No RTSP capture, decoding, images, or production reliability API is implemented.
 
 ## Problem and research status
@@ -39,6 +41,15 @@ document configurations and limits: latest-frame alone emits two obsolete-sessio
 results in the reconnect script despite passing its age budget; adding session
 checks suppresses them in this synthetic model. The same result does not establish
 any real RTSP library defect.
+
+Run `.venv/bin/python -m video_freshness_lab.threaded_demo --mode normal` for
+the producer/consumer handoff, `--mode slow` for controlled replacement, or
+`--mode idle` for shutdown of an empty blocked consumer. Add `--json` for counts,
+frame metadata, and final state. With ten items, normal delivers ten; slow
+delivers the first and last while replacing eight waiting items. These counts
+follow explicit thread coordination, not a scheduling or throughput benchmark.
+See the [mailbox contract](docs/architecture/threaded-mailbox.md) and
+[Milestone 1.4 results](docs/experiments/milestone-1.4-results.md).
 
 ## Install and check
 
