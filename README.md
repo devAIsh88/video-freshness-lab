@@ -1,6 +1,6 @@
 # Video Freshness Lab
 
-Milestone 1.4: synthetic buffering, recovery, and thread-shutdown experiments.
+Milestone 1.5: synthetic buffering, recovery, thread shutdown, and output provenance.
 This research lab implements a virtual clock, FIFO/latest-frame waiting buffers,
 one simulated consumer, session/fault scripts, optional session filtering,
 no-progress detection, explicit metrics, structured evidence, and a small CLI.
@@ -50,6 +50,15 @@ delivers the first and last while replacing eight waiting items. These counts
 follow explicit thread coordination, not a scheduling or throughput benchmark.
 See the [mailbox contract](docs/architecture/threaded-mailbox.md) and
 [Milestone 1.4 results](docs/experiments/milestone-1.4-results.md).
+
+The session experiment checks provenance again at final publication, with epoch
+validation and output recording under one lock. A result from an in-progress
+retired epoch can finish internally and be suppressed. Source closure retains
+drain-on-close; application shutdown separately suppresses subsequent outputs.
+Run `.venv/bin/python -m pytest tests/test_threaded_sessions.py -v` to reproduce
+the synchronized scenarios. See the [session boundary contract](docs/architecture/threaded-session-boundaries.md)
+and [Milestone 1.5 results](docs/experiments/milestone-1.5-results.md). These tests
+do not validate real RTSP behavior or establish an age-based freshness policy.
 
 ## Install and check
 
