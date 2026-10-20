@@ -6,11 +6,11 @@
   The originals are intentionally absent from Git/GitHub. A fresh checkout must
   receive owner-provided local copies before requirement-dependent implementation;
   do not invent or download substitutes when they are missing.
-- Milestones 1.1–1.4 are committed. The owner authorizes Milestone 1.5: synthetic
-  threaded session boundaries and obsolete-result rejection at final publication.
-  Preserve the mailbox's drain-on-close contract; closure is not epoch invalidation.
-  Stop after 1.5. Do not implement real RTSP capture or later stages without new
-  authorization.
+- Milestones 1.1–1.5 are committed. The owner authorizes Milestone 1.6: a typed
+  frame-evidence contract, minimal pure diagnostics, deterministic fixtures, and
+  official-documentation research into existing libraries. Preserve the mailbox's
+  drain-on-close contract; closure is not epoch invalidation. Stop after 1.6.
+  Real-library pipeline evaluation and real RTSP capture require new authorization.
 - Use Python 3.11+, a `src/video_freshness_lab` layout, readable typed code, and
   standard-library components where possible. Do not add unnecessary dependencies.
   Document dependency purpose, version, license, and source before adoption.

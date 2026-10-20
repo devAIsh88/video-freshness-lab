@@ -1,6 +1,6 @@
 # Video Freshness Lab
 
-Milestone 1.5: synthetic buffering, recovery, thread shutdown, and output provenance.
+Milestone 1.6: frame evidence diagnostics and existing-library capability research.
 This research lab implements a virtual clock, FIFO/latest-frame waiting buffers,
 one simulated consumer, session/fault scripts, optional session filtering,
 no-progress detection, explicit metrics, structured evidence, and a small CLI.
@@ -59,6 +59,14 @@ Run `.venv/bin/python -m pytest tests/test_threaded_sessions.py -v` to reproduce
 the synchronized scenarios. See the [session boundary contract](docs/architecture/threaded-session-boundaries.md)
 and [Milestone 1.5 results](docs/experiments/milestone-1.5-results.md). These tests
 do not validate real RTSP behavior or establish an age-based freshness policy.
+
+Milestone 1.6 adds a [frame evidence contract](docs/architecture/frame-evidence-contract.md)
+and pure diagnostics that separate session validity, arrival age, and substantiated
+capture age. Missing or incomparable capture references remain unknown. The
+[official-library comparison](docs/research/existing-library-capability-matrix.md)
+recommends testing native GStreamer queue policies before building another
+mechanism. See [1.6 fixtures and limitations](docs/experiments/milestone-1.6-results.md).
+No media pipeline, transport adapter, or new runtime dependency is introduced.
 
 ## Install and check
 
