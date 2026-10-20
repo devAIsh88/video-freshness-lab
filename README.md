@@ -1,6 +1,6 @@
 # Video Freshness Lab
 
-Milestone 1.6: frame evidence diagnostics and existing-library capability research.
+Milestone 1.7: local GStreamer buffering and final-output session comparisons.
 This research lab implements a virtual clock, FIFO/latest-frame waiting buffers,
 one simulated consumer, session/fault scripts, optional session filtering,
 no-progress detection, explicit metrics, structured evidence, and a small CLI.
@@ -66,9 +66,17 @@ capture age. Missing or incomparable capture references remain unknown. The
 [official-library comparison](docs/research/existing-library-capability-matrix.md)
 recommends testing native GStreamer queue policies before building another
 mechanism. See [1.6 fixtures and limitations](docs/experiments/milestone-1.6-results.md).
-No media pipeline, transport adapter, or new runtime dependency is introduced.
+That milestone introduced no media pipeline, transport adapter, or runtime dependency.
 
 ## Install and check
+
+The optional [GStreamer experiment](docs/architecture/gstreamer-experiment.md)
+uses existing Fedora system bindings, separately from the Python-only suite.
+Run `PYTHONPATH=src /usr/bin/python3 -m unittest discover -s integration -v`
+for the explicit integration checks, and
+`PYTHONPATH=src /usr/bin/python3 -m video_freshness_lab.gstreamer_experiment --repeat 20`
+for structured runtime observations. Missing bindings fail explicitly. Normal CI
+does not execute these commands. See [1.7 measurements and decision](docs/experiments/milestone-1.7-results.md).
 
 Use Python 3.11 or newer; Fedora development uses Python 3.12. From this directory:
 

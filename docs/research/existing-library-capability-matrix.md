@@ -1,8 +1,9 @@
 # Existing-library capability and gap investigation
 
-Research accessed **2026-10-20**. Only official project documentation and local
-read-only version/property inspection support the findings below. No media,
-decoder, RTSP endpoint, reconnect, or shutdown experiment was run. Rolling URLs
+Milestone 1.6 research accessed **2026-10-20**. Official project documentation and
+local read-only version/property inspection support the historical matrix below.
+No pipeline or transport experiment had run at that milestone. Milestone 1.7's
+separately classified runtime findings follow the matrix. Rolling URLs
 are access-date snapshots, not promises about every installed release. Missing
 documentation is not evidence that a feature is absent.
 
@@ -140,3 +141,30 @@ a recipe, maintainer acknowledgment, two unrelated developers' adoption intent,
 and proportionate maintenance before a package decision. V: 1.6 meets none of
 these external/adoption gates. H: the next milestone should authorize only the
 finite local native-configuration comparison, not RTSP or a product framework.
+
+## Milestone 1.7 runtime supplement
+
+**V (local runtime):** Fedora system Python 3.14.7 has PyGObject 3.56.3 and
+Gst/GstApp 1.0 bindings for installed GStreamer/app plugin 1.28.6. The Python
+3.12.15 project venv still lacks GI. No dependency was installed or changed.
+
+**V:** finite direct appsrc/appsink workloads verify native FIFO backpressure,
+downstream leaky oldest-waiting replacement, input/output/drop counter accounting,
+explicit payload-token/epoch association, EOS handling with pending samples,
+and NULL cleanup in the tested paths. Native appsrc buffering is independently
+observed; intermediate property snapshots are not atomic. See the
+[1.7 design](../architecture/gstreamer-experiment.md) and
+[measurements](../experiments/milestone-1.7-results.md) for exact conditions.
+
+**V:** native leaky buffering did not retract an already acquired old-epoch
+result. A small application final-output epoch check suppressed it. This is an
+application-level policy added by our harness, not a GStreamer defect or evidence
+of a missing general feature. **H / recommendation:** PIVOT toward native
+configuration, validation tests, and minimal application integration; no additional
+custom buffering layer is justified by this experiment.
+
+**U:** RTSP reconnect/session discovery, RTP/RTCP reference-clock trust, codecs,
+physical capture age, approximate clock mapping, blocked network reads, and
+third-party application behavior remain untested. Other libraries' entries remain
+documentation/inspection findings. The historical 1.6 proposal above is preserved
+as a pre-experiment recommendation, not a current claim of missing bindings.
