@@ -28,6 +28,12 @@ The original PRDs are local, untracked source documents and are intentionally
 absent from GitHub clones. Consult the owner's local copies before new
 implementation; their linked paths resolve only where those copies are present.
 
+For the completed local technical work, use the
+[Stage 0–5 completion report](docs/audits/TECHNICAL_STAGE_COMPLETION_REPORT.md)
+and [short demonstration guide](docs/audits/DEMONSTRATION_GUIDE.md).
+The scoped technical results do not establish physical capture freshness or
+independent consumer value; original Stages 6–7 have not begun.
+
 Run `.venv/bin/python -m video_freshness_lab` for all four buffering scenarios,
 or add `--json` for complete machine-readable evidence. Use `--help` for integer
 millisecond configuration overrides. See [simulation architecture and metrics](docs/architecture/simulation.md)
@@ -95,6 +101,10 @@ These Linux-only experiments need permission to bind IPv4 loopback. They accept
 no external endpoint and do not run in ordinary GitHub CI. Decoder PTS and local
 delivery ordinals do not establish physical capture freshness or source identity.
 See [1.8 results and limits](docs/experiments/milestone-1.8-results.md).
+The [original Stage 5 follow-up](docs/experiments/rtsp-contract-reliability.md)
+records 1200/1200 mature trials at 100/configuration, explicit native cleanup,
+and the separately retained initial server teardown failure. To reproduce:
+`PYTHONPATH=src /usr/bin/python3 integration/repeat_rtsp_contract.py --repeat 100 > /tmp/vfl-stage5-rtsp.json`.
 
 The [fixture-only transport injector](docs/architecture/transport-fault-injection.md)
 adds acknowledged interleaved-record delay/stall and abrupt connected-socket cuts.

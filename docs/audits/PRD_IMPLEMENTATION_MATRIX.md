@@ -96,3 +96,40 @@ The first mature RTSP cohort stopped after 399/400 normal successes: one native
 server process exited -11 during cleanup. Epoch/reconnect cohorts did not run.
 Stage 5 mature repeatability remains PARTIAL pending lifecycle investigation;
 do not hide this failure or treat separate image success as RTSP acceptance.
+
+## Final technical status (report finalized 2026-10-22)
+
+The paragraph above records the investigation boundary, not the final outcome.
+The [completion report](TECHNICAL_STAGE_COMPLETION_REPORT.md) and
+[RTSP repeatability assessment](../experiments/rtsp-contract-reliability.md)
+preserve that initial 399/400 cohort. After explicit native lifecycle correction,
+a separately declared cohort completed **1200/1200, 100/configuration**, with zero
+unexplained failures, timeouts or cleanup failures. No silent per-trial retries.
+
+| Requirement group | Final status | Closure / remaining action |
+| --- | --- | --- |
+| Stage 0: requirements, policy and uncertainty | PASS | Both originals read, unchanged and untracked; conflicts retained |
+| Stage 1: numbered FIFO/latest and real-thread demo | PASS in tested environments | Existing core reused; Windows NOT VERIFIED |
+| Stage 2: immutable evidence and final logical-epoch check | PASS for declared logical contract | Physical session discovery/capture clocks remain UNKNOWN |
+| Stage 3: actual stamped image arrays | PASS for BGR/gray/PNG path | 1000/1000 trace matches; six optional image tests; no video-codec inference |
+| Stage 4: repeated content versus no-data/backlog/obsolete work | PASS for controlled synthetic cases | Three separately decoded repeated arrays plus static-scene control; actual-camera freeze detection NOT VERIFIED |
+| Stage 5: same output contract on actual decoded RTSP receipts | PASS for application-generation contract | 100/configuration; 400/400 explicit recoveries; 1600 native server cleanups; earlier teardown failure retained |
+| Additional authorized transport impairments | PASS for finite TCP fixture assessment | 720/720; 20/configuration; no UDP loss claim |
+| Stage 6: independent maintained consumer behavioral audit | NOT IMPLEMENTED | Requires next prompt; not started |
+| Stage 7: external adoption and final product/release decision | NOT IMPLEMENTED | Requires next prompt; no public/license/release authorization |
+
+| Cross-stage gate | Final status | Evidence / remaining work |
+| --- | --- | --- |
+| Healthy delivery with stale evidence detected | PASS within constructed paths | Slow image FIFO, repeated old image stamps, held decoded RTSP evidence |
+| Actionable session/sequence/lag/event diagnostics | PASS where observable | Synthetic source IDs/lag explicit; RTSP local receipt/connection/application epochs, source lag UNKNOWN |
+| Approximately 30-line reference adapter | PARTIAL | receipt_evidence spans 24 physical source lines; independent semantic/instrumentation burden unverified |
+| ≥100 mature repetitions and ≤1% unexplained failures | PASS for final local cohort | 100/100 each of 12 RTSP configurations; failed initial cohort separately retained |
+| Value over basic pytest/FFmpeg and independent external behavior | NOT VERIFIED | A constructed integration fixture is not an external consumer audit |
+| Maintainer acknowledgment and unrelated developer adoption | NOT VERIFIED | No contacts/evidence manufactured |
+| Minimal maintenance / standalone-package need | PARTIAL | Native buffering and short output check suffice here; PIVOT remains |
+| Windows and physical camera/network portability | NOT VERIFIED | Fedora integration and Ubuntu Python-only CI cannot establish these |
+| Privacy and CI-only delivery | PASS for reviewed changes | Exact private pushes and two-version CI documented; PRDs absent from history |
+
+No requirement is marked NOT APPLICABLE to avoid a missing evidence gate.
+Technical completion is scoped to the experiments above; it is not full PRD
+product acceptance. Stop before Stages 6–7.

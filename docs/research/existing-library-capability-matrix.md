@@ -202,3 +202,23 @@ See [image evidence](../experiments/stamped-images-results.md).
 U: JPEG/video-codec stamp survival, physical capture clocks/source epochs,
 independent consumer value and adoption remain unverified. This image experiment
 does not retroactively add source lineage to the unstamped RTSP source.
+
+## Original Stage 5 mature contract supplement
+
+V: the corrected native lifecycle completed **1200/1200 actual RTSP trials**,
+100 per normal/epoch/reconnect ×FIFO/leaky ×filter configuration, with 400/400
+explicit recoveries and 1600 positively verified media-NULL/server-pool cleanups.
+The same decoded receipt sidecar reaches final output; 400 obsolete completions
+are rejected in filtered modes, while permissive controls publish 400 obsolete
+outputs. Native waiting replacement alone does not retract acquired evidence.
+
+V: the initial baseline failed once in 400 trials with a server -11 exit. It is
+retained separately; root cause is unproven. Explicit media/session/client/pool
+teardown strengthens the fixture rather than asserting an external-library defect.
+See [counts, distributions and limitations](../experiments/rtsp-contract-reliability.md).
+
+U: the short receipt helper is 24 physical lines, but independent adapter burden,
+consumer behavior, physical source lineage/capture clocks, Windows and adoption
+are still unverified. The selected local application-epoch contract passes;
+no claim of complete physical freshness follows. PIVOT remains supported; original
+Stages 6–7 await separate authorization.
