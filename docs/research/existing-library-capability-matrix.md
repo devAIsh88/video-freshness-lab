@@ -168,3 +168,23 @@ physical capture age, approximate clock mapping, blocked network reads, and
 third-party application behavior remain untested. Other libraries' entries remain
 documentation/inspection findings. The historical 1.6 proposal above is preserved
 as a pre-experiment recommendation, not a current claim of missing bindings.
+
+## Milestones 1.8/1.9 runtime supplement (2026-10-21)
+
+Historical cells above retain their original versions and untested scope.
+Current optional Fedora runtime is core/base/server 1.28.8, JPEG/RTP/rtspsrc
+1.28.6, system Python 3.14.7 / PyGObject 3.56.3. No new native package was adopted.
+
+| Boundary | Classification / executed evidence | Remaining limit |
+| --- | --- | --- |
+| JPEG RTP/RTSP TCP decoding | V: 1.8 120/120 finite loopback trials | No source pixel marker or capture-clock trust |
+| Native FIFO/leaky plus final output check | V: same decoded receipt sidecar reaches locked ledger; obsolete held work suppressed only with application check | Application epoch, not physical source session |
+| Controlled TCP delivery faults | V: 1.9 720/720 trials, acknowledged delay/stall/cuts; 400/400 explicit recoveries | No UDP, network partition, RST guarantee or automatic reconnect |
+| Shutdown under held media | V: 80 pending-read controls wake empty at NULL; relay/server ports released | Finite local configuration; no general race-freedom claim |
+| Mature original RTSP reliability | PARTIAL at 1.9 snapshot: 20/config impairment trials; original 1.8 five/config | Separate 100/config original Stage 5 cohort required; do not pool denominators |
+| Source image identity | U at baseline: unstamped videotestsrc and local ordinals cannot prove it | Initial PRD audit requires actual optional stamped arrays |
+| Physical freshness and independent value | U: no capture truth, independent consumer or adoption evidence | PIVOT to recipe remains; no separate buffering framework justified |
+
+See [1.9 measured results](../experiments/milestone-1.9-results.md) and the
+[original PRD matrix](../audits/PRD_IMPLEMENTATION_MATRIX.md). Toxiproxy's documented
+TCP toxics are an assessed alternative, not an installed/executed dependency.

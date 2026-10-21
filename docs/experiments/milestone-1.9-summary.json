@@ -1,0 +1,1742 @@
+{
+  "milestone": "1.9",
+  "date": "2026-10-21",
+  "raw_sha256": "f5fb91a93d41fc6cd0caa7312af9868fc1a1534d0ff7034660b607d691197247",
+  "scope": "owned IPv4 loopback JPEG RTP/RTCP over TCP; source capture freshness UNKNOWN",
+  "totals": {
+    "trials": 720,
+    "completed": 720,
+    "passed": 720,
+    "failed": 0,
+    "timeouts": 0,
+    "acquired": 2200,
+    "processed": 2200,
+    "published": 1960,
+    "epoch_rejected": 240,
+    "obsolete_published": 240,
+    "native_drops_observed": 240,
+    "recovery_attempts": 400,
+    "recovery_successes": 400,
+    "recovery_duration": {
+      "n": 400,
+      "min_ms": 44.614331,
+      "median_ms": 46.027713,
+      "p95_ms": 47.545999,
+      "max_ms": 49.204178,
+      "stdev_ms": 0.778295
+    },
+    "detection_latency": {
+      "n": 400,
+      "min_ms": 0.08927,
+      "median_ms": 1.535753,
+      "p95_ms": 3.675312,
+      "max_ms": 5.476263,
+      "stdev_ms": 1.10549
+    },
+    "resume_after_release": {
+      "n": 240,
+      "min_ms": 0.633808,
+      "median_ms": 0.775768,
+      "p95_ms": 1.149627,
+      "max_ms": 2.02402,
+      "stdev_ms": 0.185428
+    },
+    "hold_duration": {
+      "n": 320,
+      "min_ms": 100.920047,
+      "median_ms": 101.387141,
+      "p95_ms": 202.789307,
+      "max_ms": 203.310099,
+      "stdev_ms": 43.847252
+    },
+    "null_duration": {
+      "n": 1120,
+      "min_ms": 0.398114,
+      "median_ms": 0.510971,
+      "p95_ms": 100.857436,
+      "max_ms": 101.606331,
+      "stdev_ms": 25.85406
+    },
+    "pending_read_wakeup": {
+      "n": 80,
+      "min_ms": 100.291543,
+      "median_ms": 100.449632,
+      "p95_ms": 100.606407,
+      "max_ms": 100.706575,
+      "stdev_ms": 0.08451
+    },
+    "pts_nonadvancing": 0,
+    "pts_gaps_over_150ms": 480
+  },
+  "configurations": [
+    {
+      "config": {
+        "scenario": "baseline",
+        "policy": "fifo",
+        "filtered": false
+      },
+      "trials": 20,
+      "completed": 20,
+      "passed": 20,
+      "failed": 0,
+      "timeouts": 0,
+      "acquired": 80,
+      "processed": 80,
+      "published": 80,
+      "epoch_rejected": 0,
+      "obsolete_published": 0,
+      "native_drops_observed": 0,
+      "recovery_attempts": 0,
+      "recovery_successes": 0,
+      "recovery_duration": null,
+      "detection_latency": null,
+      "resume_after_release": null,
+      "hold_duration": null,
+      "null_duration": {
+        "n": 20,
+        "min_ms": 0.448205,
+        "median_ms": 0.565316,
+        "p95_ms": 0.722204,
+        "max_ms": 0.82875,
+        "stdev_ms": 0.090438
+      },
+      "pending_read_wakeup": null,
+      "pts_nonadvancing": 0,
+      "pts_gaps_over_150ms": 20
+    },
+    {
+      "config": {
+        "scenario": "baseline",
+        "policy": "fifo",
+        "filtered": true
+      },
+      "trials": 20,
+      "completed": 20,
+      "passed": 20,
+      "failed": 0,
+      "timeouts": 0,
+      "acquired": 80,
+      "processed": 80,
+      "published": 80,
+      "epoch_rejected": 0,
+      "obsolete_published": 0,
+      "native_drops_observed": 0,
+      "recovery_attempts": 0,
+      "recovery_successes": 0,
+      "recovery_duration": null,
+      "detection_latency": null,
+      "resume_after_release": null,
+      "hold_duration": null,
+      "null_duration": {
+        "n": 20,
+        "min_ms": 0.453355,
+        "median_ms": 0.540597,
+        "p95_ms": 0.663283,
+        "max_ms": 0.729228,
+        "stdev_ms": 0.067961
+      },
+      "pending_read_wakeup": null,
+      "pts_nonadvancing": 0,
+      "pts_gaps_over_150ms": 20
+    },
+    {
+      "config": {
+        "scenario": "baseline",
+        "policy": "leaky",
+        "filtered": false
+      },
+      "trials": 20,
+      "completed": 20,
+      "passed": 20,
+      "failed": 0,
+      "timeouts": 0,
+      "acquired": 80,
+      "processed": 80,
+      "published": 80,
+      "epoch_rejected": 0,
+      "obsolete_published": 0,
+      "native_drops_observed": 0,
+      "recovery_attempts": 0,
+      "recovery_successes": 0,
+      "recovery_duration": null,
+      "detection_latency": null,
+      "resume_after_release": null,
+      "hold_duration": null,
+      "null_duration": {
+        "n": 20,
+        "min_ms": 0.436287,
+        "median_ms": 0.508621,
+        "p95_ms": 0.680686,
+        "max_ms": 1.072602,
+        "stdev_ms": 0.139592
+      },
+      "pending_read_wakeup": null,
+      "pts_nonadvancing": 0,
+      "pts_gaps_over_150ms": 20
+    },
+    {
+      "config": {
+        "scenario": "baseline",
+        "policy": "leaky",
+        "filtered": true
+      },
+      "trials": 20,
+      "completed": 20,
+      "passed": 20,
+      "failed": 0,
+      "timeouts": 0,
+      "acquired": 80,
+      "processed": 80,
+      "published": 80,
+      "epoch_rejected": 0,
+      "obsolete_published": 0,
+      "native_drops_observed": 0,
+      "recovery_attempts": 0,
+      "recovery_successes": 0,
+      "recovery_duration": null,
+      "detection_latency": null,
+      "resume_after_release": null,
+      "hold_duration": null,
+      "null_duration": {
+        "n": 20,
+        "min_ms": 0.441775,
+        "median_ms": 0.512335,
+        "p95_ms": 0.914587,
+        "max_ms": 0.949368,
+        "stdev_ms": 0.167813
+      },
+      "pending_read_wakeup": null,
+      "pts_nonadvancing": 0,
+      "pts_gaps_over_150ms": 20
+    },
+    {
+      "config": {
+        "scenario": "delay",
+        "policy": "fifo",
+        "filtered": false
+      },
+      "trials": 20,
+      "completed": 20,
+      "passed": 20,
+      "failed": 0,
+      "timeouts": 0,
+      "acquired": 40,
+      "processed": 40,
+      "published": 40,
+      "epoch_rejected": 0,
+      "obsolete_published": 0,
+      "native_drops_observed": 0,
+      "recovery_attempts": 0,
+      "recovery_successes": 0,
+      "recovery_duration": null,
+      "detection_latency": null,
+      "resume_after_release": null,
+      "hold_duration": {
+        "n": 20,
+        "min_ms": 202.223322,
+        "median_ms": 202.530647,
+        "p95_ms": 203.176282,
+        "max_ms": 203.310099,
+        "stdev_ms": 0.296013
+      },
+      "null_duration": {
+        "n": 20,
+        "min_ms": 0.446357,
+        "median_ms": 0.498246,
+        "p95_ms": 0.682907,
+        "max_ms": 0.919202,
+        "stdev_ms": 0.103709
+      },
+      "pending_read_wakeup": null,
+      "pts_nonadvancing": 0,
+      "pts_gaps_over_150ms": 20
+    },
+    {
+      "config": {
+        "scenario": "delay",
+        "policy": "fifo",
+        "filtered": true
+      },
+      "trials": 20,
+      "completed": 20,
+      "passed": 20,
+      "failed": 0,
+      "timeouts": 0,
+      "acquired": 40,
+      "processed": 40,
+      "published": 40,
+      "epoch_rejected": 0,
+      "obsolete_published": 0,
+      "native_drops_observed": 0,
+      "recovery_attempts": 0,
+      "recovery_successes": 0,
+      "recovery_duration": null,
+      "detection_latency": null,
+      "resume_after_release": null,
+      "hold_duration": {
+        "n": 20,
+        "min_ms": 202.217477,
+        "median_ms": 202.479846,
+        "p95_ms": 202.811362,
+        "max_ms": 203.076476,
+        "stdev_ms": 0.208436
+      },
+      "null_duration": {
+        "n": 20,
+        "min_ms": 0.439572,
+        "median_ms": 0.533129,
+        "p95_ms": 0.873213,
+        "max_ms": 0.896181,
+        "stdev_ms": 0.140558
+      },
+      "pending_read_wakeup": null,
+      "pts_nonadvancing": 0,
+      "pts_gaps_over_150ms": 20
+    },
+    {
+      "config": {
+        "scenario": "delay",
+        "policy": "leaky",
+        "filtered": false
+      },
+      "trials": 20,
+      "completed": 20,
+      "passed": 20,
+      "failed": 0,
+      "timeouts": 0,
+      "acquired": 40,
+      "processed": 40,
+      "published": 40,
+      "epoch_rejected": 0,
+      "obsolete_published": 0,
+      "native_drops_observed": 0,
+      "recovery_attempts": 0,
+      "recovery_successes": 0,
+      "recovery_duration": null,
+      "detection_latency": null,
+      "resume_after_release": null,
+      "hold_duration": {
+        "n": 20,
+        "min_ms": 202.154038,
+        "median_ms": 202.422742,
+        "p95_ms": 202.95025,
+        "max_ms": 203.231123,
+        "stdev_ms": 0.256961
+      },
+      "null_duration": {
+        "n": 20,
+        "min_ms": 0.437788,
+        "median_ms": 0.610885,
+        "p95_ms": 1.379859,
+        "max_ms": 1.445456,
+        "stdev_ms": 0.300319
+      },
+      "pending_read_wakeup": null,
+      "pts_nonadvancing": 0,
+      "pts_gaps_over_150ms": 20
+    },
+    {
+      "config": {
+        "scenario": "delay",
+        "policy": "leaky",
+        "filtered": true
+      },
+      "trials": 20,
+      "completed": 20,
+      "passed": 20,
+      "failed": 0,
+      "timeouts": 0,
+      "acquired": 40,
+      "processed": 40,
+      "published": 40,
+      "epoch_rejected": 0,
+      "obsolete_published": 0,
+      "native_drops_observed": 0,
+      "recovery_attempts": 0,
+      "recovery_successes": 0,
+      "recovery_duration": null,
+      "detection_latency": null,
+      "resume_after_release": null,
+      "hold_duration": {
+        "n": 20,
+        "min_ms": 202.269363,
+        "median_ms": 202.680936,
+        "p95_ms": 203.196785,
+        "max_ms": 203.284736,
+        "stdev_ms": 0.308895
+      },
+      "null_duration": {
+        "n": 20,
+        "min_ms": 0.434603,
+        "median_ms": 0.496906,
+        "p95_ms": 1.000867,
+        "max_ms": 1.303009,
+        "stdev_ms": 0.208645
+      },
+      "pending_read_wakeup": null,
+      "pts_nonadvancing": 0,
+      "pts_gaps_over_150ms": 20
+    },
+    {
+      "config": {
+        "scenario": "close",
+        "policy": "fifo",
+        "filtered": false
+      },
+      "trials": 20,
+      "completed": 20,
+      "passed": 20,
+      "failed": 0,
+      "timeouts": 0,
+      "acquired": 40,
+      "processed": 40,
+      "published": 40,
+      "epoch_rejected": 0,
+      "obsolete_published": 20,
+      "native_drops_observed": 0,
+      "recovery_attempts": 20,
+      "recovery_successes": 20,
+      "recovery_duration": {
+        "n": 20,
+        "min_ms": 45.242694,
+        "median_ms": 46.081729,
+        "p95_ms": 46.981761,
+        "max_ms": 47.891978,
+        "stdev_ms": 0.619195
+      },
+      "detection_latency": {
+        "n": 20,
+        "min_ms": 1.4761,
+        "median_ms": 1.598577,
+        "p95_ms": 2.080985,
+        "max_ms": 2.095909,
+        "stdev_ms": 0.177183
+      },
+      "resume_after_release": null,
+      "hold_duration": null,
+      "null_duration": {
+        "n": 40,
+        "min_ms": 0.417172,
+        "median_ms": 0.513173,
+        "p95_ms": 0.831306,
+        "max_ms": 1.136925,
+        "stdev_ms": 0.152031
+      },
+      "pending_read_wakeup": null,
+      "pts_nonadvancing": 0,
+      "pts_gaps_over_150ms": 0
+    },
+    {
+      "config": {
+        "scenario": "close",
+        "policy": "fifo",
+        "filtered": true
+      },
+      "trials": 20,
+      "completed": 20,
+      "passed": 20,
+      "failed": 0,
+      "timeouts": 0,
+      "acquired": 40,
+      "processed": 40,
+      "published": 20,
+      "epoch_rejected": 20,
+      "obsolete_published": 0,
+      "native_drops_observed": 0,
+      "recovery_attempts": 20,
+      "recovery_successes": 20,
+      "recovery_duration": {
+        "n": 20,
+        "min_ms": 45.138047,
+        "median_ms": 46.303512,
+        "p95_ms": 47.500927,
+        "max_ms": 48.239407,
+        "stdev_ms": 0.733132
+      },
+      "detection_latency": {
+        "n": 20,
+        "min_ms": 1.432797,
+        "median_ms": 1.641611,
+        "p95_ms": 2.132409,
+        "max_ms": 2.392986,
+        "stdev_ms": 0.234028
+      },
+      "resume_after_release": null,
+      "hold_duration": null,
+      "null_duration": {
+        "n": 40,
+        "min_ms": 0.413448,
+        "median_ms": 0.51024,
+        "p95_ms": 0.841127,
+        "max_ms": 1.306441,
+        "stdev_ms": 0.170493
+      },
+      "pending_read_wakeup": null,
+      "pts_nonadvancing": 0,
+      "pts_gaps_over_150ms": 0
+    },
+    {
+      "config": {
+        "scenario": "close",
+        "policy": "leaky",
+        "filtered": false
+      },
+      "trials": 20,
+      "completed": 20,
+      "passed": 20,
+      "failed": 0,
+      "timeouts": 0,
+      "acquired": 40,
+      "processed": 40,
+      "published": 40,
+      "epoch_rejected": 0,
+      "obsolete_published": 20,
+      "native_drops_observed": 0,
+      "recovery_attempts": 20,
+      "recovery_successes": 20,
+      "recovery_duration": {
+        "n": 20,
+        "min_ms": 45.034358,
+        "median_ms": 45.907516,
+        "p95_ms": 47.61985,
+        "max_ms": 47.621806,
+        "stdev_ms": 0.849716
+      },
+      "detection_latency": {
+        "n": 20,
+        "min_ms": 1.508429,
+        "median_ms": 1.78266,
+        "p95_ms": 2.126955,
+        "max_ms": 2.702435,
+        "stdev_ms": 0.265621
+      },
+      "resume_after_release": null,
+      "hold_duration": null,
+      "null_duration": {
+        "n": 40,
+        "min_ms": 0.415055,
+        "median_ms": 0.53848,
+        "p95_ms": 0.851488,
+        "max_ms": 1.04442,
+        "stdev_ms": 0.147853
+      },
+      "pending_read_wakeup": null,
+      "pts_nonadvancing": 0,
+      "pts_gaps_over_150ms": 0
+    },
+    {
+      "config": {
+        "scenario": "close",
+        "policy": "leaky",
+        "filtered": true
+      },
+      "trials": 20,
+      "completed": 20,
+      "passed": 20,
+      "failed": 0,
+      "timeouts": 0,
+      "acquired": 40,
+      "processed": 40,
+      "published": 20,
+      "epoch_rejected": 20,
+      "obsolete_published": 0,
+      "native_drops_observed": 0,
+      "recovery_attempts": 20,
+      "recovery_successes": 20,
+      "recovery_duration": {
+        "n": 20,
+        "min_ms": 45.325377,
+        "median_ms": 46.376686,
+        "p95_ms": 47.354816,
+        "max_ms": 47.391584,
+        "stdev_ms": 0.664198
+      },
+      "detection_latency": {
+        "n": 20,
+        "min_ms": 1.415272,
+        "median_ms": 1.655378,
+        "p95_ms": 2.05381,
+        "max_ms": 2.05908,
+        "stdev_ms": 0.187197
+      },
+      "resume_after_release": null,
+      "hold_duration": null,
+      "null_duration": {
+        "n": 40,
+        "min_ms": 0.435654,
+        "median_ms": 0.517802,
+        "p95_ms": 0.93394,
+        "max_ms": 1.095228,
+        "stdev_ms": 0.16386
+      },
+      "pending_read_wakeup": null,
+      "pts_nonadvancing": 0,
+      "pts_gaps_over_150ms": 0
+    },
+    {
+      "config": {
+        "scenario": "stall",
+        "policy": "fifo",
+        "filtered": false
+      },
+      "trials": 20,
+      "completed": 20,
+      "passed": 20,
+      "failed": 0,
+      "timeouts": 0,
+      "acquired": 40,
+      "processed": 40,
+      "published": 40,
+      "epoch_rejected": 0,
+      "obsolete_published": 0,
+      "native_drops_observed": 0,
+      "recovery_attempts": 0,
+      "recovery_successes": 0,
+      "recovery_duration": null,
+      "detection_latency": null,
+      "resume_after_release": {
+        "n": 20,
+        "min_ms": 0.636366,
+        "median_ms": 0.770419,
+        "p95_ms": 1.090373,
+        "max_ms": 1.097592,
+        "stdev_ms": 0.128659
+      },
+      "hold_duration": {
+        "n": 20,
+        "min_ms": 100.952293,
+        "median_ms": 101.258721,
+        "p95_ms": 101.485595,
+        "max_ms": 101.512317,
+        "stdev_ms": 0.137382
+      },
+      "null_duration": {
+        "n": 20,
+        "min_ms": 0.4536,
+        "median_ms": 0.52607,
+        "p95_ms": 0.752114,
+        "max_ms": 0.838094,
+        "stdev_ms": 0.101515
+      },
+      "pending_read_wakeup": null,
+      "pts_nonadvancing": 0,
+      "pts_gaps_over_150ms": 20
+    },
+    {
+      "config": {
+        "scenario": "stall",
+        "policy": "fifo",
+        "filtered": true
+      },
+      "trials": 20,
+      "completed": 20,
+      "passed": 20,
+      "failed": 0,
+      "timeouts": 0,
+      "acquired": 40,
+      "processed": 40,
+      "published": 40,
+      "epoch_rejected": 0,
+      "obsolete_published": 0,
+      "native_drops_observed": 0,
+      "recovery_attempts": 0,
+      "recovery_successes": 0,
+      "recovery_duration": null,
+      "detection_latency": null,
+      "resume_after_release": {
+        "n": 20,
+        "min_ms": 0.693673,
+        "median_ms": 0.792679,
+        "p95_ms": 1.2203,
+        "max_ms": 2.02402,
+        "stdev_ms": 0.286956
+      },
+      "hold_duration": {
+        "n": 20,
+        "min_ms": 101.027003,
+        "median_ms": 101.254737,
+        "p95_ms": 101.769588,
+        "max_ms": 101.916545,
+        "stdev_ms": 0.213752
+      },
+      "null_duration": {
+        "n": 20,
+        "min_ms": 0.427096,
+        "median_ms": 0.490938,
+        "p95_ms": 0.735411,
+        "max_ms": 0.807471,
+        "stdev_ms": 0.109613
+      },
+      "pending_read_wakeup": null,
+      "pts_nonadvancing": 0,
+      "pts_gaps_over_150ms": 20
+    },
+    {
+      "config": {
+        "scenario": "stall",
+        "policy": "leaky",
+        "filtered": false
+      },
+      "trials": 20,
+      "completed": 20,
+      "passed": 20,
+      "failed": 0,
+      "timeouts": 0,
+      "acquired": 40,
+      "processed": 40,
+      "published": 40,
+      "epoch_rejected": 0,
+      "obsolete_published": 0,
+      "native_drops_observed": 0,
+      "recovery_attempts": 0,
+      "recovery_successes": 0,
+      "recovery_duration": null,
+      "detection_latency": null,
+      "resume_after_release": {
+        "n": 20,
+        "min_ms": 0.668481,
+        "median_ms": 0.791787,
+        "p95_ms": 0.946755,
+        "max_ms": 1.112511,
+        "stdev_ms": 0.100172
+      },
+      "hold_duration": {
+        "n": 20,
+        "min_ms": 101.078411,
+        "median_ms": 101.258361,
+        "p95_ms": 101.631321,
+        "max_ms": 101.670479,
+        "stdev_ms": 0.154281
+      },
+      "null_duration": {
+        "n": 20,
+        "min_ms": 0.444982,
+        "median_ms": 0.488538,
+        "p95_ms": 0.900893,
+        "max_ms": 1.108583,
+        "stdev_ms": 0.174825
+      },
+      "pending_read_wakeup": null,
+      "pts_nonadvancing": 0,
+      "pts_gaps_over_150ms": 20
+    },
+    {
+      "config": {
+        "scenario": "stall",
+        "policy": "leaky",
+        "filtered": true
+      },
+      "trials": 20,
+      "completed": 20,
+      "passed": 20,
+      "failed": 0,
+      "timeouts": 0,
+      "acquired": 40,
+      "processed": 40,
+      "published": 40,
+      "epoch_rejected": 0,
+      "obsolete_published": 0,
+      "native_drops_observed": 0,
+      "recovery_attempts": 0,
+      "recovery_successes": 0,
+      "recovery_duration": null,
+      "detection_latency": null,
+      "resume_after_release": {
+        "n": 20,
+        "min_ms": 0.656317,
+        "median_ms": 0.777131,
+        "p95_ms": 1.362802,
+        "max_ms": 1.416497,
+        "stdev_ms": 0.201225
+      },
+      "hold_duration": {
+        "n": 20,
+        "min_ms": 101.003981,
+        "median_ms": 101.264779,
+        "p95_ms": 101.587215,
+        "max_ms": 101.943154,
+        "stdev_ms": 0.197275
+      },
+      "null_duration": {
+        "n": 20,
+        "min_ms": 0.418929,
+        "median_ms": 0.515744,
+        "p95_ms": 0.593969,
+        "max_ms": 1.086262,
+        "stdev_ms": 0.134345
+      },
+      "pending_read_wakeup": null,
+      "pts_nonadvancing": 0,
+      "pts_gaps_over_150ms": 20
+    },
+    {
+      "config": {
+        "scenario": "cycles",
+        "policy": "fifo",
+        "filtered": false
+      },
+      "trials": 20,
+      "completed": 20,
+      "passed": 20,
+      "failed": 0,
+      "timeouts": 0,
+      "acquired": 80,
+      "processed": 80,
+      "published": 80,
+      "epoch_rejected": 0,
+      "obsolete_published": 60,
+      "native_drops_observed": 0,
+      "recovery_attempts": 60,
+      "recovery_successes": 60,
+      "recovery_duration": {
+        "n": 60,
+        "min_ms": 44.692255,
+        "median_ms": 45.949041,
+        "p95_ms": 47.15518,
+        "max_ms": 48.25217,
+        "stdev_ms": 0.729634
+      },
+      "detection_latency": {
+        "n": 60,
+        "min_ms": 0.106891,
+        "median_ms": 0.27211,
+        "p95_ms": 1.808207,
+        "max_ms": 2.025642,
+        "stdev_ms": 0.680216
+      },
+      "resume_after_release": null,
+      "hold_duration": null,
+      "null_duration": {
+        "n": 80,
+        "min_ms": 0.398114,
+        "median_ms": 0.471,
+        "p95_ms": 0.670969,
+        "max_ms": 0.828819,
+        "stdev_ms": 0.082063
+      },
+      "pending_read_wakeup": null,
+      "pts_nonadvancing": 0,
+      "pts_gaps_over_150ms": 0
+    },
+    {
+      "config": {
+        "scenario": "cycles",
+        "policy": "fifo",
+        "filtered": true
+      },
+      "trials": 20,
+      "completed": 20,
+      "passed": 20,
+      "failed": 0,
+      "timeouts": 0,
+      "acquired": 80,
+      "processed": 80,
+      "published": 20,
+      "epoch_rejected": 60,
+      "obsolete_published": 0,
+      "native_drops_observed": 0,
+      "recovery_attempts": 60,
+      "recovery_successes": 60,
+      "recovery_duration": {
+        "n": 60,
+        "min_ms": 44.614331,
+        "median_ms": 45.740477,
+        "p95_ms": 47.210417,
+        "max_ms": 47.547532,
+        "stdev_ms": 0.724438
+      },
+      "detection_latency": {
+        "n": 60,
+        "min_ms": 0.08927,
+        "median_ms": 0.262101,
+        "p95_ms": 1.83708,
+        "max_ms": 2.216102,
+        "stdev_ms": 0.671519
+      },
+      "resume_after_release": null,
+      "hold_duration": null,
+      "null_duration": {
+        "n": 80,
+        "min_ms": 0.39875,
+        "median_ms": 0.47816,
+        "p95_ms": 0.687292,
+        "max_ms": 0.996258,
+        "stdev_ms": 0.098978
+      },
+      "pending_read_wakeup": null,
+      "pts_nonadvancing": 0,
+      "pts_gaps_over_150ms": 0
+    },
+    {
+      "config": {
+        "scenario": "cycles",
+        "policy": "leaky",
+        "filtered": false
+      },
+      "trials": 20,
+      "completed": 20,
+      "passed": 20,
+      "failed": 0,
+      "timeouts": 0,
+      "acquired": 80,
+      "processed": 80,
+      "published": 80,
+      "epoch_rejected": 0,
+      "obsolete_published": 60,
+      "native_drops_observed": 0,
+      "recovery_attempts": 60,
+      "recovery_successes": 60,
+      "recovery_duration": {
+        "n": 60,
+        "min_ms": 44.817895,
+        "median_ms": 46.092652,
+        "p95_ms": 47.688078,
+        "max_ms": 48.034746,
+        "stdev_ms": 0.81161
+      },
+      "detection_latency": {
+        "n": 60,
+        "min_ms": 0.123293,
+        "median_ms": 0.267836,
+        "p95_ms": 2.046866,
+        "max_ms": 2.237156,
+        "stdev_ms": 0.746594
+      },
+      "resume_after_release": null,
+      "hold_duration": null,
+      "null_duration": {
+        "n": 80,
+        "min_ms": 0.411238,
+        "median_ms": 0.498887,
+        "p95_ms": 0.929959,
+        "max_ms": 1.622382,
+        "stdev_ms": 0.19059
+      },
+      "pending_read_wakeup": null,
+      "pts_nonadvancing": 0,
+      "pts_gaps_over_150ms": 0
+    },
+    {
+      "config": {
+        "scenario": "cycles",
+        "policy": "leaky",
+        "filtered": true
+      },
+      "trials": 20,
+      "completed": 20,
+      "passed": 20,
+      "failed": 0,
+      "timeouts": 0,
+      "acquired": 80,
+      "processed": 80,
+      "published": 20,
+      "epoch_rejected": 60,
+      "obsolete_published": 0,
+      "native_drops_observed": 0,
+      "recovery_attempts": 60,
+      "recovery_successes": 60,
+      "recovery_duration": {
+        "n": 60,
+        "min_ms": 45.034121,
+        "median_ms": 46.252491,
+        "p95_ms": 47.392781,
+        "max_ms": 49.204178,
+        "stdev_ms": 0.796371
+      },
+      "detection_latency": {
+        "n": 60,
+        "min_ms": 0.10212,
+        "median_ms": 0.263836,
+        "p95_ms": 2.160006,
+        "max_ms": 2.785915,
+        "stdev_ms": 0.75976
+      },
+      "resume_after_release": null,
+      "hold_duration": null,
+      "null_duration": {
+        "n": 80,
+        "min_ms": 0.403831,
+        "median_ms": 0.498794,
+        "p95_ms": 0.94666,
+        "max_ms": 1.081815,
+        "stdev_ms": 0.155446
+      },
+      "pending_read_wakeup": null,
+      "pts_nonadvancing": 0,
+      "pts_gaps_over_150ms": 0
+    },
+    {
+      "config": {
+        "scenario": "slow-interruption",
+        "policy": "fifo",
+        "filtered": false
+      },
+      "trials": 20,
+      "completed": 20,
+      "passed": 20,
+      "failed": 0,
+      "timeouts": 0,
+      "acquired": 200,
+      "processed": 200,
+      "published": 200,
+      "epoch_rejected": 0,
+      "obsolete_published": 20,
+      "native_drops_observed": 0,
+      "recovery_attempts": 20,
+      "recovery_successes": 20,
+      "recovery_duration": {
+        "n": 20,
+        "min_ms": 45.3021,
+        "median_ms": 46.292459,
+        "p95_ms": 47.702018,
+        "max_ms": 48.309144,
+        "stdev_ms": 0.728549
+      },
+      "detection_latency": {
+        "n": 20,
+        "min_ms": 3.368079,
+        "median_ms": 3.623713,
+        "p95_ms": 4.237009,
+        "max_ms": 4.397287,
+        "stdev_ms": 0.290232
+      },
+      "resume_after_release": null,
+      "hold_duration": null,
+      "null_duration": {
+        "n": 40,
+        "min_ms": 0.412787,
+        "median_ms": 0.480385,
+        "p95_ms": 0.576656,
+        "max_ms": 0.978682,
+        "stdev_ms": 0.088342
+      },
+      "pending_read_wakeup": null,
+      "pts_nonadvancing": 0,
+      "pts_gaps_over_150ms": 20
+    },
+    {
+      "config": {
+        "scenario": "slow-interruption",
+        "policy": "fifo",
+        "filtered": true
+      },
+      "trials": 20,
+      "completed": 20,
+      "passed": 20,
+      "failed": 0,
+      "timeouts": 0,
+      "acquired": 200,
+      "processed": 200,
+      "published": 180,
+      "epoch_rejected": 20,
+      "obsolete_published": 0,
+      "native_drops_observed": 0,
+      "recovery_attempts": 20,
+      "recovery_successes": 20,
+      "recovery_duration": {
+        "n": 20,
+        "min_ms": 45.256353,
+        "median_ms": 46.05668,
+        "p95_ms": 47.277653,
+        "max_ms": 48.954809,
+        "stdev_ms": 0.830919
+      },
+      "detection_latency": {
+        "n": 20,
+        "min_ms": 3.328665,
+        "median_ms": 3.82335,
+        "p95_ms": 4.410208,
+        "max_ms": 5.476263,
+        "stdev_ms": 0.479325
+      },
+      "resume_after_release": null,
+      "hold_duration": null,
+      "null_duration": {
+        "n": 40,
+        "min_ms": 0.406662,
+        "median_ms": 0.505432,
+        "p95_ms": 0.657761,
+        "max_ms": 1.054527,
+        "stdev_ms": 0.111769
+      },
+      "pending_read_wakeup": null,
+      "pts_nonadvancing": 0,
+      "pts_gaps_over_150ms": 20
+    },
+    {
+      "config": {
+        "scenario": "slow-interruption",
+        "policy": "leaky",
+        "filtered": false
+      },
+      "trials": 20,
+      "completed": 20,
+      "passed": 20,
+      "failed": 0,
+      "timeouts": 0,
+      "acquired": 60,
+      "processed": 60,
+      "published": 60,
+      "epoch_rejected": 0,
+      "obsolete_published": 20,
+      "native_drops_observed": 120,
+      "recovery_attempts": 20,
+      "recovery_successes": 20,
+      "recovery_duration": {
+        "n": 20,
+        "min_ms": 45.391502,
+        "median_ms": 46.139761,
+        "p95_ms": 46.976311,
+        "max_ms": 47.370844,
+        "stdev_ms": 0.603086
+      },
+      "detection_latency": {
+        "n": 20,
+        "min_ms": 1.457844,
+        "median_ms": 1.781986,
+        "p95_ms": 2.041983,
+        "max_ms": 2.189116,
+        "stdev_ms": 0.213566
+      },
+      "resume_after_release": null,
+      "hold_duration": null,
+      "null_duration": {
+        "n": 40,
+        "min_ms": 0.41857,
+        "median_ms": 0.515401,
+        "p95_ms": 0.747087,
+        "max_ms": 0.984672,
+        "stdev_ms": 0.119625
+      },
+      "pending_read_wakeup": null,
+      "pts_nonadvancing": 0,
+      "pts_gaps_over_150ms": 20
+    },
+    {
+      "config": {
+        "scenario": "slow-interruption",
+        "policy": "leaky",
+        "filtered": true
+      },
+      "trials": 20,
+      "completed": 20,
+      "passed": 20,
+      "failed": 0,
+      "timeouts": 0,
+      "acquired": 60,
+      "processed": 60,
+      "published": 40,
+      "epoch_rejected": 20,
+      "obsolete_published": 0,
+      "native_drops_observed": 120,
+      "recovery_attempts": 20,
+      "recovery_successes": 20,
+      "recovery_duration": {
+        "n": 20,
+        "min_ms": 45.171328,
+        "median_ms": 45.739522,
+        "p95_ms": 47.608785,
+        "max_ms": 47.904933,
+        "stdev_ms": 0.876121
+      },
+      "detection_latency": {
+        "n": 20,
+        "min_ms": 1.489256,
+        "median_ms": 1.669514,
+        "p95_ms": 2.547169,
+        "max_ms": 2.650051,
+        "stdev_ms": 0.357321
+      },
+      "resume_after_release": null,
+      "hold_duration": null,
+      "null_duration": {
+        "n": 40,
+        "min_ms": 0.401484,
+        "median_ms": 0.487643,
+        "p95_ms": 0.74476,
+        "max_ms": 0.854825,
+        "stdev_ms": 0.108361
+      },
+      "pending_read_wakeup": null,
+      "pts_nonadvancing": 0,
+      "pts_gaps_over_150ms": 20
+    },
+    {
+      "config": {
+        "scenario": "shutdown",
+        "policy": "fifo",
+        "filtered": false
+      },
+      "trials": 20,
+      "completed": 20,
+      "passed": 20,
+      "failed": 0,
+      "timeouts": 0,
+      "acquired": 20,
+      "processed": 20,
+      "published": 20,
+      "epoch_rejected": 0,
+      "obsolete_published": 0,
+      "native_drops_observed": 0,
+      "recovery_attempts": 0,
+      "recovery_successes": 0,
+      "recovery_duration": null,
+      "detection_latency": null,
+      "resume_after_release": null,
+      "hold_duration": null,
+      "null_duration": {
+        "n": 20,
+        "min_ms": 100.760085,
+        "median_ms": 100.885233,
+        "p95_ms": 101.023003,
+        "max_ms": 101.068381,
+        "stdev_ms": 0.081138
+      },
+      "pending_read_wakeup": {
+        "n": 20,
+        "min_ms": 100.291543,
+        "median_ms": 100.426969,
+        "p95_ms": 100.554169,
+        "max_ms": 100.572821,
+        "stdev_ms": 0.0776
+      },
+      "pts_nonadvancing": 0,
+      "pts_gaps_over_150ms": 0
+    },
+    {
+      "config": {
+        "scenario": "shutdown",
+        "policy": "fifo",
+        "filtered": true
+      },
+      "trials": 20,
+      "completed": 20,
+      "passed": 20,
+      "failed": 0,
+      "timeouts": 0,
+      "acquired": 20,
+      "processed": 20,
+      "published": 20,
+      "epoch_rejected": 0,
+      "obsolete_published": 0,
+      "native_drops_observed": 0,
+      "recovery_attempts": 0,
+      "recovery_successes": 0,
+      "recovery_duration": null,
+      "detection_latency": null,
+      "resume_after_release": null,
+      "hold_duration": null,
+      "null_duration": {
+        "n": 20,
+        "min_ms": 100.729483,
+        "median_ms": 100.879543,
+        "p95_ms": 101.176661,
+        "max_ms": 101.399599,
+        "stdev_ms": 0.15057
+      },
+      "pending_read_wakeup": {
+        "n": 20,
+        "min_ms": 100.317823,
+        "median_ms": 100.478402,
+        "p95_ms": 100.559298,
+        "max_ms": 100.642194,
+        "stdev_ms": 0.074682
+      },
+      "pts_nonadvancing": 0,
+      "pts_gaps_over_150ms": 0
+    },
+    {
+      "config": {
+        "scenario": "shutdown",
+        "policy": "leaky",
+        "filtered": false
+      },
+      "trials": 20,
+      "completed": 20,
+      "passed": 20,
+      "failed": 0,
+      "timeouts": 0,
+      "acquired": 20,
+      "processed": 20,
+      "published": 20,
+      "epoch_rejected": 0,
+      "obsolete_published": 0,
+      "native_drops_observed": 0,
+      "recovery_attempts": 0,
+      "recovery_successes": 0,
+      "recovery_duration": null,
+      "detection_latency": null,
+      "resume_after_release": null,
+      "hold_duration": null,
+      "null_duration": {
+        "n": 20,
+        "min_ms": 100.684285,
+        "median_ms": 100.962553,
+        "p95_ms": 101.112786,
+        "max_ms": 101.146638,
+        "stdev_ms": 0.122198
+      },
+      "pending_read_wakeup": {
+        "n": 20,
+        "min_ms": 100.292636,
+        "median_ms": 100.440185,
+        "p95_ms": 100.574948,
+        "max_ms": 100.62501,
+        "stdev_ms": 0.077578
+      },
+      "pts_nonadvancing": 0,
+      "pts_gaps_over_150ms": 0
+    },
+    {
+      "config": {
+        "scenario": "shutdown",
+        "policy": "leaky",
+        "filtered": true
+      },
+      "trials": 20,
+      "completed": 20,
+      "passed": 20,
+      "failed": 0,
+      "timeouts": 0,
+      "acquired": 20,
+      "processed": 20,
+      "published": 20,
+      "epoch_rejected": 0,
+      "obsolete_published": 0,
+      "native_drops_observed": 0,
+      "recovery_attempts": 0,
+      "recovery_successes": 0,
+      "recovery_duration": null,
+      "detection_latency": null,
+      "resume_after_release": null,
+      "hold_duration": null,
+      "null_duration": {
+        "n": 20,
+        "min_ms": 100.709753,
+        "median_ms": 100.911632,
+        "p95_ms": 101.507422,
+        "max_ms": 101.606331,
+        "stdev_ms": 0.237874
+      },
+      "pending_read_wakeup": {
+        "n": 20,
+        "min_ms": 100.294624,
+        "median_ms": 100.482248,
+        "p95_ms": 100.623218,
+        "max_ms": 100.706575,
+        "stdev_ms": 0.099324
+      },
+      "pts_nonadvancing": 0,
+      "pts_gaps_over_150ms": 0
+    },
+    {
+      "config": {
+        "scenario": "epoch",
+        "policy": "fifo",
+        "filtered": false
+      },
+      "trials": 20,
+      "completed": 20,
+      "passed": 20,
+      "failed": 0,
+      "timeouts": 0,
+      "acquired": 40,
+      "processed": 40,
+      "published": 40,
+      "epoch_rejected": 0,
+      "obsolete_published": 20,
+      "native_drops_observed": 0,
+      "recovery_attempts": 0,
+      "recovery_successes": 0,
+      "recovery_duration": null,
+      "detection_latency": null,
+      "resume_after_release": {
+        "n": 20,
+        "min_ms": 0.654199,
+        "median_ms": 0.789214,
+        "p95_ms": 1.048813,
+        "max_ms": 1.298723,
+        "stdev_ms": 0.14514
+      },
+      "hold_duration": {
+        "n": 20,
+        "min_ms": 101.008591,
+        "median_ms": 101.412477,
+        "p95_ms": 101.756309,
+        "max_ms": 101.767014,
+        "stdev_ms": 0.237092
+      },
+      "null_duration": {
+        "n": 20,
+        "min_ms": 0.456778,
+        "median_ms": 0.510965,
+        "p95_ms": 0.56751,
+        "max_ms": 0.640713,
+        "stdev_ms": 0.042238
+      },
+      "pending_read_wakeup": null,
+      "pts_nonadvancing": 0,
+      "pts_gaps_over_150ms": 20
+    },
+    {
+      "config": {
+        "scenario": "epoch",
+        "policy": "fifo",
+        "filtered": true
+      },
+      "trials": 20,
+      "completed": 20,
+      "passed": 20,
+      "failed": 0,
+      "timeouts": 0,
+      "acquired": 40,
+      "processed": 40,
+      "published": 20,
+      "epoch_rejected": 20,
+      "obsolete_published": 0,
+      "native_drops_observed": 0,
+      "recovery_attempts": 0,
+      "recovery_successes": 0,
+      "recovery_duration": null,
+      "detection_latency": null,
+      "resume_after_release": {
+        "n": 20,
+        "min_ms": 0.633808,
+        "median_ms": 0.776626,
+        "p95_ms": 1.086813,
+        "max_ms": 1.590427,
+        "stdev_ms": 0.199417
+      },
+      "hold_duration": {
+        "n": 20,
+        "min_ms": 101.028139,
+        "median_ms": 101.401006,
+        "p95_ms": 101.90742,
+        "max_ms": 101.914091,
+        "stdev_ms": 0.24275
+      },
+      "null_duration": {
+        "n": 20,
+        "min_ms": 0.443019,
+        "median_ms": 0.472571,
+        "p95_ms": 0.640433,
+        "max_ms": 0.667883,
+        "stdev_ms": 0.064397
+      },
+      "pending_read_wakeup": null,
+      "pts_nonadvancing": 0,
+      "pts_gaps_over_150ms": 20
+    },
+    {
+      "config": {
+        "scenario": "epoch",
+        "policy": "leaky",
+        "filtered": false
+      },
+      "trials": 20,
+      "completed": 20,
+      "passed": 20,
+      "failed": 0,
+      "timeouts": 0,
+      "acquired": 40,
+      "processed": 40,
+      "published": 40,
+      "epoch_rejected": 0,
+      "obsolete_published": 20,
+      "native_drops_observed": 0,
+      "recovery_attempts": 0,
+      "recovery_successes": 0,
+      "recovery_duration": null,
+      "detection_latency": null,
+      "resume_after_release": {
+        "n": 20,
+        "min_ms": 0.643414,
+        "median_ms": 0.765081,
+        "p95_ms": 1.149627,
+        "max_ms": 1.481132,
+        "stdev_ms": 0.182494
+      },
+      "hold_duration": {
+        "n": 20,
+        "min_ms": 101.027897,
+        "median_ms": 101.234972,
+        "p95_ms": 101.763976,
+        "max_ms": 102.32817,
+        "stdev_ms": 0.301774
+      },
+      "null_duration": {
+        "n": 20,
+        "min_ms": 0.440603,
+        "median_ms": 0.515956,
+        "p95_ms": 0.624357,
+        "max_ms": 0.663772,
+        "stdev_ms": 0.059016
+      },
+      "pending_read_wakeup": null,
+      "pts_nonadvancing": 0,
+      "pts_gaps_over_150ms": 20
+    },
+    {
+      "config": {
+        "scenario": "epoch",
+        "policy": "leaky",
+        "filtered": true
+      },
+      "trials": 20,
+      "completed": 20,
+      "passed": 20,
+      "failed": 0,
+      "timeouts": 0,
+      "acquired": 40,
+      "processed": 40,
+      "published": 20,
+      "epoch_rejected": 20,
+      "obsolete_published": 0,
+      "native_drops_observed": 0,
+      "recovery_attempts": 0,
+      "recovery_successes": 0,
+      "recovery_duration": null,
+      "detection_latency": null,
+      "resume_after_release": {
+        "n": 20,
+        "min_ms": 0.660463,
+        "median_ms": 0.773792,
+        "p95_ms": 0.877545,
+        "max_ms": 0.941627,
+        "stdev_ms": 0.068026
+      },
+      "hold_duration": {
+        "n": 20,
+        "min_ms": 101.044302,
+        "median_ms": 101.34639,
+        "p95_ms": 101.607305,
+        "max_ms": 101.736925,
+        "stdev_ms": 0.192936
+      },
+      "null_duration": {
+        "n": 20,
+        "min_ms": 0.416006,
+        "median_ms": 0.482765,
+        "p95_ms": 0.587889,
+        "max_ms": 0.606955,
+        "stdev_ms": 0.053421
+      },
+      "pending_read_wakeup": null,
+      "pts_nonadvancing": 0,
+      "pts_gaps_over_150ms": 20
+    },
+    {
+      "config": {
+        "scenario": "recovery",
+        "policy": "fifo",
+        "filtered": false
+      },
+      "trials": 20,
+      "completed": 20,
+      "passed": 20,
+      "failed": 0,
+      "timeouts": 0,
+      "acquired": 80,
+      "processed": 80,
+      "published": 80,
+      "epoch_rejected": 0,
+      "obsolete_published": 0,
+      "native_drops_observed": 0,
+      "recovery_attempts": 0,
+      "recovery_successes": 0,
+      "recovery_duration": null,
+      "detection_latency": null,
+      "resume_after_release": {
+        "n": 20,
+        "min_ms": 0.678928,
+        "median_ms": 0.740496,
+        "p95_ms": 1.029055,
+        "max_ms": 1.259036,
+        "stdev_ms": 0.132442
+      },
+      "hold_duration": {
+        "n": 20,
+        "min_ms": 100.920047,
+        "median_ms": 101.393606,
+        "p95_ms": 101.576599,
+        "max_ms": 101.749726,
+        "stdev_ms": 0.217657
+      },
+      "null_duration": {
+        "n": 20,
+        "min_ms": 0.423297,
+        "median_ms": 0.523912,
+        "p95_ms": 0.587499,
+        "max_ms": 0.662578,
+        "stdev_ms": 0.063115
+      },
+      "pending_read_wakeup": null,
+      "pts_nonadvancing": 0,
+      "pts_gaps_over_150ms": 20
+    },
+    {
+      "config": {
+        "scenario": "recovery",
+        "policy": "fifo",
+        "filtered": true
+      },
+      "trials": 20,
+      "completed": 20,
+      "passed": 20,
+      "failed": 0,
+      "timeouts": 0,
+      "acquired": 80,
+      "processed": 80,
+      "published": 80,
+      "epoch_rejected": 0,
+      "obsolete_published": 0,
+      "native_drops_observed": 0,
+      "recovery_attempts": 0,
+      "recovery_successes": 0,
+      "recovery_duration": null,
+      "detection_latency": null,
+      "resume_after_release": {
+        "n": 20,
+        "min_ms": 0.659716,
+        "median_ms": 0.767521,
+        "p95_ms": 1.108887,
+        "max_ms": 1.156585,
+        "stdev_ms": 0.131186
+      },
+      "hold_duration": {
+        "n": 20,
+        "min_ms": 101.031214,
+        "median_ms": 101.302397,
+        "p95_ms": 101.69993,
+        "max_ms": 101.745749,
+        "stdev_ms": 0.196557
+      },
+      "null_duration": {
+        "n": 20,
+        "min_ms": 0.436869,
+        "median_ms": 0.531876,
+        "p95_ms": 0.881888,
+        "max_ms": 1.000618,
+        "stdev_ms": 0.138839
+      },
+      "pending_read_wakeup": null,
+      "pts_nonadvancing": 0,
+      "pts_gaps_over_150ms": 20
+    },
+    {
+      "config": {
+        "scenario": "recovery",
+        "policy": "leaky",
+        "filtered": false
+      },
+      "trials": 20,
+      "completed": 20,
+      "passed": 20,
+      "failed": 0,
+      "timeouts": 0,
+      "acquired": 80,
+      "processed": 80,
+      "published": 80,
+      "epoch_rejected": 0,
+      "obsolete_published": 0,
+      "native_drops_observed": 0,
+      "recovery_attempts": 0,
+      "recovery_successes": 0,
+      "recovery_duration": null,
+      "detection_latency": null,
+      "resume_after_release": {
+        "n": 20,
+        "min_ms": 0.668546,
+        "median_ms": 0.796967,
+        "p95_ms": 1.10084,
+        "max_ms": 1.222158,
+        "stdev_ms": 0.139164
+      },
+      "hold_duration": {
+        "n": 20,
+        "min_ms": 101.061884,
+        "median_ms": 101.270052,
+        "p95_ms": 101.692302,
+        "max_ms": 101.785704,
+        "stdev_ms": 0.202391
+      },
+      "null_duration": {
+        "n": 20,
+        "min_ms": 0.433214,
+        "median_ms": 0.481291,
+        "p95_ms": 0.801239,
+        "max_ms": 1.160574,
+        "stdev_ms": 0.171591
+      },
+      "pending_read_wakeup": null,
+      "pts_nonadvancing": 0,
+      "pts_gaps_over_150ms": 20
+    },
+    {
+      "config": {
+        "scenario": "recovery",
+        "policy": "leaky",
+        "filtered": true
+      },
+      "trials": 20,
+      "completed": 20,
+      "passed": 20,
+      "failed": 0,
+      "timeouts": 0,
+      "acquired": 80,
+      "processed": 80,
+      "published": 80,
+      "epoch_rejected": 0,
+      "obsolete_published": 0,
+      "native_drops_observed": 0,
+      "recovery_attempts": 0,
+      "recovery_successes": 0,
+      "recovery_duration": null,
+      "detection_latency": null,
+      "resume_after_release": {
+        "n": 20,
+        "min_ms": 0.635323,
+        "median_ms": 0.759764,
+        "p95_ms": 1.602426,
+        "max_ms": 1.845021,
+        "stdev_ms": 0.314795
+      },
+      "hold_duration": {
+        "n": 20,
+        "min_ms": 100.991252,
+        "median_ms": 101.085874,
+        "p95_ms": 101.307699,
+        "max_ms": 101.526175,
+        "stdev_ms": 0.130188
+      },
+      "null_duration": {
+        "n": 20,
+        "min_ms": 0.456583,
+        "median_ms": 0.522004,
+        "p95_ms": 0.680237,
+        "max_ms": 0.866233,
+        "stdev_ms": 0.097669
+      },
+      "pending_read_wakeup": null,
+      "pts_nonadvancing": 0,
+      "pts_gaps_over_150ms": 20
+    }
+  ],
+  "cleanup": {
+    "clients": 1120,
+    "servers": 720,
+    "relay_workers": 720,
+    "all_null": true,
+    "remaining_children": 0,
+    "remaining_python_threads": 0,
+    "relay_errors": 0,
+    "relay_listener_failures": 0,
+    "server_listener_failures": 0,
+    "server_fallbacks": 0,
+    "nonzero_server_exits": 0,
+    "nonempty_stderr_trials": 0
+  },
+  "source_capture_timestamp": null,
+  "source_frame_identity": null,
+  "UDP_loss": null
+}

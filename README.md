@@ -1,6 +1,6 @@
 # Video Freshness Lab
 
-Milestone 1.8: finite localhost RTSP transport and final-output epoch comparisons.
+Milestone 1.9: finite localhost RTSP transport faults and output epoch comparisons.
 This research lab implements a virtual clock, FIFO/latest-frame waiting buffers,
 one simulated consumer, session/fault scripts, optional session filtering,
 no-progress detection, explicit metrics, structured evidence, and a small CLI.
@@ -21,8 +21,9 @@ adds value over existing libraries.
 The [Markdown PRD](PRD.md) and [full DOCX PRD](Video_Freshness_Lab_PRD_v0.1.docx)
 remain unchanged at their original paths. See the [source index](docs/prd/README.md),
 [scope decisions](docs/architecture/foundation.md), and
-[validation plan](docs/experiments/validation-plan.md). The PRDs' full Stage 1
-learning lab is broader than this in-process milestone and remains unfinished.
+[validation plan](docs/experiments/validation-plan.md). Original Stage 1's numbered
+buffering/metrics and threaded demo are implemented; later requirements are
+tracked independently in the [PRD implementation audit](docs/audits/PRD_IMPLEMENTATION_MATRIX.md).
 The original PRDs are local, untracked source documents and are intentionally
 absent from GitHub clones. Consult the owner's local copies before new
 implementation; their linked paths resolve only where those copies are present.
@@ -94,6 +95,15 @@ These Linux-only experiments need permission to bind IPv4 loopback. They accept
 no external endpoint and do not run in ordinary GitHub CI. Decoder PTS and local
 delivery ordinals do not establish physical capture freshness or source identity.
 See [1.8 results and limits](docs/experiments/milestone-1.8-results.md).
+
+The [fixture-only transport injector](docs/architecture/transport-fault-injection.md)
+adds acknowledged interleaved-record delay/stall and abrupt connected-socket cuts.
+It targets only the owned IPv4 loopback fixture. Run
+`PYTHONPATH=src /usr/bin/python3 -m unittest discover -s integration -p test_transport_faults.py -v`
+or `PYTHONPATH=src /usr/bin/python3 -m video_freshness_lab.transport_experiment --repeat 20`
+for the declared assessment. [1.9 results](docs/experiments/milestone-1.9-results.md)
+separate transport faults, application recovery and held-work epoch checks.
+No UDP loss, physical capture freshness or independent consumer defect is claimed.
 
 Use Python 3.11 or newer; Fedora development uses Python 3.12. From this directory:
 
