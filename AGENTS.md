@@ -6,11 +6,12 @@
   The originals are intentionally absent from Git/GitHub. A fresh checkout must
   receive owner-provided local copies before requirement-dependent implementation;
   do not invent or download substitutes when they are missing.
-- Milestones 1.1–1.6 are committed. The owner authorizes Milestone 1.7: finite
-  local GStreamer appsrc/appsink comparisons using existing approved bindings,
+- Milestones 1.1–1.7 are committed. The owner authorizes Milestone 1.8: finite
+  localhost-only RTSP transport experiments using the installed GstRtspServer,
   isolated integration evidence, and native-versus-application contract analysis.
   Preserve the mailbox's drain-on-close contract; closure is not epoch invalidation.
-  Stop after 1.7. Real RTSP transport and later milestones require new authorization.
+  Stop after 1.8. Milestone 1.9, real cameras and external endpoints require new
+  authorization.
 - Use Python 3.11+, a `src/video_freshness_lab` layout, readable typed code, and
   standard-library components where possible. Do not add unnecessary dependencies.
   Document dependency purpose, version, license, and source before adoption.
@@ -30,9 +31,9 @@
   scan document containers as well as text. Do not use `git add .` blindly.
 - CI only: read-only permissions, no secrets, no deployment, no package/container
   publishing, no releases or paid services. Pin actions to full commit SHAs.
-- Avoid unnecessary commits. Use milestone-based conventional Git history, with
-  at most one Milestone 1.1 commit after all checks pass and owner approval of the
-  staged diff. Proposed message: `chore: establish validation harness foundation`.
+- Avoid unnecessary commits. Create exactly one meaningful Milestone 1.8 commit
+  after successful validation and staged-content review. Authorized message:
+  `test: validate local RTSP transport and recovery behavior`.
 - Do not force-push or rewrite history. Private GitHub creation and verified
   milestone pushes are authorized under the delivery policy below. Public
   visibility, publishing, deployment, and license selection remain unapproved.

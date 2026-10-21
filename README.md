@@ -1,12 +1,13 @@
 # Video Freshness Lab
 
-Milestone 1.7: local GStreamer buffering and final-output session comparisons.
+Milestone 1.8: finite localhost RTSP transport and final-output epoch comparisons.
 This research lab implements a virtual clock, FIFO/latest-frame waiting buffers,
 one simulated consumer, session/fault scripts, optional session filtering,
 no-progress detection, explicit metrics, structured evidence, and a small CLI.
 A separate real-thread demo uses a bounded latest-frame mailbox with explicit
 drain-on-close behavior and bounded joins.
-No RTSP capture, decoding, images, or production reliability API is implemented.
+An optional local experiment uses the installed GstRTSPServer and GStreamer
+JPEG decoder. It supplies no production reliability API.
 
 ## Problem and research status
 
@@ -72,11 +73,27 @@ That milestone introduced no media pipeline, transport adapter, or runtime depen
 
 The optional [GStreamer experiment](docs/architecture/gstreamer-experiment.md)
 uses existing Fedora system bindings, separately from the Python-only suite.
-Run `PYTHONPATH=src /usr/bin/python3 -m unittest discover -s integration -v`
+Run `PYTHONPATH=src /usr/bin/python3 -m unittest discover -s integration -p 'test_gstreamer_native.py' -v`
 for the explicit integration checks, and
 `PYTHONPATH=src /usr/bin/python3 -m video_freshness_lab.gstreamer_experiment --repeat 20`
 for structured runtime observations. Missing bindings fail explicitly. Normal CI
 does not execute these commands. See [1.7 measurements and decision](docs/experiments/milestone-1.7-results.md).
+
+The optional [localhost RTSP testbed](docs/architecture/local-rtsp-testbed.md)
+uses the existing system GstRtspServer library, synthetic JPEG over interleaved
+TCP, and finite isolated processes. Its six scenarios cover streaming,
+interruption, explicit application reconnect, consumer slowdown, pending-read
+shutdown, and final epoch filtering. Run:
+
+```sh
+PYTHONPATH=src /usr/bin/python3 -m unittest discover -s integration -p 'test_rtsp_transport.py' -v
+PYTHONPATH=src /usr/bin/python3 -m video_freshness_lab.rtsp_experiment --repeat 5 > /tmp/vfl18-results.json
+```
+
+These Linux-only experiments need permission to bind IPv4 loopback. They accept
+no external endpoint and do not run in ordinary GitHub CI. Decoder PTS and local
+delivery ordinals do not establish physical capture freshness or source identity.
+See [1.8 results and limits](docs/experiments/milestone-1.8-results.md).
 
 Use Python 3.11 or newer; Fedora development uses Python 3.12. From this directory:
 
@@ -104,8 +121,8 @@ versions with `python -m pip freeze` when collecting experiment evidence.
 
 ## Scope and uncertainty
 
-Current work uses numbered synthetic items and controlled event order.
-Transport comes only after pure contracts have been validated. Sequence lag
+The core uses numbered synthetic items and controlled event order; the optional
+transport fixture uses generated test patterns. Source sequence lag
 measures distance from the source head; evidence age measures elapsed time;
 neither a nominal frame rate nor connection status substitutes for these.
 The simulator defines explicit synthetic thresholds and session boundaries;

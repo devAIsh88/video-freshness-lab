@@ -1,0 +1,343 @@
+{
+  "milestone": "1.8",
+  "date": "2026-10-21",
+  "scope": "synthetic IPv4 loopback; JPEG RTP over TCP; application output epochs only",
+  "raw_sha256": "75d3b498ff721fd49897a8c22cb51574f5770f63573d8fffc44123b0b8071408",
+  "trials": 120,
+  "successful": 120,
+  "failed": 0,
+  "capture_freshness": "unknown",
+  "source_frame_identity": "unknown",
+  "source_sequence_lag": null,
+  "per_configuration": [
+    {
+      "scenario": "normal",
+      "policy": "fifo",
+      "filtered": false,
+      "trials": 5,
+      "receipts_per_trial": [4, 4, 4, 4, 4],
+      "native_drops_at_pre_null_per_trial": [0, 0, 0, 0, 0],
+      "application_rejections_per_trial": [0, 0, 0, 0, 0],
+      "obsolete_published_per_trial": [0, 0, 0, 0, 0]
+    },
+    {
+      "scenario": "normal",
+      "policy": "fifo",
+      "filtered": true,
+      "trials": 5,
+      "receipts_per_trial": [4, 4, 4, 4, 4],
+      "native_drops_at_pre_null_per_trial": [0, 0, 0, 0, 0],
+      "application_rejections_per_trial": [0, 0, 0, 0, 0],
+      "obsolete_published_per_trial": [0, 0, 0, 0, 0]
+    },
+    {
+      "scenario": "normal",
+      "policy": "leaky",
+      "filtered": false,
+      "trials": 5,
+      "receipts_per_trial": [4, 4, 4, 4, 4],
+      "native_drops_at_pre_null_per_trial": [0, 0, 0, 0, 0],
+      "application_rejections_per_trial": [0, 0, 0, 0, 0],
+      "obsolete_published_per_trial": [0, 0, 0, 0, 0]
+    },
+    {
+      "scenario": "normal",
+      "policy": "leaky",
+      "filtered": true,
+      "trials": 5,
+      "receipts_per_trial": [4, 4, 4, 4, 4],
+      "native_drops_at_pre_null_per_trial": [0, 0, 0, 0, 0],
+      "application_rejections_per_trial": [0, 0, 0, 0, 0],
+      "obsolete_published_per_trial": [0, 0, 0, 0, 0]
+    },
+    {
+      "scenario": "interruption",
+      "policy": "fifo",
+      "filtered": false,
+      "trials": 5,
+      "receipts_per_trial": [1, 1, 1, 1, 1],
+      "native_drops_at_pre_null_per_trial": [0, 0, 0, 0, 0],
+      "application_rejections_per_trial": [0, 0, 0, 0, 0],
+      "obsolete_published_per_trial": [0, 0, 0, 0, 0]
+    },
+    {
+      "scenario": "interruption",
+      "policy": "fifo",
+      "filtered": true,
+      "trials": 5,
+      "receipts_per_trial": [1, 1, 1, 1, 1],
+      "native_drops_at_pre_null_per_trial": [0, 0, 0, 0, 0],
+      "application_rejections_per_trial": [0, 0, 0, 0, 0],
+      "obsolete_published_per_trial": [0, 0, 0, 0, 0]
+    },
+    {
+      "scenario": "interruption",
+      "policy": "leaky",
+      "filtered": false,
+      "trials": 5,
+      "receipts_per_trial": [1, 1, 1, 1, 1],
+      "native_drops_at_pre_null_per_trial": [0, 0, 0, 0, 0],
+      "application_rejections_per_trial": [0, 0, 0, 0, 0],
+      "obsolete_published_per_trial": [0, 0, 0, 0, 0]
+    },
+    {
+      "scenario": "interruption",
+      "policy": "leaky",
+      "filtered": true,
+      "trials": 5,
+      "receipts_per_trial": [1, 1, 1, 1, 1],
+      "native_drops_at_pre_null_per_trial": [0, 0, 0, 0, 0],
+      "application_rejections_per_trial": [0, 0, 0, 0, 0],
+      "obsolete_published_per_trial": [0, 0, 0, 0, 0]
+    },
+    {
+      "scenario": "reconnect",
+      "policy": "fifo",
+      "filtered": false,
+      "trials": 5,
+      "receipts_per_trial": [2, 2, 2, 2, 2],
+      "native_drops_at_pre_null_per_trial": [0, 0, 0, 0, 0],
+      "application_rejections_per_trial": [0, 0, 0, 0, 0],
+      "obsolete_published_per_trial": [1, 1, 1, 1, 1]
+    },
+    {
+      "scenario": "reconnect",
+      "policy": "fifo",
+      "filtered": true,
+      "trials": 5,
+      "receipts_per_trial": [2, 2, 2, 2, 2],
+      "native_drops_at_pre_null_per_trial": [0, 0, 0, 0, 0],
+      "application_rejections_per_trial": [1, 1, 1, 1, 1],
+      "obsolete_published_per_trial": [0, 0, 0, 0, 0]
+    },
+    {
+      "scenario": "reconnect",
+      "policy": "leaky",
+      "filtered": false,
+      "trials": 5,
+      "receipts_per_trial": [2, 2, 2, 2, 2],
+      "native_drops_at_pre_null_per_trial": [0, 0, 0, 0, 0],
+      "application_rejections_per_trial": [0, 0, 0, 0, 0],
+      "obsolete_published_per_trial": [1, 1, 1, 1, 1]
+    },
+    {
+      "scenario": "reconnect",
+      "policy": "leaky",
+      "filtered": true,
+      "trials": 5,
+      "receipts_per_trial": [2, 2, 2, 2, 2],
+      "native_drops_at_pre_null_per_trial": [0, 0, 0, 0, 0],
+      "application_rejections_per_trial": [1, 1, 1, 1, 1],
+      "obsolete_published_per_trial": [0, 0, 0, 0, 0]
+    },
+    {
+      "scenario": "slow",
+      "policy": "fifo",
+      "filtered": false,
+      "trials": 5,
+      "receipts_per_trial": [3, 3, 3, 3, 3],
+      "native_drops_at_pre_null_per_trial": [0, 0, 0, 0, 0],
+      "application_rejections_per_trial": [0, 0, 0, 0, 0],
+      "obsolete_published_per_trial": [0, 0, 0, 0, 0]
+    },
+    {
+      "scenario": "slow",
+      "policy": "fifo",
+      "filtered": true,
+      "trials": 5,
+      "receipts_per_trial": [3, 3, 3, 3, 3],
+      "native_drops_at_pre_null_per_trial": [0, 0, 0, 0, 0],
+      "application_rejections_per_trial": [0, 0, 0, 0, 0],
+      "obsolete_published_per_trial": [0, 0, 0, 0, 0]
+    },
+    {
+      "scenario": "slow",
+      "policy": "leaky",
+      "filtered": false,
+      "trials": 5,
+      "receipts_per_trial": [3, 3, 3, 3, 3],
+      "native_drops_at_pre_null_per_trial": [6, 6, 6, 6, 6],
+      "application_rejections_per_trial": [0, 0, 0, 0, 0],
+      "obsolete_published_per_trial": [0, 0, 0, 0, 0]
+    },
+    {
+      "scenario": "slow",
+      "policy": "leaky",
+      "filtered": true,
+      "trials": 5,
+      "receipts_per_trial": [3, 3, 3, 3, 3],
+      "native_drops_at_pre_null_per_trial": [6, 6, 6, 6, 6],
+      "application_rejections_per_trial": [0, 0, 0, 0, 0],
+      "obsolete_published_per_trial": [0, 0, 0, 0, 0]
+    },
+    {
+      "scenario": "blocked-read",
+      "policy": "fifo",
+      "filtered": false,
+      "trials": 5,
+      "receipts_per_trial": [1, 1, 1, 1, 1],
+      "native_drops_at_pre_null_per_trial": [0, 0, 0, 0, 0],
+      "application_rejections_per_trial": [0, 0, 0, 0, 0],
+      "obsolete_published_per_trial": [0, 0, 0, 0, 0]
+    },
+    {
+      "scenario": "blocked-read",
+      "policy": "fifo",
+      "filtered": true,
+      "trials": 5,
+      "receipts_per_trial": [1, 1, 1, 1, 1],
+      "native_drops_at_pre_null_per_trial": [0, 0, 0, 0, 0],
+      "application_rejections_per_trial": [0, 0, 0, 0, 0],
+      "obsolete_published_per_trial": [0, 0, 0, 0, 0]
+    },
+    {
+      "scenario": "blocked-read",
+      "policy": "leaky",
+      "filtered": false,
+      "trials": 5,
+      "receipts_per_trial": [1, 1, 1, 1, 1],
+      "native_drops_at_pre_null_per_trial": [0, 0, 0, 0, 0],
+      "application_rejections_per_trial": [0, 0, 0, 0, 0],
+      "obsolete_published_per_trial": [0, 0, 0, 0, 0]
+    },
+    {
+      "scenario": "blocked-read",
+      "policy": "leaky",
+      "filtered": true,
+      "trials": 5,
+      "receipts_per_trial": [1, 1, 1, 1, 1],
+      "native_drops_at_pre_null_per_trial": [0, 0, 0, 0, 0],
+      "application_rejections_per_trial": [0, 0, 0, 0, 0],
+      "obsolete_published_per_trial": [0, 0, 0, 0, 0]
+    },
+    {
+      "scenario": "epoch",
+      "policy": "fifo",
+      "filtered": false,
+      "trials": 5,
+      "receipts_per_trial": [2, 2, 2, 2, 2],
+      "native_drops_at_pre_null_per_trial": [0, 0, 0, 0, 0],
+      "application_rejections_per_trial": [0, 0, 0, 0, 0],
+      "obsolete_published_per_trial": [1, 1, 1, 1, 1]
+    },
+    {
+      "scenario": "epoch",
+      "policy": "fifo",
+      "filtered": true,
+      "trials": 5,
+      "receipts_per_trial": [2, 2, 2, 2, 2],
+      "native_drops_at_pre_null_per_trial": [0, 0, 0, 0, 0],
+      "application_rejections_per_trial": [1, 1, 1, 1, 1],
+      "obsolete_published_per_trial": [0, 0, 0, 0, 0]
+    },
+    {
+      "scenario": "epoch",
+      "policy": "leaky",
+      "filtered": false,
+      "trials": 5,
+      "receipts_per_trial": [2, 2, 2, 2, 2],
+      "native_drops_at_pre_null_per_trial": [0, 0, 0, 0, 0],
+      "application_rejections_per_trial": [0, 0, 0, 0, 0],
+      "obsolete_published_per_trial": [1, 1, 1, 1, 1]
+    },
+    {
+      "scenario": "epoch",
+      "policy": "leaky",
+      "filtered": true,
+      "trials": 5,
+      "receipts_per_trial": [2, 2, 2, 2, 2],
+      "native_drops_at_pre_null_per_trial": [0, 0, 0, 0, 0],
+      "application_rejections_per_trial": [1, 1, 1, 1, 1],
+      "obsolete_published_per_trial": [0, 0, 0, 0, 0]
+    }
+  ],
+  "timings": {
+    "client_null_request_to_observed": {
+      "count": 140,
+      "min_ms": 0.449367,
+      "median_ms": 0.781028,
+      "max_ms": 2.343892
+    },
+    "server_stop_request_to_exit_observed": {
+      "count": 140,
+      "min_ms": 18.386033,
+      "median_ms": 25.767204,
+      "max_ms": 37.276847
+    },
+    "pending_read_wakeup_after_null_request": {
+      "count": 20,
+      "min_ms": 0.548874,
+      "median_ms": 0.742,
+      "max_ms": 1.85651
+    },
+    "interruption_observation_end_after_exit": {
+      "count": 20,
+      "min_ms": 1.471184,
+      "median_ms": 1.526956,
+      "max_ms": 1.92192
+    },
+    "reconnect_observation_end_after_exit": {
+      "count": 20,
+      "min_ms": 1.438569,
+      "median_ms": 1.517243,
+      "max_ms": 2.05662
+    },
+    "slow_fifo_waiting_pad_to_receipt": {
+      "count": 20,
+      "min_ms": 601.600114,
+      "median_ms": 656.498593,
+      "max_ms": 710.773541
+    },
+    "slow_fifo_held_arrival_age": {
+      "count": 10,
+      "min_ms": 916.92874,
+      "median_ms": 924.742822,
+      "max_ms": 926.4158
+    },
+    "slow_leaky_waiting_pad_to_receipt": {
+      "count": 20,
+      "min_ms": 0.941924,
+      "median_ms": 56.349307,
+      "max_ms": 111.161658
+    },
+    "slow_leaky_held_arrival_age": {
+      "count": 10,
+      "min_ms": 916.393378,
+      "median_ms": 923.090412,
+      "max_ms": 927.046259
+    }
+  },
+  "slow_fifo_observed_decoder_pad_ordinals": [
+    [0, 1, 2]
+  ],
+  "slow_leaky_observed_decoder_pad_ordinals": [
+    [0, 7, 8]
+  ],
+  "cleanup": {
+    "client_pipelines": 140,
+    "server_processes": 140,
+    "all_null": true,
+    "remaining_owned_children": 0,
+    "remaining_python_workers": 0,
+    "fallbacks": 0,
+    "all_ports_refused": true,
+    "nonempty_native_stderr_trials": 0
+  },
+  "post_exit_delivery_counts": {
+    "interruption": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    "reconnect": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  },
+  "previous_attempts": {
+    "launcher_failure_batch": {
+      "attempts": 20,
+      "rtsp_sessions": 0,
+      "cause": "CLI used __main__ as child module; corrected and regression tested"
+    },
+    "pre_review_transport_batch": {
+      "trials": 120,
+      "successful": 120,
+      "failed": 0,
+      "note": "before SDP field whitelist and snapshot-failure cleanup hardening; timings not pooled"
+    }
+  }
+}
