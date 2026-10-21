@@ -23,6 +23,10 @@ class RtspIntegration(unittest.TestCase):
             self.assertTrue(event["port_closed"])
             self.assertFalse(event["termination_fallback"])
             self.assertEqual(event["accepted_loopback"], [True])
+            cleanup = event["library_cleanup"]
+            self.assertTrue(cleanup["pool_drained"])
+            self.assertTrue(cleanup["media_null"])
+            self.assertTrue(all(cleanup["media_null"]))
 
     def test_transport_and_application_output_controls(self):
         for scenario in SCENARIOS:

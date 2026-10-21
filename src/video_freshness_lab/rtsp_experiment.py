@@ -53,12 +53,16 @@ def server_main(pipe) -> None:
         "! rtpjpegpay name=pay0 pt=26 )"
     )
     state = {"produced": 0, "accepted_loopback": [], "media": None}
+    media_objects = []
 
     def produced(pad, info):
         state["produced"] += 1
         return Gst.PadProbeReturn.OK
 
     def configured(factory, media):
+        # Keep wrappers alive until explicit native teardown has finished; native
+        # streaming callbacks must not outlive Python interpreter finalization.
+        media_objects.append(media)
         state["media"] = media.get_element()
         state["media"].get_by_name("source").get_static_pad("src").add_probe(
             Gst.PadProbeType.BUFFER, produced
@@ -107,8 +111,29 @@ def server_main(pipe) -> None:
         loop.run()
     finally:
         GLib.source_remove(attachment)
+        clients = server.client_filter(lambda *_: Server.RTSPFilterResult.REF)
+        for client in clients:
+            client.close()
+        server.get_session_pool().filter(lambda *_: Server.RTSPFilterResult.REMOVE)
+        media_null = []
+        for media in media_objects:
+            unprepared = media.unprepare()
+            element = media.get_element()
+            element.set_state(Gst.State.NULL)
+            state_result, current, _ = element.get_state(JOIN_S * Gst.SECOND)
+            media_null.append(
+                bool(unprepared)
+                and current == Gst.State.NULL
+                and state_result != Gst.StateChangeReturn.FAILURE
+            )
+        server.get_mount_points().remove_factory("/synthetic")
+        # Documented test-suite cleanup: wait for the library's own tasks rather
+        # than relying on interpreter/process destruction to stop native work.
+        Server.RTSPThreadPool.cleanup()
+        pipe.send(
+            {"command": "cleanup", "media_null": media_null, "pool_drained": True}
+        )
         pipe.close()
-    # Process exit releases the library's remaining native resources/listeners.
 
 
 def port_closed(port: int) -> bool:
@@ -175,6 +200,12 @@ class OwnedServer:
             if self.process.is_alive():
                 self.process.kill()
                 self.process.join(JOIN_S)
+            library_cleanup = None
+            if self.pipe.poll():
+                try:
+                    library_cleanup = self.pipe.recv()
+                except EOFError:
+                    pass
             closed = self.port is None or port_closed(self.port)
             self.events.append(
                 {
@@ -186,6 +217,7 @@ class OwnedServer:
                     "accepted_loopback": None
                     if response is None
                     else response["accepted_loopback"],
+                    "library_cleanup": library_cleanup,
                 }
             )
             self.stopped = True
@@ -195,6 +227,10 @@ class OwnedServer:
                 or self.process.exitcode != 0
                 or not closed
                 or fallback
+                or not library_cleanup
+                or library_cleanup.get("command") != "cleanup"
+                or not library_cleanup.get("pool_drained")
+                or not all(library_cleanup.get("media_null", []))
             ):
                 raise RuntimeError("server did not cleanly exit and release listener")
             if response is not None and (

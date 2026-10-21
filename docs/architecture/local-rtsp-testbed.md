@@ -169,3 +169,21 @@ system-Python source access only; editable packaging is independently checked in
 the project venv. The unchanged GitHub workflow runs Python-only tests on 3.11
 and 3.12, with read-only permissions and no secrets, deployment or publishing.
 See [observations and limitations](../experiments/milestone-1.8-results.md).
+
+## Original Stage 5 lifecycle and repeatability follow-up
+
+Later owner authorization covers original technical Stages 0–5; the introductory
+1.8 stop language describes its historical authorization. The original pipeline
+and evidence settings are unchanged. Mature normal/epoch/reconnect controls now
+have a separate [100/configuration assessment](../experiments/rtsp-contract-reliability.md),
+which preserves an initial 399/400 baseline with one native server -11 exit.
+
+The follow-up strengthens server ownership: retain configured media wrappers,
+remove the listener, close clients outside the server-filter lock, remove sessions,
+unprepare each media and verify its element reaches NULL, remove the mount, then
+drain the native RTSP thread pool before sending positive cleanup evidence.
+The parent requires that evidence as well as exit 0, no fallback and exact-port
+refusal. A successful process exit alone no longer passes cleanup. The outer
+process-group watchdog still bounds native cleanup calls. No precise cause of
+the original native crash is asserted. The corrected cohort has 1200/1200 passes
+and 1600 verified native server teardowns; ordinary CI remains Python-only.

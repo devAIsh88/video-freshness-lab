@@ -1,0 +1,719 @@
+{
+  "original_PRD_stage": 5,
+  "date": "2026-10-21",
+  "runtime": "Fedora 44; system Python 3.14.7 / GI 3.56.3; Gst core/base/server 1.28.8; JPEG/RTP/rtspsrc 1.28.6; interleaved TCP",
+  "raw_sha256": "0712846d3a22c95194b290b0be346ed183193a9745492e9ece69299a2fdf3461",
+  "initial_baseline_cohort": {
+    "raw_sha256": "fd80bfc1aebf7083b5439fb4f98a574659916901b23e20af469090d13fbbe778",
+    "trials": 400,
+    "passed": 399,
+    "failed": 1,
+    "failure_kind": "one server process -11 during implicit teardown; normal gate stopped later scenarios; no timeout",
+    "retries": 0
+  },
+  "final": {
+    "trials": 1200,
+    "passed": 1200,
+    "failed": 0,
+    "acquired": 3200,
+    "processed": 3200,
+    "published": 2800,
+    "application_rejected": 400,
+    "obsolete_published": 400,
+    "native_drops_observed": 0,
+    "watchdog_timeouts": 0,
+    "other_reported_timeouts": 0,
+    "server_processes": 1600,
+    "nonzero_server_exits": 0,
+    "client_pipelines": 1600,
+    "all_clients_null": true,
+    "remaining_owned_children": 0,
+    "remaining_python_workers": 0,
+    "server_fallbacks": 0,
+    "port_refusal_failures": 0,
+    "native_cleanup_confirmed": 1600,
+    "nonempty_stderr_trials": 0,
+    "null_duration": {
+      "n": 1600,
+      "min_ms": 0.492044,
+      "median_ms": 0.760189,
+      "p95_ms": 1.656168,
+      "max_ms": 4.152909,
+      "stdev_ms": 0.381671
+    },
+    "receipt_to_decision": {
+      "n": 3200,
+      "min_ms": 0.062542,
+      "median_ms": 0.106486,
+      "p95_ms": 155.149388,
+      "max_ms": 205.607889,
+      "stdev_ms": 51.324796
+    },
+    "pad_to_receipt": {
+      "n": 3200,
+      "min_ms": 0.027721,
+      "median_ms": 0.123558,
+      "p95_ms": 0.521114,
+      "max_ms": 0.975886,
+      "stdev_ms": 0.189189
+    }
+  },
+  "configurations": [
+    {
+      "config": {
+        "scenario": "normal",
+        "policy": "fifo",
+        "filtered": false
+      },
+      "trials": 100,
+      "passed": 100,
+      "failed": 0,
+      "acquired": 400,
+      "processed": 400,
+      "published": 400,
+      "application_rejected": 0,
+      "obsolete_published": 0,
+      "native_drops_observed": 0,
+      "watchdog_timeouts": 0,
+      "other_reported_timeouts": 0,
+      "server_processes": 100,
+      "nonzero_server_exits": 0,
+      "client_pipelines": 100,
+      "all_clients_null": true,
+      "remaining_owned_children": 0,
+      "remaining_python_workers": 0,
+      "server_fallbacks": 0,
+      "port_refusal_failures": 0,
+      "native_cleanup_confirmed": 100,
+      "nonempty_stderr_trials": 0,
+      "null_duration": {
+        "n": 100,
+        "min_ms": 0.648025,
+        "median_ms": 0.89468,
+        "p95_ms": 1.719248,
+        "max_ms": 2.071099,
+        "stdev_ms": 0.368269
+      },
+      "receipt_to_decision": {
+        "n": 400,
+        "min_ms": 0.063316,
+        "median_ms": 0.089384,
+        "p95_ms": 0.25158,
+        "max_ms": 0.481055,
+        "stdev_ms": 0.075261
+      },
+      "pad_to_receipt": {
+        "n": 400,
+        "min_ms": 0.031297,
+        "median_ms": 0.115957,
+        "p95_ms": 0.417774,
+        "max_ms": 0.659568,
+        "stdev_ms": 0.145986
+      }
+    },
+    {
+      "config": {
+        "scenario": "normal",
+        "policy": "fifo",
+        "filtered": true
+      },
+      "trials": 100,
+      "passed": 100,
+      "failed": 0,
+      "acquired": 400,
+      "processed": 400,
+      "published": 400,
+      "application_rejected": 0,
+      "obsolete_published": 0,
+      "native_drops_observed": 0,
+      "watchdog_timeouts": 0,
+      "other_reported_timeouts": 0,
+      "server_processes": 100,
+      "nonzero_server_exits": 0,
+      "client_pipelines": 100,
+      "all_clients_null": true,
+      "remaining_owned_children": 0,
+      "remaining_python_workers": 0,
+      "server_fallbacks": 0,
+      "port_refusal_failures": 0,
+      "native_cleanup_confirmed": 100,
+      "nonempty_stderr_trials": 0,
+      "null_duration": {
+        "n": 100,
+        "min_ms": 0.631043,
+        "median_ms": 0.868897,
+        "p95_ms": 1.6027,
+        "max_ms": 1.76398,
+        "stdev_ms": 0.34014
+      },
+      "receipt_to_decision": {
+        "n": 400,
+        "min_ms": 0.062542,
+        "median_ms": 0.092279,
+        "p95_ms": 0.267081,
+        "max_ms": 0.616552,
+        "stdev_ms": 0.082458
+      },
+      "pad_to_receipt": {
+        "n": 400,
+        "min_ms": 0.031682,
+        "median_ms": 0.112807,
+        "p95_ms": 0.42484,
+        "max_ms": 0.702458,
+        "stdev_ms": 0.154243
+      }
+    },
+    {
+      "config": {
+        "scenario": "normal",
+        "policy": "leaky",
+        "filtered": false
+      },
+      "trials": 100,
+      "passed": 100,
+      "failed": 0,
+      "acquired": 400,
+      "processed": 400,
+      "published": 400,
+      "application_rejected": 0,
+      "obsolete_published": 0,
+      "native_drops_observed": 0,
+      "watchdog_timeouts": 0,
+      "other_reported_timeouts": 0,
+      "server_processes": 100,
+      "nonzero_server_exits": 0,
+      "client_pipelines": 100,
+      "all_clients_null": true,
+      "remaining_owned_children": 0,
+      "remaining_python_workers": 0,
+      "server_fallbacks": 0,
+      "port_refusal_failures": 0,
+      "native_cleanup_confirmed": 100,
+      "nonempty_stderr_trials": 0,
+      "null_duration": {
+        "n": 100,
+        "min_ms": 0.626314,
+        "median_ms": 0.971108,
+        "p95_ms": 1.7325,
+        "max_ms": 2.712798,
+        "stdev_ms": 0.402524
+      },
+      "receipt_to_decision": {
+        "n": 400,
+        "min_ms": 0.063049,
+        "median_ms": 0.097363,
+        "p95_ms": 0.287554,
+        "max_ms": 0.607088,
+        "stdev_ms": 0.085601
+      },
+      "pad_to_receipt": {
+        "n": 400,
+        "min_ms": 0.033417,
+        "median_ms": 0.110557,
+        "p95_ms": 0.46786,
+        "max_ms": 0.92142,
+        "stdev_ms": 0.170872
+      }
+    },
+    {
+      "config": {
+        "scenario": "normal",
+        "policy": "leaky",
+        "filtered": true
+      },
+      "trials": 100,
+      "passed": 100,
+      "failed": 0,
+      "acquired": 400,
+      "processed": 400,
+      "published": 400,
+      "application_rejected": 0,
+      "obsolete_published": 0,
+      "native_drops_observed": 0,
+      "watchdog_timeouts": 0,
+      "other_reported_timeouts": 0,
+      "server_processes": 100,
+      "nonzero_server_exits": 0,
+      "client_pipelines": 100,
+      "all_clients_null": true,
+      "remaining_owned_children": 0,
+      "remaining_python_workers": 0,
+      "server_fallbacks": 0,
+      "port_refusal_failures": 0,
+      "native_cleanup_confirmed": 100,
+      "nonempty_stderr_trials": 0,
+      "null_duration": {
+        "n": 100,
+        "min_ms": 0.657558,
+        "median_ms": 0.878321,
+        "p95_ms": 2.008265,
+        "max_ms": 2.661078,
+        "stdev_ms": 0.446816
+      },
+      "receipt_to_decision": {
+        "n": 400,
+        "min_ms": 0.065181,
+        "median_ms": 0.099561,
+        "p95_ms": 0.274064,
+        "max_ms": 0.941401,
+        "stdev_ms": 0.090076
+      },
+      "pad_to_receipt": {
+        "n": 400,
+        "min_ms": 0.034391,
+        "median_ms": 0.103739,
+        "p95_ms": 0.47187,
+        "max_ms": 0.896287,
+        "stdev_ms": 0.163001
+      }
+    },
+    {
+      "config": {
+        "scenario": "epoch",
+        "policy": "fifo",
+        "filtered": false
+      },
+      "trials": 100,
+      "passed": 100,
+      "failed": 0,
+      "acquired": 200,
+      "processed": 200,
+      "published": 200,
+      "application_rejected": 0,
+      "obsolete_published": 100,
+      "native_drops_observed": 0,
+      "watchdog_timeouts": 0,
+      "other_reported_timeouts": 0,
+      "server_processes": 100,
+      "nonzero_server_exits": 0,
+      "client_pipelines": 100,
+      "all_clients_null": true,
+      "remaining_owned_children": 0,
+      "remaining_python_workers": 0,
+      "server_fallbacks": 0,
+      "port_refusal_failures": 0,
+      "native_cleanup_confirmed": 100,
+      "nonempty_stderr_trials": 0,
+      "null_duration": {
+        "n": 100,
+        "min_ms": 0.65419,
+        "median_ms": 0.927156,
+        "p95_ms": 1.90035,
+        "max_ms": 2.573929,
+        "stdev_ms": 0.427053
+      },
+      "receipt_to_decision": {
+        "n": 200,
+        "min_ms": 0.073024,
+        "median_ms": 0.23474,
+        "p95_ms": 0.342242,
+        "max_ms": 0.456893,
+        "stdev_ms": 0.091982
+      },
+      "pad_to_receipt": {
+        "n": 200,
+        "min_ms": 0.035916,
+        "median_ms": 0.283477,
+        "p95_ms": 0.544122,
+        "max_ms": 0.789655,
+        "stdev_ms": 0.186431
+      }
+    },
+    {
+      "config": {
+        "scenario": "epoch",
+        "policy": "fifo",
+        "filtered": true
+      },
+      "trials": 100,
+      "passed": 100,
+      "failed": 0,
+      "acquired": 200,
+      "processed": 200,
+      "published": 100,
+      "application_rejected": 100,
+      "obsolete_published": 0,
+      "native_drops_observed": 0,
+      "watchdog_timeouts": 0,
+      "other_reported_timeouts": 0,
+      "server_processes": 100,
+      "nonzero_server_exits": 0,
+      "client_pipelines": 100,
+      "all_clients_null": true,
+      "remaining_owned_children": 0,
+      "remaining_python_workers": 0,
+      "server_fallbacks": 0,
+      "port_refusal_failures": 0,
+      "native_cleanup_confirmed": 100,
+      "nonempty_stderr_trials": 0,
+      "null_duration": {
+        "n": 100,
+        "min_ms": 0.607221,
+        "median_ms": 0.908756,
+        "p95_ms": 1.757473,
+        "max_ms": 2.466639,
+        "stdev_ms": 0.384998
+      },
+      "receipt_to_decision": {
+        "n": 200,
+        "min_ms": 0.074032,
+        "median_ms": 0.231081,
+        "p95_ms": 0.358566,
+        "max_ms": 0.530176,
+        "stdev_ms": 0.09708
+      },
+      "pad_to_receipt": {
+        "n": 200,
+        "min_ms": 0.036206,
+        "median_ms": 0.271672,
+        "p95_ms": 0.51078,
+        "max_ms": 0.882797,
+        "stdev_ms": 0.188676
+      }
+    },
+    {
+      "config": {
+        "scenario": "epoch",
+        "policy": "leaky",
+        "filtered": false
+      },
+      "trials": 100,
+      "passed": 100,
+      "failed": 0,
+      "acquired": 200,
+      "processed": 200,
+      "published": 200,
+      "application_rejected": 0,
+      "obsolete_published": 100,
+      "native_drops_observed": 0,
+      "watchdog_timeouts": 0,
+      "other_reported_timeouts": 0,
+      "server_processes": 100,
+      "nonzero_server_exits": 0,
+      "client_pipelines": 100,
+      "all_clients_null": true,
+      "remaining_owned_children": 0,
+      "remaining_python_workers": 0,
+      "server_fallbacks": 0,
+      "port_refusal_failures": 0,
+      "native_cleanup_confirmed": 100,
+      "nonempty_stderr_trials": 0,
+      "null_duration": {
+        "n": 100,
+        "min_ms": 0.648595,
+        "median_ms": 0.888957,
+        "p95_ms": 1.768292,
+        "max_ms": 2.191514,
+        "stdev_ms": 0.377249
+      },
+      "receipt_to_decision": {
+        "n": 200,
+        "min_ms": 0.074591,
+        "median_ms": 0.235375,
+        "p95_ms": 0.361877,
+        "max_ms": 0.61082,
+        "stdev_ms": 0.101105
+      },
+      "pad_to_receipt": {
+        "n": 200,
+        "min_ms": 0.038794,
+        "median_ms": 0.381352,
+        "p95_ms": 0.513389,
+        "max_ms": 0.924307,
+        "stdev_ms": 0.19149
+      }
+    },
+    {
+      "config": {
+        "scenario": "epoch",
+        "policy": "leaky",
+        "filtered": true
+      },
+      "trials": 100,
+      "passed": 100,
+      "failed": 0,
+      "acquired": 200,
+      "processed": 200,
+      "published": 100,
+      "application_rejected": 100,
+      "obsolete_published": 0,
+      "native_drops_observed": 0,
+      "watchdog_timeouts": 0,
+      "other_reported_timeouts": 0,
+      "server_processes": 100,
+      "nonzero_server_exits": 0,
+      "client_pipelines": 100,
+      "all_clients_null": true,
+      "remaining_owned_children": 0,
+      "remaining_python_workers": 0,
+      "server_fallbacks": 0,
+      "port_refusal_failures": 0,
+      "native_cleanup_confirmed": 100,
+      "nonempty_stderr_trials": 0,
+      "null_duration": {
+        "n": 100,
+        "min_ms": 0.634895,
+        "median_ms": 0.912471,
+        "p95_ms": 1.79377,
+        "max_ms": 2.948169,
+        "stdev_ms": 0.473141
+      },
+      "receipt_to_decision": {
+        "n": 200,
+        "min_ms": 0.07562,
+        "median_ms": 0.234413,
+        "p95_ms": 0.35851,
+        "max_ms": 0.535471,
+        "stdev_ms": 0.095439
+      },
+      "pad_to_receipt": {
+        "n": 200,
+        "min_ms": 0.038198,
+        "median_ms": 0.312153,
+        "p95_ms": 0.534728,
+        "max_ms": 0.756428,
+        "stdev_ms": 0.185211
+      }
+    },
+    {
+      "config": {
+        "scenario": "reconnect",
+        "policy": "fifo",
+        "filtered": false
+      },
+      "trials": 100,
+      "passed": 100,
+      "failed": 0,
+      "acquired": 200,
+      "processed": 200,
+      "published": 200,
+      "application_rejected": 0,
+      "obsolete_published": 100,
+      "native_drops_observed": 0,
+      "watchdog_timeouts": 0,
+      "other_reported_timeouts": 0,
+      "server_processes": 200,
+      "nonzero_server_exits": 0,
+      "client_pipelines": 200,
+      "all_clients_null": true,
+      "remaining_owned_children": 0,
+      "remaining_python_workers": 0,
+      "server_fallbacks": 0,
+      "port_refusal_failures": 0,
+      "native_cleanup_confirmed": 200,
+      "nonempty_stderr_trials": 0,
+      "null_duration": {
+        "n": 200,
+        "min_ms": 0.509688,
+        "median_ms": 0.61517,
+        "p95_ms": 0.915396,
+        "max_ms": 1.218688,
+        "stdev_ms": 0.122603
+      },
+      "receipt_to_decision": {
+        "n": 200,
+        "min_ms": 0.078538,
+        "median_ms": 71.592299,
+        "p95_ms": 158.087898,
+        "max_ms": 162.029601,
+        "stdev_ms": 77.357223
+      },
+      "pad_to_receipt": {
+        "n": 200,
+        "min_ms": 0.039896,
+        "median_ms": 0.29305,
+        "p95_ms": 0.578675,
+        "max_ms": 0.842986,
+        "stdev_ms": 0.217765
+      }
+    },
+    {
+      "config": {
+        "scenario": "reconnect",
+        "policy": "fifo",
+        "filtered": true
+      },
+      "trials": 100,
+      "passed": 100,
+      "failed": 0,
+      "acquired": 200,
+      "processed": 200,
+      "published": 100,
+      "application_rejected": 100,
+      "obsolete_published": 0,
+      "native_drops_observed": 0,
+      "watchdog_timeouts": 0,
+      "other_reported_timeouts": 0,
+      "server_processes": 200,
+      "nonzero_server_exits": 0,
+      "client_pipelines": 200,
+      "all_clients_null": true,
+      "remaining_owned_children": 0,
+      "remaining_python_workers": 0,
+      "server_fallbacks": 0,
+      "port_refusal_failures": 0,
+      "native_cleanup_confirmed": 200,
+      "nonempty_stderr_trials": 0,
+      "null_duration": {
+        "n": 200,
+        "min_ms": 0.513481,
+        "median_ms": 0.632293,
+        "p95_ms": 1.063609,
+        "max_ms": 1.746142,
+        "stdev_ms": 0.18221
+      },
+      "receipt_to_decision": {
+        "n": 200,
+        "min_ms": 0.078927,
+        "median_ms": 73.70692,
+        "p95_ms": 158.230065,
+        "max_ms": 165.41767,
+        "stdev_ms": 77.399736
+      },
+      "pad_to_receipt": {
+        "n": 200,
+        "min_ms": 0.040044,
+        "median_ms": 0.173298,
+        "p95_ms": 0.583261,
+        "max_ms": 0.950631,
+        "stdev_ms": 0.221189
+      }
+    },
+    {
+      "config": {
+        "scenario": "reconnect",
+        "policy": "leaky",
+        "filtered": false
+      },
+      "trials": 100,
+      "passed": 100,
+      "failed": 0,
+      "acquired": 200,
+      "processed": 200,
+      "published": 200,
+      "application_rejected": 0,
+      "obsolete_published": 100,
+      "native_drops_observed": 0,
+      "watchdog_timeouts": 0,
+      "other_reported_timeouts": 0,
+      "server_processes": 200,
+      "nonzero_server_exits": 0,
+      "client_pipelines": 200,
+      "all_clients_null": true,
+      "remaining_owned_children": 0,
+      "remaining_python_workers": 0,
+      "server_fallbacks": 0,
+      "port_refusal_failures": 0,
+      "native_cleanup_confirmed": 200,
+      "nonempty_stderr_trials": 0,
+      "null_duration": {
+        "n": 200,
+        "min_ms": 0.492044,
+        "median_ms": 0.629719,
+        "p95_ms": 1.061163,
+        "max_ms": 1.872542,
+        "stdev_ms": 0.195695
+      },
+      "receipt_to_decision": {
+        "n": 200,
+        "min_ms": 0.077718,
+        "median_ms": 74.996139,
+        "p95_ms": 159.221049,
+        "max_ms": 205.607889,
+        "stdev_ms": 78.70717
+      },
+      "pad_to_receipt": {
+        "n": 200,
+        "min_ms": 0.039537,
+        "median_ms": 0.268329,
+        "p95_ms": 0.59515,
+        "max_ms": 0.834879,
+        "stdev_ms": 0.224536
+      }
+    },
+    {
+      "config": {
+        "scenario": "reconnect",
+        "policy": "leaky",
+        "filtered": true
+      },
+      "trials": 100,
+      "passed": 100,
+      "failed": 0,
+      "acquired": 200,
+      "processed": 200,
+      "published": 100,
+      "application_rejected": 100,
+      "obsolete_published": 0,
+      "native_drops_observed": 0,
+      "watchdog_timeouts": 0,
+      "other_reported_timeouts": 0,
+      "server_processes": 200,
+      "nonzero_server_exits": 0,
+      "client_pipelines": 200,
+      "all_clients_null": true,
+      "remaining_owned_children": 0,
+      "remaining_python_workers": 0,
+      "server_fallbacks": 0,
+      "port_refusal_failures": 0,
+      "native_cleanup_confirmed": 200,
+      "nonempty_stderr_trials": 0,
+      "null_duration": {
+        "n": 200,
+        "min_ms": 0.507844,
+        "median_ms": 0.6288,
+        "p95_ms": 1.007468,
+        "max_ms": 4.152909,
+        "stdev_ms": 0.308959
+      },
+      "receipt_to_decision": {
+        "n": 200,
+        "min_ms": 0.078487,
+        "median_ms": 68.624889,
+        "p95_ms": 157.317258,
+        "max_ms": 201.630443,
+        "stdev_ms": 77.186063
+      },
+      "pad_to_receipt": {
+        "n": 200,
+        "min_ms": 0.027721,
+        "median_ms": 0.292841,
+        "p95_ms": 0.592806,
+        "max_ms": 0.975886,
+        "stdev_ms": 0.222063
+      }
+    }
+  ],
+  "capture_freshness": "UNKNOWN",
+  "source_frame_identity": null,
+  "source_sequence_lag": null,
+  "physical_source_epoch": null,
+  "reconnect": {
+    "attempts": 400,
+    "successful": 400,
+    "epoch_activation_to_first_new_receipt": {
+      "n": 400,
+      "min_ms": 110.426868,
+      "median_ms": 119.911342,
+      "p95_ms": 124.211145,
+      "max_ms": 166.263572,
+      "stdev_ms": 4.696639
+    },
+    "new_client_open_to_first_receipt": {
+      "n": 400,
+      "min_ms": 11.226341,
+      "median_ms": 12.83241,
+      "p95_ms": 13.977281,
+      "max_ms": 39.584839,
+      "stdev_ms": 1.536302
+    },
+    "exit_observed_to_bus_observed": {
+      "n": 400,
+      "min_ms": 1.445023,
+      "median_ms": 1.602821,
+      "p95_ms": 2.009162,
+      "max_ms": 3.606542,
+      "stdev_ms": 0.188532
+    }
+  }
+}

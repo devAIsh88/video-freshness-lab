@@ -79,3 +79,48 @@ def test_cli_supervisor_launches_importable_module(monkeypatch):
     monkeypatch.setattr(rtsp_experiment.subprocess, "Popen", Child)
     assert rtsp_experiment.run_isolated(RtspConfig("normal"))["status"] == "ok"
     assert launches[0][1:3] == ["-m", "video_freshness_lab.rtsp_experiment"]
+
+
+@pytest.mark.parametrize("native_null", [None, False, True])
+def test_clean_process_exit_alone_does_not_prove_native_media_cleanup(
+    monkeypatch, native_null
+):
+    """Require positive library evidence as well as exited process/closed port."""
+
+    class Process:
+        exitcode = 0
+
+        def is_alive(self):
+            return False
+
+        def join(self, timeout):
+            pass
+
+    class Pipe:
+        def poll(self):
+            return native_null is not None
+
+        def recv(self):
+            return {
+                "command": "cleanup",
+                "media_null": [native_null],
+                "pool_drained": True,
+            }
+
+        def close(self):
+            pass
+
+    server = rtsp_experiment.OwnedServer.__new__(rtsp_experiment.OwnedServer)
+    server.events = []
+    server.port = 1
+    server.stopped = False
+    server.process, server.pipe = Process(), Pipe()
+    monkeypatch.setattr(rtsp_experiment, "port_closed", lambda _: True)
+    if native_null is True:
+        server.stop()
+    else:
+        with pytest.raises(RuntimeError, match="cleanly exit"):
+            server.stop()
+    assert server.stopped
+    assert server.events[-1]["server_exitcode"] == 0
+    assert server.events[-1]["port_closed"]
