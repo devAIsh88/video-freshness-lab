@@ -188,3 +188,17 @@ Current optional Fedora runtime is core/base/server 1.28.8, JPEG/RTP/rtspsrc
 See [1.9 measured results](../experiments/milestone-1.9-results.md) and the
 [original PRD matrix](../audits/PRD_IMPLEMENTATION_MATRIX.md). Toxiproxy's documented
 TCP toxics are an assessed alternative, not an installed/executed dependency.
+
+## Original Stage 3/4 image supplement
+
+V: optional Python 3.12.15 / NumPy 2.2.6 / headless OpenCV 4.12.0.88 process
+generates and independently decodes source/epoch/sequence pixel markers through
+BGR→gray→BGR and lossless PNG. Ten configurations match across 100 repetitions
+each. Actual new decoded buffers carrying repeated old markers are distinguished
+from no-data intervals and a static scene with advancing stamps. Source sidecars
+retain their original epochs through active work and final simulator rejection.
+See [image evidence](../experiments/stamped-images-results.md).
+
+U: JPEG/video-codec stamp survival, physical capture clocks/source epochs,
+independent consumer value and adoption remain unverified. This image experiment
+does not retroactively add source lineage to the unstamped RTSP source.

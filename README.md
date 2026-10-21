@@ -1,6 +1,6 @@
 # Video Freshness Lab
 
-Milestone 1.9: finite localhost RTSP transport faults and output epoch comparisons.
+Synthetic freshness contracts, stamped images, and finite localhost RTSP experiments.
 This research lab implements a virtual clock, FIFO/latest-frame waiting buffers,
 one simulated consumer, session/fault scripts, optional session filtering,
 no-progress detection, explicit metrics, structured evidence, and a small CLI.
@@ -104,6 +104,24 @@ or `PYTHONPATH=src /usr/bin/python3 -m video_freshness_lab.transport_experiment 
 for the declared assessment. [1.9 results](docs/experiments/milestone-1.9-results.md)
 separate transport faults, application recovery and held-work epoch checks.
 No UDP loss, physical capture freshness or independent consumer defect is claimed.
+
+Original PRD Stages 3/4 add [source-stamped NumPy/OpenCV images](docs/architecture/stamped-images.md)
+and an actual repeated-content control. Source/epoch/sequence markers are decoded
+after color conversion and lossless PNG processing; unreadable identity stays
+UNKNOWN. [Measured results](docs/experiments/stamped-images-results.md) distinguish
+new buffers repeating old evidence from a static scene with advancing stamps.
+Use an isolated optional environment; the ordinary test environment needs no media
+packages:
+
+```sh
+.venv/bin/python -m venv venv-media
+venv-media/bin/python -m pip install -e '.[images]'
+venv-media/bin/python -m unittest discover -s integration -p test_stamped_images.py -v
+venv-media/bin/python -m video_freshness_lab.stamped_images --repeat 1 > /tmp/vfl-images-demo.json
+```
+
+Image delays/ages are virtual source-schedule values, not camera/CPU latency.
+PNG marker survival does not establish JPEG/video-codec lineage.
 
 Use Python 3.11 or newer; Fedora development uses Python 3.12. From this directory:
 

@@ -1,0 +1,680 @@
+{
+  "date": "2026-10-21",
+  "source": "source-generated uint32 source/epoch/sequence plus CRC32 pixel marker",
+  "path": "96x160 uint8 BGR \u2192 gray \u2192 BGR \u2192 in-memory lossless PNG \u2192 BGR",
+  "capture_freshness": "UNKNOWN",
+  "raw_sha256": "423a057b7b0d49c31d1700c7cd70b4c6c479a09a5bdcb85e1165ef3b7e5cba9a",
+  "versions": {
+    "opencv": "4.12.0",
+    "numpy": "2.2.6"
+  },
+  "reference_runs_excluded": 10,
+  "cases": {
+    "balanced-fifo": {
+      "repetitions": 100,
+      "failed": 0,
+      "metrics": {
+        "frames_produced": 10,
+        "frames_consumed": 10,
+        "frames_dropped": 0,
+        "frames_replaced": 0,
+        "max_queue_depth": 1,
+        "max_start_age_ms": 0,
+        "mean_start_age_ms": 0.0,
+        "max_completion_age_ms": 10,
+        "mean_completion_age_ms": 10.0,
+        "max_processing_lag": 0,
+        "start_freshness_violations": 0,
+        "result_freshness_violations": 0,
+        "finished_at_ms": 100,
+        "frames_processed": 10,
+        "frames_rejected": 0,
+        "frames_invalidated": 0,
+        "obsolete_session_frames_detected": 0,
+        "obsolete_session_outputs": 0,
+        "no_progress_intervals": 0
+      },
+      "processed_markers": [
+        {
+          "source": 7,
+          "epoch": 0,
+          "sequence": 0
+        },
+        {
+          "source": 7,
+          "epoch": 0,
+          "sequence": 1
+        },
+        {
+          "source": 7,
+          "epoch": 0,
+          "sequence": 2
+        },
+        {
+          "source": 7,
+          "epoch": 0,
+          "sequence": 3
+        },
+        {
+          "source": 7,
+          "epoch": 0,
+          "sequence": 4
+        },
+        {
+          "source": 7,
+          "epoch": 0,
+          "sequence": 5
+        },
+        {
+          "source": 7,
+          "epoch": 0,
+          "sequence": 6
+        },
+        {
+          "source": 7,
+          "epoch": 0,
+          "sequence": 7
+        },
+        {
+          "source": 7,
+          "epoch": 0,
+          "sequence": 8
+        },
+        {
+          "source": 7,
+          "epoch": 0,
+          "sequence": 9
+        }
+      ],
+      "rejected_processed_markers": []
+    },
+    "slow-fifo": {
+      "repetitions": 100,
+      "failed": 0,
+      "metrics": {
+        "frames_produced": 10,
+        "frames_consumed": 10,
+        "frames_dropped": 0,
+        "frames_replaced": 0,
+        "max_queue_depth": 7,
+        "max_start_age_ms": 270,
+        "mean_start_age_ms": 135.0,
+        "max_completion_age_ms": 310,
+        "mean_completion_age_ms": 175.0,
+        "max_processing_lag": 7,
+        "start_freshness_violations": 7,
+        "result_freshness_violations": 8,
+        "finished_at_ms": 400,
+        "frames_processed": 10,
+        "frames_rejected": 0,
+        "frames_invalidated": 0,
+        "obsolete_session_frames_detected": 0,
+        "obsolete_session_outputs": 0,
+        "no_progress_intervals": 0
+      },
+      "processed_markers": [
+        {
+          "source": 7,
+          "epoch": 0,
+          "sequence": 0
+        },
+        {
+          "source": 7,
+          "epoch": 0,
+          "sequence": 1
+        },
+        {
+          "source": 7,
+          "epoch": 0,
+          "sequence": 2
+        },
+        {
+          "source": 7,
+          "epoch": 0,
+          "sequence": 3
+        },
+        {
+          "source": 7,
+          "epoch": 0,
+          "sequence": 4
+        },
+        {
+          "source": 7,
+          "epoch": 0,
+          "sequence": 5
+        },
+        {
+          "source": 7,
+          "epoch": 0,
+          "sequence": 6
+        },
+        {
+          "source": 7,
+          "epoch": 0,
+          "sequence": 7
+        },
+        {
+          "source": 7,
+          "epoch": 0,
+          "sequence": 8
+        },
+        {
+          "source": 7,
+          "epoch": 0,
+          "sequence": 9
+        }
+      ],
+      "rejected_processed_markers": []
+    },
+    "pause-fifo": {
+      "repetitions": 100,
+      "failed": 0,
+      "metrics": {
+        "frames_produced": 6,
+        "frames_consumed": 6,
+        "frames_dropped": 0,
+        "frames_replaced": 0,
+        "max_queue_depth": 3,
+        "max_start_age_ms": 110,
+        "mean_start_age_ms": 48.333333333333336,
+        "max_completion_age_ms": 150,
+        "mean_completion_age_ms": 88.33333333333333,
+        "max_processing_lag": 3,
+        "start_freshness_violations": 1,
+        "result_freshness_violations": 3,
+        "finished_at_ms": 240,
+        "frames_processed": 6,
+        "frames_rejected": 0,
+        "frames_invalidated": 0,
+        "obsolete_session_frames_detected": 0,
+        "obsolete_session_outputs": 0,
+        "no_progress_intervals": 1
+      },
+      "processed_markers": [
+        {
+          "source": 7,
+          "epoch": 0,
+          "sequence": 0
+        },
+        {
+          "source": 7,
+          "epoch": 0,
+          "sequence": 1
+        },
+        {
+          "source": 7,
+          "epoch": 0,
+          "sequence": 2
+        },
+        {
+          "source": 7,
+          "epoch": 0,
+          "sequence": 3
+        },
+        {
+          "source": 7,
+          "epoch": 0,
+          "sequence": 4
+        },
+        {
+          "source": 7,
+          "epoch": 0,
+          "sequence": 5
+        }
+      ],
+      "rejected_processed_markers": []
+    },
+    "restart-fifo-False": {
+      "repetitions": 100,
+      "failed": 0,
+      "metrics": {
+        "frames_produced": 7,
+        "frames_consumed": 7,
+        "frames_dropped": 0,
+        "frames_replaced": 0,
+        "max_queue_depth": 4,
+        "max_start_age_ms": 150,
+        "mean_start_age_ms": 72.85714285714286,
+        "max_completion_age_ms": 190,
+        "mean_completion_age_ms": 112.85714285714286,
+        "max_processing_lag": 3,
+        "start_freshness_violations": 3,
+        "result_freshness_violations": 5,
+        "finished_at_ms": 280,
+        "frames_processed": 7,
+        "frames_rejected": 0,
+        "frames_invalidated": 0,
+        "obsolete_session_frames_detected": 3,
+        "obsolete_session_outputs": 3,
+        "no_progress_intervals": 1
+      },
+      "processed_markers": [
+        {
+          "source": 7,
+          "epoch": 0,
+          "sequence": 0
+        },
+        {
+          "source": 7,
+          "epoch": 0,
+          "sequence": 1
+        },
+        {
+          "source": 7,
+          "epoch": 0,
+          "sequence": 2
+        },
+        {
+          "source": 7,
+          "epoch": 1,
+          "sequence": 0
+        },
+        {
+          "source": 7,
+          "epoch": 1,
+          "sequence": 1
+        },
+        {
+          "source": 7,
+          "epoch": 1,
+          "sequence": 2
+        },
+        {
+          "source": 7,
+          "epoch": 1,
+          "sequence": 3
+        }
+      ],
+      "rejected_processed_markers": []
+    },
+    "restart-fifo-True": {
+      "repetitions": 100,
+      "failed": 0,
+      "metrics": {
+        "frames_produced": 7,
+        "frames_consumed": 4,
+        "frames_dropped": 3,
+        "frames_replaced": 0,
+        "max_queue_depth": 3,
+        "max_start_age_ms": 90,
+        "mean_start_age_ms": 36.0,
+        "max_completion_age_ms": 130,
+        "mean_completion_age_ms": 85.0,
+        "max_processing_lag": 3,
+        "start_freshness_violations": 1,
+        "result_freshness_violations": 2,
+        "finished_at_ms": 220,
+        "frames_processed": 5,
+        "frames_rejected": 3,
+        "frames_invalidated": 0,
+        "obsolete_session_frames_detected": 3,
+        "obsolete_session_outputs": 0,
+        "no_progress_intervals": 1
+      },
+      "processed_markers": [
+        {
+          "source": 7,
+          "epoch": 0,
+          "sequence": 0
+        },
+        {
+          "source": 7,
+          "epoch": 1,
+          "sequence": 0
+        },
+        {
+          "source": 7,
+          "epoch": 1,
+          "sequence": 1
+        },
+        {
+          "source": 7,
+          "epoch": 1,
+          "sequence": 2
+        },
+        {
+          "source": 7,
+          "epoch": 1,
+          "sequence": 3
+        }
+      ],
+      "rejected_processed_markers": [
+        {
+          "source": 7,
+          "epoch": 0,
+          "sequence": 0
+        }
+      ]
+    },
+    "balanced-latest": {
+      "repetitions": 100,
+      "failed": 0,
+      "metrics": {
+        "frames_produced": 10,
+        "frames_consumed": 10,
+        "frames_dropped": 0,
+        "frames_replaced": 0,
+        "max_queue_depth": 1,
+        "max_start_age_ms": 0,
+        "mean_start_age_ms": 0.0,
+        "max_completion_age_ms": 10,
+        "mean_completion_age_ms": 10.0,
+        "max_processing_lag": 0,
+        "start_freshness_violations": 0,
+        "result_freshness_violations": 0,
+        "finished_at_ms": 100,
+        "frames_processed": 10,
+        "frames_rejected": 0,
+        "frames_invalidated": 0,
+        "obsolete_session_frames_detected": 0,
+        "obsolete_session_outputs": 0,
+        "no_progress_intervals": 0
+      },
+      "processed_markers": [
+        {
+          "source": 7,
+          "epoch": 0,
+          "sequence": 0
+        },
+        {
+          "source": 7,
+          "epoch": 0,
+          "sequence": 1
+        },
+        {
+          "source": 7,
+          "epoch": 0,
+          "sequence": 2
+        },
+        {
+          "source": 7,
+          "epoch": 0,
+          "sequence": 3
+        },
+        {
+          "source": 7,
+          "epoch": 0,
+          "sequence": 4
+        },
+        {
+          "source": 7,
+          "epoch": 0,
+          "sequence": 5
+        },
+        {
+          "source": 7,
+          "epoch": 0,
+          "sequence": 6
+        },
+        {
+          "source": 7,
+          "epoch": 0,
+          "sequence": 7
+        },
+        {
+          "source": 7,
+          "epoch": 0,
+          "sequence": 8
+        },
+        {
+          "source": 7,
+          "epoch": 0,
+          "sequence": 9
+        }
+      ],
+      "rejected_processed_markers": []
+    },
+    "slow-latest": {
+      "repetitions": 100,
+      "failed": 0,
+      "metrics": {
+        "frames_produced": 10,
+        "frames_consumed": 4,
+        "frames_dropped": 6,
+        "frames_replaced": 6,
+        "max_queue_depth": 1,
+        "max_start_age_ms": 30,
+        "mean_start_age_ms": 7.5,
+        "max_completion_age_ms": 70,
+        "mean_completion_age_ms": 47.5,
+        "max_processing_lag": 3,
+        "start_freshness_violations": 0,
+        "result_freshness_violations": 0,
+        "finished_at_ms": 160,
+        "frames_processed": 4,
+        "frames_rejected": 0,
+        "frames_invalidated": 0,
+        "obsolete_session_frames_detected": 0,
+        "obsolete_session_outputs": 0,
+        "no_progress_intervals": 0
+      },
+      "processed_markers": [
+        {
+          "source": 7,
+          "epoch": 0,
+          "sequence": 0
+        },
+        {
+          "source": 7,
+          "epoch": 0,
+          "sequence": 4
+        },
+        {
+          "source": 7,
+          "epoch": 0,
+          "sequence": 8
+        },
+        {
+          "source": 7,
+          "epoch": 0,
+          "sequence": 9
+        }
+      ],
+      "rejected_processed_markers": []
+    },
+    "pause-latest": {
+      "repetitions": 100,
+      "failed": 0,
+      "metrics": {
+        "frames_produced": 6,
+        "frames_consumed": 4,
+        "frames_dropped": 2,
+        "frames_replaced": 2,
+        "max_queue_depth": 1,
+        "max_start_age_ms": 30,
+        "mean_start_age_ms": 15.0,
+        "max_completion_age_ms": 70,
+        "mean_completion_age_ms": 55.0,
+        "max_processing_lag": 2,
+        "start_freshness_violations": 0,
+        "result_freshness_violations": 0,
+        "finished_at_ms": 160,
+        "frames_processed": 4,
+        "frames_rejected": 0,
+        "frames_invalidated": 0,
+        "obsolete_session_frames_detected": 0,
+        "obsolete_session_outputs": 0,
+        "no_progress_intervals": 1
+      },
+      "processed_markers": [
+        {
+          "source": 7,
+          "epoch": 0,
+          "sequence": 0
+        },
+        {
+          "source": 7,
+          "epoch": 0,
+          "sequence": 1
+        },
+        {
+          "source": 7,
+          "epoch": 0,
+          "sequence": 4
+        },
+        {
+          "source": 7,
+          "epoch": 0,
+          "sequence": 5
+        }
+      ],
+      "rejected_processed_markers": []
+    },
+    "restart-latest-False": {
+      "repetitions": 100,
+      "failed": 0,
+      "metrics": {
+        "frames_produced": 7,
+        "frames_consumed": 4,
+        "frames_dropped": 3,
+        "frames_replaced": 3,
+        "max_queue_depth": 1,
+        "max_start_age_ms": 30,
+        "mean_start_age_ms": 12.5,
+        "max_completion_age_ms": 70,
+        "mean_completion_age_ms": 52.5,
+        "max_processing_lag": 2,
+        "start_freshness_violations": 0,
+        "result_freshness_violations": 0,
+        "finished_at_ms": 160,
+        "frames_processed": 4,
+        "frames_rejected": 0,
+        "frames_invalidated": 0,
+        "obsolete_session_frames_detected": 2,
+        "obsolete_session_outputs": 2,
+        "no_progress_intervals": 1
+      },
+      "processed_markers": [
+        {
+          "source": 7,
+          "epoch": 0,
+          "sequence": 0
+        },
+        {
+          "source": 7,
+          "epoch": 0,
+          "sequence": 2
+        },
+        {
+          "source": 7,
+          "epoch": 1,
+          "sequence": 2
+        },
+        {
+          "source": 7,
+          "epoch": 1,
+          "sequence": 3
+        }
+      ],
+      "rejected_processed_markers": []
+    },
+    "restart-latest-True": {
+      "repetitions": 100,
+      "failed": 0,
+      "metrics": {
+        "frames_produced": 7,
+        "frames_consumed": 2,
+        "frames_dropped": 5,
+        "frames_replaced": 3,
+        "max_queue_depth": 1,
+        "max_start_age_ms": 10,
+        "mean_start_age_ms": 3.3333333333333335,
+        "max_completion_age_ms": 50,
+        "mean_completion_age_ms": 45.0,
+        "max_processing_lag": 3,
+        "start_freshness_violations": 0,
+        "result_freshness_violations": 0,
+        "finished_at_ms": 140,
+        "frames_processed": 3,
+        "frames_rejected": 2,
+        "frames_invalidated": 0,
+        "obsolete_session_frames_detected": 2,
+        "obsolete_session_outputs": 0,
+        "no_progress_intervals": 1
+      },
+      "processed_markers": [
+        {
+          "source": 7,
+          "epoch": 0,
+          "sequence": 0
+        },
+        {
+          "source": 7,
+          "epoch": 1,
+          "sequence": 0
+        },
+        {
+          "source": 7,
+          "epoch": 1,
+          "sequence": 3
+        }
+      ],
+      "rejected_processed_markers": [
+        {
+          "source": 7,
+          "epoch": 0,
+          "sequence": 0
+        }
+      ]
+    }
+  },
+  "repeated_content": {
+    "no_data_deliveries": 0,
+    "repeat_observations": [
+      {
+        "local_delivery": 0,
+        "marker": {
+          "source": 7,
+          "epoch": 0,
+          "sequence": 0
+        },
+        "repeated_identity": false,
+        "capture_freshness": "unknown",
+        "arrival_ns": 0
+      },
+      {
+        "local_delivery": 1,
+        "marker": {
+          "source": 7,
+          "epoch": 0,
+          "sequence": 0
+        },
+        "repeated_identity": true,
+        "capture_freshness": "unknown",
+        "arrival_ns": 10
+      },
+      {
+        "local_delivery": 2,
+        "marker": {
+          "source": 7,
+          "epoch": 0,
+          "sequence": 0
+        },
+        "repeated_identity": true,
+        "capture_freshness": "unknown",
+        "arrival_ns": 20
+      }
+    ],
+    "new_buffer_objects": true,
+    "no_shared_memory": true,
+    "identical_repeated_pixels": true,
+    "static_scene_roi_equal": true,
+    "static_scene_markers": [
+      {
+        "source": 7,
+        "epoch": 0,
+        "sequence": 0
+      },
+      {
+        "source": 7,
+        "epoch": 0,
+        "sequence": 1
+      },
+      {
+        "source": 7,
+        "epoch": 0,
+        "sequence": 2
+      }
+    ]
+  }
+}

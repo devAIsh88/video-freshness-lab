@@ -81,3 +81,18 @@ Every coherent delivery requires all quality checks, security review, a meaningf
 commit, private push and actual two-version CI verification. Update the technical
 completion report with final statuses and delivery evidence; do not silently
 replace the initial gaps with retrospective PASS labels.
+
+## Stage 3/4 closure evidence
+
+Actual NumPy/OpenCV arrays, source marker generation, color/PNG decoding, immutable
+sidecars, queued/active identity checks and repeated decoded buffers now pass
+the selected-path criteria. See [the image report](../experiments/stamped-images-results.md)
+for 1000/1000 matching repetitions, six optional media tests and seven new pure
+marker cases. The initial Stage 3 and repeated-content rows become PASS within
+that explicit synthetic path; physical capture and video-codec lineage remain
+NOT VERIFIED. Other already-complete Stage 4 scenarios were reused unchanged.
+
+The first mature RTSP cohort stopped after 399/400 normal successes: one native
+server process exited -11 during cleanup. Epoch/reconnect cohorts did not run.
+Stage 5 mature repeatability remains PARTIAL pending lifecycle investigation;
+do not hide this failure or treat separate image success as RTSP acceptance.
