@@ -13,7 +13,7 @@ The system interpreter is /usr/bin/python3 (3.14.7 in the recorded environment).
 The ordinary venv intentionally does not import GI or OpenCV.
 
 ```sh
-cd /home/missy/projects/rtsp_camera
+# Run from the root of your existing checkout.
 .venv/bin/python --version
 .venv/bin/python -m pip check
 rpm -q gstreamer1-rtsp-server
@@ -37,6 +37,7 @@ requirements-dependent implementation. Standard Python-only installation is:
 
 ```sh
 python3.12 -m venv .venv
+.venv/bin/python -m pip install --only-binary=:all: pip==26.2.1
 .venv/bin/python -m pip install -e '.[dev]'
 ```
 
@@ -44,6 +45,7 @@ Optional image setup, when needed, is the existing documented isolated extra:
 
 ```sh
 .venv/bin/python -m venv venv-media
+venv-media/bin/python -m pip install --only-binary=:all: pip==26.2.1
 venv-media/bin/python -m pip install -e '.[images]'
 ```
 

@@ -101,3 +101,12 @@ Reopen only for a separately authorized, bounded question supported by new input
 
 No follow-on milestone, upstream posting, publication or deployment starts
 as part of this handover.
+
+## Subsequent source-release preparation — 23 October 2026
+
+The research findings and unmet adoption/package gates above remain unchanged.
+The owner subsequently authorized security review, conditional MIT licensing and
+conditional public publication of this source repository. That authorization
+is not ownership evidence or package-release approval. Current gate results are
+recorded in the [release-readiness report](../release/PUBLIC_RELEASE_READINESS.md).
+The two original PRDs remain private local inputs and are excluded from Git.

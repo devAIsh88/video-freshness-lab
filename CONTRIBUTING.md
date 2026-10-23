@@ -1,52 +1,57 @@
 # Contributing
 
-Read both PRDs, [scope decisions](docs/architecture/foundation.md), and the
-[validation plan](docs/experiments/validation-plan.md) before changing behavior.
-Licensing is pending; agree redistribution terms with the owner before accepting
-external contributions or copying third-party code.
+The research outcome is a reference recipe and reliability validation toolkit.
+Prefer small fixes, clearer diagnostics and reproducible evidence. A new streaming
+framework or package is outside the accepted scope. Read the [walkthrough](docs/guides/PROJECT_WALKTHROUGH.md),
+[evidence contract](docs/architecture/frame-evidence-contract.md) and
+[final decision](docs/audits/FINAL_GO_NO_GO_DECISION.md) before proposing behavior changes.
 
-## Local setup
+Licensing remains pending explicit ownership confirmation. Do not incorporate
+external contributions or third-party code until redistribution rights are clear.
+See [release readiness](docs/release/PUBLIC_RELEASE_READINESS.md). The original
+PRDs are private local inputs, deliberately absent from Git; requirement-dependent
+implementation needs owner-provided copies. Routine bug fixes can be reviewed
+against the published contracts and tests.
 
-Use Python 3.11+ and follow the [README installation commands](README.md#install-and-check).
-Install editable with the `dev` extra, then run:
+## Local setup and verification
+
+Use Python 3.11+ and the [README installation commands](README.md#install-and-run-the-python-core).
+Install editable with the `dev` extra, then run from the checkout root:
 
 ```sh
-python -m ruff check .
-python -m ruff format --check .
-python -m pytest
+.venv/bin/python -m ruff check .
+.venv/bin/python -m ruff format --check .
+.venv/bin/python -m pytest -v
+.venv/bin/python -m pip check
+git diff --check
+git diff --cached --check
 ```
 
-Keep runtime dependencies empty for this milestone. Direct development and build
-dependencies and their license/source are recorded in the architecture document.
-Record purpose, version, source, license, and alternatives before adding another.
+Keep the core free of runtime dependencies. Record purpose, version, license,
+source and alternatives before adopting a dependency. The
+[dependency review](docs/release/THIRD_PARTY_LICENSE_REVIEW.md) distinguishes
+development tools, optional images, system media libraries and the disposable
+external audit. Optional integration commands are in the [runbook](docs/guides/DEMO_RUNBOOK.md).
 
 ## Tests and evidence
 
-The import test checks the installed distribution and this checkout's `src`
-package without injecting a test-only import path. Future behavior tests must
-cover observable contracts, invalid inputs, and failure cases. Use synthetic
-inputs, controlled event order, and injected clocks rather than timing sleeps.
-Report cleanup, unexplained flakiness, and negative findings. Never retry silently
-until a scenario passes or infer external reliability from an intentionally
-broken demonstration. Transport tests belong to later PRD stages.
+Use synthetic inputs, controlled events and injected clocks. Cover observable
+contracts, invalid inputs and failure cases. Separate no arrival, repeated content,
+queued old frames and obsolete-epoch completions. Report unknown evidence, cleanup
+failures and initial failures honestly; do not retry silently until green.
+
+Keep GStreamer/OpenCV tests separate from ordinary Python CI. Use only owned
+loopback sockets and bounded trials, with positive process/thread/pipeline cleanup.
+Do not infer physical-camera freshness from local receipt time or decoder PTS.
 
 ## Review and Git
 
-Keep each pull request within its approved milestone. Describe the problem,
-behavior changed, test commands and actual results, limitations, and PRD gates.
-Review generated code and documentation line by line. Include no secrets, media,
-private paths, or unverified claims. CI must pass before acceptance.
+Describe the concrete problem, resulting behavior, actual checks and limitations.
+Use one coherent conventional commit per meaningful change. Never force-push or
+rewrite history. Review full diffs and explicitly stage intended paths; do not
+use `git add .`. Check ignored paths and document containers as well as text.
 
-Use imperative conventional commits: `chore:`, `docs:`, `test:`, `feat:`, or
-`fix:` as appropriate. Prefer one coherent commit per completed milestone;
-do not manufacture activity or combine unrelated stages. Milestone 1.1 proposes
-`chore: establish validation harness foundation` only after checks pass and the
-owner approves the complete staged contents. Never force-push or rewrite history.
-
-Before staging, inspect `git status --short --ignored`, candidate paths, file
-sizes, and contents; scan text and document containers for secrets. Stage an
-explicit reviewed file list. Inspect `git diff --cached --name-status`,
-`git diff --cached --stat`, `git diff --cached --check`, and the complete
-`git diff --cached`. Ignore rules are a guardrail, not a secret scanner.
-Only the owner can authorize repository creation, pushing, public visibility,
-licensing, deployment, or publishing. Current policy permits CI only.
+Exclude credentials, original PRDs, private connection data, recordings, environments,
+caches and generated binaries. Follow [SECURITY.md](SECURITY.md) for sensitive findings.
+CI uses pinned actions, read-only permissions and bounded jobs. No deployment,
+package publishing, releases or paid services are part of this project.

@@ -1,47 +1,52 @@
 # Security policy
 
-This repository currently contains research scaffolding, not a network client
-or a production security boundary. There are no supported production releases,
-camera authentication features, encryption guarantees, or safety guarantees.
-An eventual freshness verdict cannot establish image integrity, prevent source
-spoofing, or certify a clinical or industrial decision.
+Video Freshness Lab is a research recipe and validation toolkit. Optional local
+experiments contain RTSP clients, a synthetic server and a bounded loopback fault
+injector. There are no supported production releases, camera authentication
+features, image-integrity guarantees or safety certifications. A freshness verdict
+cannot establish source authenticity or certify a clinical or industrial decision.
 
 ## Report privately
 
-For a security-sensitive finding, contact the repository owner through a verified
-private channel. Once a GitHub repository exists, use its **Security → Report a
-vulnerability** facility if the owner has enabled private reporting. No private
-contact address or reporting facility has been configured yet; the owner must
-establish one before public release. Do not post secrets or exploit details in a
-public issue while arranging a channel. Ordinary bugs can be reported publicly
-using synthetic reproductions after repository publication is approved.
+Use this repository's **Security → Report a vulnerability** facility when enabled:
+[private report](https://github.com/devAIsh88/video-freshness-lab/security/advisories/new).
+GitHub provides this facility for public repositories; it is currently unavailable
+while this repository is private. Enabling and verifying it is part of the
+conditional publication follow-up in the [release report](docs/release/PUBLIC_RELEASE_READINESS.md).
 
-Provide the affected revision, impact, and a minimal sanitized synthetic
-reproduction. Arrange disclosure timing with the owner. No response SLA is
-promised at this stage. Do not transmit camera credentials or private recordings.
+If the facility is unavailable, ask the owner to arrange a private channel without
+including sensitive details. For a public repository, a minimal issue requesting
+private contact is the [GitHub-documented fallback](https://docs.github.com/en/code-security/how-tos/report-and-fix-vulnerabilities/report-privately).
+Do not post exploit details, credentials or recordings in an issue. No personal
+security email address or response SLA is promised.
 
-## Sensitive connection data
+Provide the affected revision, impact and a sanitized synthetic reproduction.
+Arrange disclosure timing with the owner. Ordinary bugs can use normal issue
+reports without private connection information.
 
-Validation uses synthetic data only. This milestone needs no real credentials
-and does not read `.env` files. Never include authentication strings, private
-RTSP URLs, camera addresses, hostnames, personal footage, or patient data in
-code, documentation, logs, issue reports, screenshots, or CI output. Later local
-experiments must keep private configuration and media outside tracked files.
-Diagnostics should use opaque session labels and sequence/event identifiers.
+## Sensitive data and dependency review
 
-Review staged paths and contents, including DOCX metadata, links, and embedded
-assets, before any push. Run a repository-wide secret scan before first public
-push and after configuration changes. Pattern scans and `.gitignore` cannot
-prove the absence of secrets. If a credential is exposed, revoke or rotate it
-and notify the owner privately; deleting the working file alone is insufficient.
-Coordinate any history cleanup with the owner; do not rewrite history unaided.
+Validation uses synthetic media and owned IPv4 loopback sockets only. Never add
+credentials, private camera URLs, personal footage, confidential documents,
+environments or generated binaries to Git. Original PRDs stay local and untracked.
+
+Review staged contents, complete reachable history, document containers and
+available Actions logs before public publication. A clean automated scan supports
+review but cannot prove the absence of secrets. If a credential is exposed, rotate
+or revoke it; deleting its working copy does not remove historical exposure.
+Coordinate remediation with the owner and do not rewrite history unaided.
+
+Keep development installers patched and review dependency advisories. Optional
+native libraries retain their own licenses and security maintenance requirements;
+the repository does not redistribute their binaries. See the
+[third-party review](docs/release/THIRD_PARTY_LICENSE_REVIEW.md).
 
 ## CI boundary
 
-CI uses read-only contents permissions, ordinary pull-request events, pinned
-action commits, and checkout without persisted credentials. It requires no
-secrets and performs no publishing, artifact upload, or deployment. Do not use
-`pull_request_target`, privileged workflows for untrusted PR code, write tokens,
-cloud credentials, or self-hosted runners for untrusted contributions. Dependency
-installation still executes third-party tooling; review version updates and
-keep this boundary narrow. No paid third-party security service is required.
+CI uses read-only permissions, ordinary pull-request events, pinned action commits
+and checkout without persisted credentials. It requires no secrets and performs
+no publishing, artifact upload or deployment. Do not use `pull_request_target`,
+privileged workflows for untrusted PR code, write tokens, cloud credentials or
+self-hosted runners for untrusted contributions. Dependency installation executes
+third-party tooling; review updates and keep this boundary narrow. No paid service
+is required.

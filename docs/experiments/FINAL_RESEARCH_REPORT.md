@@ -216,3 +216,12 @@ contract and performed an actual independent audit with an honest negative
 freshness result. The supported outcome is the reference recipe/toolkit, with
 active work stopped and product gates deferred. See [final decision](../audits/FINAL_GO_NO_GO_DECISION.md)
 for reopening conditions. **RESEARCH COMPLETE WITH EXPLICIT UNMET EXTERNAL GATES**.
+
+## Subsequent source-release preparation — 23 October 2026
+
+The research findings and unmet adoption/package gates above remain unchanged.
+The owner subsequently authorized security review, conditional MIT licensing and
+conditional public publication of this source repository. That authorization
+is not ownership evidence or package-release approval. Current gate results are
+recorded in the [release-readiness report](../release/PUBLIC_RELEASE_READINESS.md).
+The two original PRDs remain private local inputs and are excluded from Git.

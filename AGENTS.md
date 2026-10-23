@@ -6,12 +6,16 @@
   The originals are intentionally absent from Git/GitHub. A fresh checkout must
   receive owner-provided local copies before requirement-dependent implementation;
   do not invent or download substitutes when they are missing.
-- Technical Stages 0–5 and Milestones 1.1–1.9 are committed. The owner
-  authorizes the final execution: a bounded independent consumer audit, original
-  Stage 7 evidence-based decision, documentation and owner handover. Preserve
-  drain-on-close and the existing PIVOT unless contrary evidence warrants change.
-  Stop after this final research delivery. No further features, external posting,
-  real cameras, package publication, deployment or license selection are authorized.
+- Research Stages 0–7 have been assessed; the outcome remains PIVOT to a
+  reference recipe and reliability validation toolkit with unmet external gates.
+  The owner now authorizes release preparation, security fixes, documentation,
+  reviewed commits/private pushes, free GitHub security settings, and conditional
+  public visibility. MIT with attribution `Copyright (c) 2026 devAIsh88` requires
+  explicit confirmation of authority over the original material. Publication
+  additionally requires every mandatory pre-publication gate in
+  `docs/release/PUBLIC_RELEASE_READINESS.md` to pass. Do not infer legal authority from Git identity or routine continuation.
+  Preserve drain-on-close. No new features, external posting, real cameras,
+  package publication, GitHub releases, deployment or paid services are authorized.
 - Use Python 3.11+, a `src/video_freshness_lab` layout, readable typed code, and
   standard-library components where possible. Do not add unnecessary dependencies.
   Document dependency purpose, version, license, and source before adoption.
@@ -31,19 +35,17 @@
   scan document containers as well as text. Do not use `git add .` blindly.
 - CI only: read-only permissions, no secrets, no deployment, no package/container
   publishing, no releases or paid services. Pin actions to full commit SHAs.
-- Avoid unnecessary commits. Final delivery permits one verified Stage 6 commit
-  `docs: record third-party video freshness audit` and one final handover commit
-  `docs: finalize video freshness research and handover`. Do not manufacture a
-  success commit for blocked or unverified acceptance criteria.
-- Do not force-push or rewrite history. Private GitHub creation and verified
-  milestone pushes are authorized under the delivery policy below. Public
-  visibility, publishing, deployment, and license selection remain unapproved.
+- Avoid unnecessary commits. Prefer one coherent, verified release-preparation
+  commit: `chore: prepare video freshness lab for open-source release`. A blocked
+  checkpoint must accurately state what remains unverified; it is not a release.
+- Do not force-push, amend commits or rewrite history. Public visibility is
+  authorized only after the mandatory legal, privacy, security and CI gates pass.
 - Record uncertainty and negative results. Stop at the authorized milestone and
   provide reviewable evidence instead of assuming productization is inevitable.
 
 ## GitHub Repository and Milestone Delivery Policy
 
-- Intended repository: `devAIsh88/video-freshness-lab`, PRIVATE ONLY, at
+- Intended repository: `devAIsh88/video-freshness-lab`, initially PRIVATE, at
   `https://github.com/devAIsh88/video-freshness-lab`. Confirm the authenticated
   account is `devAIsh88`, ownership, private visibility, and existing branches
   before creation/reuse. Never overwrite unrelated remote history or initialize
@@ -77,5 +79,8 @@
   paid runners, cloud provisioning, or paid infrastructure. Avoid unnecessary CI
   runs. Owner spending controls must prevent unexpected Actions overage charges;
   report any required owner configuration rather than enabling paid usage.
-- Licensing remains pending. Private synchronization does not approve a license,
-  public release, public visibility, or disclosure of the original PRDs.
+- Licensing remains blocked until the explicit ownership confirmation arrives.
+  Keep private while any mandatory publication gate is FAIL, BLOCKED or NOT
+  VERIFIED. After private push and passing CI, recheck identity and remote SHA
+  before the authorized visibility change. Verify visibility independently.
+  The original PRDs are excluded regardless of repository visibility.

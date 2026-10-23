@@ -1,6 +1,6 @@
 # Video Freshness Lab
 
-A private, CPU-only research lab for testing whether successful video processing
+A CPU-only research lab for testing whether successful video processing
 can still publish results from old or obsolete evidence. It compares FIFO/latest
 buffering, tracks immutable frame evidence, validates application epochs at final
 publication, and exercises existing GStreamer through local synthetic RTSP.
@@ -8,7 +8,9 @@ publication, and exercises existing GStreamer through local synthetic RTSP.
 **Status: research complete with explicit unmet external gates.** The final
 choice is a documented reference recipe and validation toolkit. Native buffering
 plus a small application output check was sufficient for the tested contract.
-A production RTSP framework, public package and release are not approved.
+A production RTSP framework and package publication remain out of scope.
+Public source release is being evaluated separately; see the
+[release-readiness report](docs/release/PUBLIC_RELEASE_READINESS.md).
 
 Start with [the 75-minute learning plan](docs/guides/START_HERE.md) or
 [the 10–15-minute demonstration](docs/guides/DEMO_RUNBOOK.md).
@@ -35,6 +37,7 @@ Python 3.11+; recorded Fedora development uses Python 3.12.15. From this checkou
 
 ```sh
 python3.12 -m venv .venv
+.venv/bin/python -m pip install --only-binary=:all: pip==26.2.1
 .venv/bin/python -m pip install -e '.[dev]'
 .venv/bin/python -m video_freshness_lab
 .venv/bin/python -m video_freshness_lab --scenario reconnect --policy latest --session-filter
@@ -66,7 +69,9 @@ git diff --cached --check
 installs the editable dev extra, runs Ruff and pytest on Ubuntu Python 3.11 and
 3.12. The verified Stage 6 delivery passed both jobs in
 [run 39842507560](https://github.com/devAIsh88/video-freshness-lab/actions/runs/39842507560).
-The final handover response records its exact final SHA and CI verification.
+The subsequent research handover also passed both jobs in
+[run 39844877466](https://github.com/devAIsh88/video-freshness-lab/actions/runs/39844877466).
+Release-preparation checks are recorded separately in the release-readiness report.
 Workflow permissions are read-only, actions pinned to full SHAs, with no CD,
 publication, releases, secrets or deployment. Optional media tests do not run in CI.
 
@@ -80,8 +85,12 @@ venv-media/bin/python -m unittest discover -s integration -p test_stamped_images
 ```
 
 If absent, create it with `.venv/bin/python -m venv venv-media` then
+`venv-media/bin/python -m pip install --only-binary=:all: pip==26.2.1` and
 `venv-media/bin/python -m pip install -e '.[images]'`. This optional extra pins
 NumPy 2.2.6 and opencv-python-headless 4.12.0.88; it does not change system Python.
+Use a supported, patched pip in each environment (26.2.1 was checked here).
+Native dependency licenses and binary notices are summarized in the
+[third-party review](docs/release/THIRD_PARTY_LICENSE_REVIEW.md).
 
 The existing Fedora system interpreter supplies GI, GStreamer and GstRtspServer.
 Verify these prerequisites; missing bindings are a blocker, not a reason to
@@ -137,8 +146,15 @@ UDP impairment, H.264/GOP recovery, safety certification, production readiness o
 broad community adoption is claimed. Complete low-burden semantic instrumentation
 and package advantage over a short pytest/FFmpeg recipe remain unproven.
 
-Repository visibility remains PRIVATE. Licensing is [pending owner approval](LICENSE);
-this is not an approved public open-source release. No package publication, paid
-infrastructure or deployment is part of the project. See [security](SECURITY.md)
-and [contributing](CONTRIBUTING.md). Stop active work after this handover; reopening
-conditions are recorded in the final decision.
+## License and contribution status
+
+The repository remains PRIVATE while release gates are unresolved. The owner has
+selected MIT with pseudonymous attribution `Copyright (c) 2026 devAIsh88`, subject
+to confirming authority over all original material. [LICENSE](LICENSE) currently
+grants no open-source license. See the [release-readiness report](docs/release/PUBLIC_RELEASE_READINESS.md)
+for the actual legal, security and delivery status.
+
+[Contribution guidance](CONTRIBUTING.md) covers small, evidence-backed fixes and
+[security reporting](SECURITY.md) covers sensitive findings. Source publication
+does not establish adoption, physical-camera guarantees or package readiness.
+No package publication, paid infrastructure or deployment is authorized.

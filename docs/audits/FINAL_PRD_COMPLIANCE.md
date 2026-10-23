@@ -121,3 +121,12 @@ are part of this delivery.
 **RESEARCH COMPLETE WITH EXPLICIT UNMET EXTERNAL GATES**. Stop after handover;
 reopening requires separate authorization and the evidence conditions in the
 [final decision](FINAL_GO_NO_GO_DECISION.md).
+
+## Subsequent source-release preparation — 23 October 2026
+
+The research findings and unmet adoption/package gates above remain unchanged.
+The owner subsequently authorized security review, conditional MIT licensing and
+conditional public publication of this source repository. That authorization
+is not ownership evidence or package-release approval. Current gate results are
+recorded in the [release-readiness report](../release/PUBLIC_RELEASE_READINESS.md).
+The two original PRDs remain private local inputs and are excluded from Git.
