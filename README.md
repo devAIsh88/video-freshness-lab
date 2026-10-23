@@ -1,181 +1,144 @@
 # Video Freshness Lab
 
-Synthetic freshness contracts, stamped images, and finite localhost RTSP experiments.
-This research lab implements a virtual clock, FIFO/latest-frame waiting buffers,
-one simulated consumer, session/fault scripts, optional session filtering,
-no-progress detection, explicit metrics, structured evidence, and a small CLI.
-A separate real-thread demo uses a bounded latest-frame mailbox with explicit
-drain-on-close behavior and bounded joins.
-An optional local experiment uses the installed GstRTSPServer and GStreamer
-JPEG decoder. It supplies no production reliability API.
+A private, CPU-only research lab for testing whether successful video processing
+can still publish results from old or obsolete evidence. It compares FIFO/latest
+buffering, tracks immutable frame evidence, validates application epochs at final
+publication, and exercises existing GStreamer through local synthetic RTSP.
 
-## Problem and research status
+**Status: research complete with explicit unmet external gates.** The final
+choice is a documented reference recipe and validation toolkit. Native buffering
+plus a small application output check was sufficient for the tested contract.
+A production RTSP framework, public package and release are not approved.
 
-A successful frame read or a live process does not by itself establish the age
-or source session of the evidence behind an application output. The hypothesis
-is that backlog or reconnection can allow stale frames or previous-session
-results to escape otherwise healthy consumers. We have not reproduced this in
-an external consumer, established a market gap, or shown that a separate package
-adds value over existing libraries.
+Start with [the 75-minute learning plan](docs/guides/START_HERE.md) or
+[the 10–15-minute demonstration](docs/guides/DEMO_RUNBOOK.md).
 
-The [Markdown PRD](PRD.md) and [full DOCX PRD](Video_Freshness_Lab_PRD_v0.1.docx)
-remain unchanged at their original paths. See the [source index](docs/prd/README.md),
-[scope decisions](docs/architecture/foundation.md), and
-[validation plan](docs/experiments/validation-plan.md). Original Stage 1's numbered
-buffering/metrics and threaded demo are implemented; later requirements are
-tracked independently in the [PRD implementation audit](docs/audits/PRD_IMPLEMENTATION_MATRIX.md).
-The original PRDs are local, untracked source documents and are intentionally
-absent from GitHub clones. Consult the owner's local copies before new
-implementation; their linked paths resolve only where those copies are present.
+## What the experiments found
 
-For the completed local technical work, use the
-[Stage 0–5 completion report](docs/audits/TECHNICAL_STAGE_COMPLETION_REPORT.md)
-and [short demonstration guide](docs/audits/DEMONSTRATION_GUIDE.md).
-The scoped technical results do not establish physical capture freshness or
-independent consumer value; original Stages 6–7 have not begun.
+| Evidence environment | Measured finding | Limit |
+| --- | --- | --- |
+| Deterministic simulation | Slow FIFO: 10 results, max age 310 virtual ms, 8 violations at 80 ms budget. Latest: 4 results, 6 replacements, max 70 ms, 0 violations | Virtual source/workload timing, not camera latency |
+| Real Python threads | Controlled slow handoff delivers first/last of 10 items, replaces 8 and terminates both workers | Event-coordinated behavior, not throughput measurement |
+| Source-stamped OpenCV images | 1000/1000 trace matches over ten configurations; source marker survives selected color/PNG path | Arbitrary transforms and JPEG RTSP pixel lineage unverified |
+| Mature local RTSP contract | Corrected 1200/1200, 100/configuration; 400 explicit recoveries; filtered modes reject all 400 obsolete completions | Actual JPEG/RTP/TCP/decode; application epochs, not physical source freshness |
+| Controlled TCP delivery faults | 720/720, 20/configuration; delay/stall/cuts and bounded recovery/shutdown | Owned localhost fixture; no UDP packet loss or real-network rate |
+| Independent FrameGrab file audit | Final 800/800, 100/scenario; native supported behavior confirmed, no freshness defect observed | FFV1/FFmpeg path; external RTSP blocked by audit OpenCV build; no adoption claim |
 
-Run `.venv/bin/python -m video_freshness_lab` for all four buffering scenarios,
-or add `--json` for complete machine-readable evidence. Use `--help` for integer
-millisecond configuration overrides. See [simulation architecture and metrics](docs/architecture/simulation.md)
-and [measured Milestone 1.2 results](docs/experiments/milestone-1.2-results.md).
-Slow FIFO keeps all 10 frames but reaches 310 ms result age; under the identical
-workload latest-frame drops six waiting frames and reaches 70 ms. Neither result
-establishes how a real camera reader behaves.
+Each row has its own denominator. Initial failures remain in the reports: one
+server teardown failure in the first 400 mature RTSP controls, and one immediate
+native-task remainder in the first 100 external controls. Corrections/new
+observation boundaries precede separately declared successful cohorts.
 
-Run `.venv/bin/python -m video_freshness_lab --suite recovery` for nine interruption
-presets. Add `--policy latest --session-filter` to compare waiting-frame replacement
-with provenance checks. [Milestone 1.3 results](docs/experiments/milestone-1.3-results.md)
-document configurations and limits: latest-frame alone emits two obsolete-session
-results in the reconnect script despite passing its age budget; adding session
-checks suppresses them in this synthetic model. The same result does not establish
-any real RTSP library defect.
+## Install and run the Python core
 
-Run `.venv/bin/python -m video_freshness_lab.threaded_demo --mode normal` for
-the producer/consumer handoff, `--mode slow` for controlled replacement, or
-`--mode idle` for shutdown of an empty blocked consumer. Add `--json` for counts,
-frame metadata, and final state. With ten items, normal delivers ten; slow
-delivers the first and last while replacing eight waiting items. These counts
-follow explicit thread coordination, not a scheduling or throughput benchmark.
-See the [mailbox contract](docs/architecture/threaded-mailbox.md) and
-[Milestone 1.4 results](docs/experiments/milestone-1.4-results.md).
-
-The session experiment checks provenance again at final publication, with epoch
-validation and output recording under one lock. A result from an in-progress
-retired epoch can finish internally and be suppressed. Source closure retains
-drain-on-close; application shutdown separately suppresses subsequent outputs.
-Run `.venv/bin/python -m pytest tests/test_threaded_sessions.py -v` to reproduce
-the synchronized scenarios. See the [session boundary contract](docs/architecture/threaded-session-boundaries.md)
-and [Milestone 1.5 results](docs/experiments/milestone-1.5-results.md). These tests
-do not validate real RTSP behavior or establish an age-based freshness policy.
-
-Milestone 1.6 adds a [frame evidence contract](docs/architecture/frame-evidence-contract.md)
-and pure diagnostics that separate session validity, arrival age, and substantiated
-capture age. Missing or incomparable capture references remain unknown. The
-[official-library comparison](docs/research/existing-library-capability-matrix.md)
-recommends testing native GStreamer queue policies before building another
-mechanism. See [1.6 fixtures and limitations](docs/experiments/milestone-1.6-results.md).
-That milestone introduced no media pipeline, transport adapter, or runtime dependency.
-
-## Install and check
-
-The optional [GStreamer experiment](docs/architecture/gstreamer-experiment.md)
-uses existing Fedora system bindings, separately from the Python-only suite.
-Run `PYTHONPATH=src /usr/bin/python3 -m unittest discover -s integration -p 'test_gstreamer_native.py' -v`
-for the explicit integration checks, and
-`PYTHONPATH=src /usr/bin/python3 -m video_freshness_lab.gstreamer_experiment --repeat 20`
-for structured runtime observations. Missing bindings fail explicitly. Normal CI
-does not execute these commands. See [1.7 measurements and decision](docs/experiments/milestone-1.7-results.md).
-
-The optional [localhost RTSP testbed](docs/architecture/local-rtsp-testbed.md)
-uses the existing system GstRtspServer library, synthetic JPEG over interleaved
-TCP, and finite isolated processes. Its six scenarios cover streaming,
-interruption, explicit application reconnect, consumer slowdown, pending-read
-shutdown, and final epoch filtering. Run:
-
-```sh
-PYTHONPATH=src /usr/bin/python3 -m unittest discover -s integration -p 'test_rtsp_transport.py' -v
-PYTHONPATH=src /usr/bin/python3 -m video_freshness_lab.rtsp_experiment --repeat 5 > /tmp/vfl18-results.json
-```
-
-These Linux-only experiments need permission to bind IPv4 loopback. They accept
-no external endpoint and do not run in ordinary GitHub CI. Decoder PTS and local
-delivery ordinals do not establish physical capture freshness or source identity.
-See [1.8 results and limits](docs/experiments/milestone-1.8-results.md).
-The [original Stage 5 follow-up](docs/experiments/rtsp-contract-reliability.md)
-records 1200/1200 mature trials at 100/configuration, explicit native cleanup,
-and the separately retained initial server teardown failure. To reproduce:
-`PYTHONPATH=src /usr/bin/python3 integration/repeat_rtsp_contract.py --repeat 100 > /tmp/vfl-stage5-rtsp.json`.
-
-The [fixture-only transport injector](docs/architecture/transport-fault-injection.md)
-adds acknowledged interleaved-record delay/stall and abrupt connected-socket cuts.
-It targets only the owned IPv4 loopback fixture. Run
-`PYTHONPATH=src /usr/bin/python3 -m unittest discover -s integration -p test_transport_faults.py -v`
-or `PYTHONPATH=src /usr/bin/python3 -m video_freshness_lab.transport_experiment --repeat 20`
-for the declared assessment. [1.9 results](docs/experiments/milestone-1.9-results.md)
-separate transport faults, application recovery and held-work epoch checks.
-No UDP loss, physical capture freshness or independent consumer defect is claimed.
-
-Original PRD Stages 3/4 add [source-stamped NumPy/OpenCV images](docs/architecture/stamped-images.md)
-and an actual repeated-content control. Source/epoch/sequence markers are decoded
-after color conversion and lossless PNG processing; unreadable identity stays
-UNKNOWN. [Measured results](docs/experiments/stamped-images-results.md) distinguish
-new buffers repeating old evidence from a static scene with advancing stamps.
-Use an isolated optional environment; the ordinary test environment needs no media
-packages:
-
-```sh
-.venv/bin/python -m venv venv-media
-venv-media/bin/python -m pip install -e '.[images]'
-venv-media/bin/python -m unittest discover -s integration -p test_stamped_images.py -v
-venv-media/bin/python -m video_freshness_lab.stamped_images --repeat 1 > /tmp/vfl-images-demo.json
-```
-
-Image delays/ages are virtual source-schedule values, not camera/CPU latency.
-PNG marker survival does not establish JPEG/video-codec lineage.
-
-Use Python 3.11 or newer; Fedora development uses Python 3.12. From this directory:
+Python 3.11+; recorded Fedora development uses Python 3.12.15. From this checkout:
 
 ```sh
 python3.12 -m venv .venv
-source .venv/bin/activate
-python -m pip install -e ".[dev]"
-python -m ruff check .
-python -m ruff format --check .
-python -m pytest
+.venv/bin/python -m pip install -e '.[dev]'
+.venv/bin/python -m video_freshness_lab
+.venv/bin/python -m video_freshness_lab --scenario reconnect --policy latest --session-filter
+.venv/bin/python -m video_freshness_lab.threaded_demo --mode slow
 ```
 
-On Windows PowerShell, create the environment with `py -3.11 -m venv .venv`
-and use `.venv\Scripts\python.exe` in place of `python`; activation is optional.
-Run `python -m ruff format .` to apply formatting. No camera, environment
-variables, network stream, GPU, or paid service is needed. Initial dependency
-installation requires access to PyPI or an approved local wheel source.
+If .venv already exists, use it. The core has no runtime dependency beyond the
+standard library. Initial installation requires an approved package index/cache.
+A fresh checkout needs owner-provided local original PRDs before changing
+requirements-dependent implementation; they are deliberately absent from Git.
 
-CI runs the same installation and checks on Ubuntu with Python 3.11 and 3.12.
-Local foundation checks have passed on Fedora with Python 3.12. Windows remains
-an unverified PRD portability target; neither platform is in the initial CI matrix.
-Development tool versions are pinned; transitive dependencies are not locked,
-so this is not a fully reproducible dependency snapshot. Record resolved
-versions with `python -m pip freeze` when collecting experiment evidence.
+The simulator supports --suite buffering/recovery/all and --json. Its processing
+ages are virtual milliseconds. The threaded demo supports --mode normal/slow/idle.
+Source closure drains the final waiting item; it does not invalidate an epoch.
 
-## Scope and uncertainty
+## Tests and CI
 
-The core uses numbered synthetic items and controlled event order; the optional
-transport fixture uses generated test patterns. Source sequence lag
-measures distance from the source head; evidence age measures elapsed time;
-neither a nominal frame rate nor connection status substitutes for these.
-The simulator defines explicit synthetic thresholds and session boundaries;
-source lineage across transport and real reconnect/session semantics remain
-unverified investigation questions.
+```sh
+.venv/bin/python -m ruff check .
+.venv/bin/python -m ruff format --check .
+.venv/bin/python -m pytest -v
+.venv/bin/python -m pip check
+git diff --check
+git diff --cached --check
+```
 
-Non-goals are a capture SDK, RTSP server, NVR, dashboard, AI detection or model
-training, hosted service, safety certification, and deployment infrastructure.
-CI performs checks only: no publishing, releases, containers, cloud credentials,
-or deployment. Synthetic data is mandatory during validation. Verified milestone
-commits may synchronize to the owner-approved PRIVATE GitHub repository; public
-visibility and releases remain unapproved. See AGENTS.md for delivery requirements.
+**305 Python-only tests pass**, retaining the original 275. GitHub
+[CI](https://github.com/devAIsh88/video-freshness-lab/actions/workflows/ci.yml)
+installs the editable dev extra, runs Ruff and pytest on Ubuntu Python 3.11 and
+3.12. The verified Stage 6 delivery passed both jobs in
+[run 39842507560](https://github.com/devAIsh88/video-freshness-lab/actions/runs/39842507560).
+The final handover response records its exact final SHA and CI verification.
+Workflow permissions are read-only, actions pinned to full SHAs, with no CD,
+publication, releases, secrets or deployment. Optional media tests do not run in CI.
 
-The package name `video_freshness_lab` and distribution name
-`video-freshness-lab` are provisional local choices; global availability has not
-been checked. Version `0.0.0` identifies scaffolding, not a release. Licensing is
-[pending owner approval](LICENSE), so this is not yet a licensed open-source
-release. See [contributing](CONTRIBUTING.md) and [security](SECURITY.md).
+## Optional synthetic images and native media
+
+Existing isolated images environment:
+
+```sh
+venv-media/bin/python -m video_freshness_lab.stamped_images --repeat 1 > /tmp/vfl-images-demo.json
+venv-media/bin/python -m unittest discover -s integration -p test_stamped_images.py -v
+```
+
+If absent, create it with `.venv/bin/python -m venv venv-media` then
+`venv-media/bin/python -m pip install -e '.[images]'`. This optional extra pins
+NumPy 2.2.6 and opencv-python-headless 4.12.0.88; it does not change system Python.
+
+The existing Fedora system interpreter supplies GI, GStreamer and GstRtspServer.
+Verify these prerequisites; missing bindings are a blocker, not a reason to
+repeat host installations from an isolated execution environment.
+
+```sh
+rpm -q gstreamer1-rtsp-server
+PYTHONPATH=src /usr/bin/python3 -m unittest discover -s integration -p test_gstreamer_native.py -v
+PYTHONPATH=src /usr/bin/python3 -m unittest discover -s integration -p test_rtsp_transport.py -v
+PYTHONPATH=src /usr/bin/python3 -m unittest discover -s integration -p test_transport_faults.py -v
+PYTHONPATH=src /usr/bin/python3 -m video_freshness_lab.rtsp_experiment --repeat 1 > /tmp/vfl-rtsp-demo.json
+```
+
+The optional tests use generated inputs and owned IPv4 loopback listeners only.
+They verify finite teardown and listener release. Fedora integration results are
+separate from Python CI. The independent consumer audit uses a reviewed disposable
+environment outside the repo; see its report rather than adding its dependencies
+to the core. Exact tested demonstration and reliability commands are in the runbook.
+
+## Architecture and documentation
+
+Controlled source → waiting buffer → acquired processing with original immutable
+evidence → locked final epoch check → in-memory publication ledger. Pure diagnostics
+report session, identity progression and supported ages without publishing.
+Existing GStreamer owns native buffering; the lab adds finite tests and the
+application boundary policy. [Code guide and Mermaid diagram](docs/guides/CODEBASE_GUIDE.md).
+
+| Read for | Document |
+| --- | --- |
+| Guided learning | [START_HERE](docs/guides/START_HERE.md) |
+| Concepts and original stages | [Project walkthrough](docs/guides/PROJECT_WALKTHROUGH.md) |
+| Actual modules/classes/tests | [Codebase guide](docs/guides/CODEBASE_GUIDE.md) |
+| Tested Fedora demos and cleanup | [Demo runbook](docs/guides/DEMO_RUNBOOK.md) |
+| Presentation and 20 technical questions | [Explanation Q&A](docs/guides/PROJECT_EXPLANATION_QA.md) |
+| Consolidated measured evidence | [Final research report](docs/experiments/FINAL_RESEARCH_REPORT.md) |
+| Original requirement history | [PRD matrix](docs/audits/PRD_IMPLEMENTATION_MATRIX.md), [technical completion](docs/audits/TECHNICAL_STAGE_COMPLETION_REPORT.md) |
+| Independent target and honest findings | [Third-party audit](docs/audits/THIRD_PARTY_CONSUMER_AUDIT.md) |
+| Every gate and final outcome | [Final compliance](docs/audits/FINAL_PRD_COMPLIANCE.md), [go/no-go decision](docs/audits/FINAL_GO_NO_GO_DECISION.md) |
+| Timestamp/identity rules | [Evidence contract](docs/architecture/frame-evidence-contract.md) |
+| Documented versus verified library behavior | [Capability matrix](docs/research/existing-library-capability-matrix.md) |
+
+## Supported scope and limitations
+
+The Python core is tested locally on Fedora 44/Python 3.12 and in Ubuntu
+Python 3.11/3.12 CI. Windows remains an unverified PRD target. Native harnesses
+are Fedora/Linux experiments using explicitly recorded versions. Direct tool/image
+dependencies are pinned; transitive dependencies are not globally locked.
+
+Local receipt time, decoder PTS, source capture time, source epoch, connection
+generation and application epoch are distinct. Unavailable physical capture age
+and source-head lag remain UNKNOWN. No physical cameras, public-network faults,
+UDP impairment, H.264/GOP recovery, safety certification, production readiness or
+broad community adoption is claimed. Complete low-burden semantic instrumentation
+and package advantage over a short pytest/FFmpeg recipe remain unproven.
+
+Repository visibility remains PRIVATE. Licensing is [pending owner approval](LICENSE);
+this is not an approved public open-source release. No package publication, paid
+infrastructure or deployment is part of the project. See [security](SECURITY.md)
+and [contributing](CONTRIBUTING.md). Stop active work after this handover; reopening
+conditions are recorded in the final decision.

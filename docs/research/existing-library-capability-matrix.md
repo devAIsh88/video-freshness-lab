@@ -222,3 +222,29 @@ consumer behavior, physical source lineage/capture clocks, Windows and adoption
 are still unverified. The selected local application-epoch contract passes;
 no claim of complete physical freshness follows. PIVOT remains supported; original
 Stages 6–7 await separate authorization.
+
+## Independent consumer and final decision supplement (2026-10-23)
+
+Historical unverified cells remain historical. **V:** unchanged Groundlight
+FrameGrab commit `17f550890b33925cbd92cf997776e64600954f87` (metadata 0.15.1,
+MIT) was reviewed and executed through its supported file consumer. Actual
+source-stamped FFV1/AVI → OpenCV FFmpeg decode → public grab/options/seek/release
+path completed 800/800 final trials, 100 per eight scenarios. Native decimation,
+replay, EOF and crop behavior matched inspection. No reusable freshness defect
+was observed. The initial 99/100 immediate cleanup cohort remains separately
+reported; bounded native-task observation preceded the final cohort.
+
+**V:** source markers survive this selected video codec path. A removed marker
+becomes UNKNOWN. Old held arrays require an explicit application final policy;
+no upstream promise to retract them is alleged. **V:** README support predicate
+has a false positive when GStreamer build value is NO; a private unposted proposal
+exists. **BLOCKED:** external GStreamer RTSP execution in the audit OpenCV wheel,
+which reports NO. Do not extend file results to that backend or physical cameras.
+
+**U:** physical capture clocks, live source-head lag, Windows, external adoption,
+full approximately 30-line semantic adaptation and package advantage remain unmet.
+**Decision:** retain PIVOT to native configuration plus final epoch recipe and
+validation toolkit. No new buffering framework, public package or deployment.
+See [independent audit](../audits/THIRD_PARTY_CONSUMER_AUDIT.md),
+[final decision](../audits/FINAL_GO_NO_GO_DECISION.md) and
+[compliance](../audits/FINAL_PRD_COMPLIANCE.md).

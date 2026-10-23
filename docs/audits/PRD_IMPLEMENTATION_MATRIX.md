@@ -133,3 +133,27 @@ unexplained failures, timeouts or cleanup failures. No silent per-trial retries.
 No requirement is marked NOT APPLICABLE to avoid a missing evidence gate.
 Technical completion is scoped to the experiments above; it is not full PRD
 product acceptance. Stop before Stages 6–7.
+
+## Final execution supplement (2026-10-23)
+
+The previous stop boundary and NOT IMPLEMENTED rows describe Execution 1. The
+owner subsequently authorized original Stages 6–7 and final handover. Initial
+and technical-stage findings above are retained rather than rewritten.
+
+| Original requirement / gate | Final evidence and status |
+| --- | --- |
+| Stage 6 independent maintained consumer | PASS for actual pinned FrameGrab file audit; 800/800 final trials, 100/scenario; supported native guarantees and honest negative freshness result; private README proposal, no external contact |
+| Stage 7 all gates and final choice | PASS for decision research exit; reference recipe/toolkit PIVOT selected, active development stopped |
+| External behavior | PASS for supported FFV1/FFmpeg/file path; external RTSP BLOCKED by OpenCV build without GStreamer |
+| Mature repeatability | PASS for final scoped cohorts; initial RTSP 399/400 and external 99/100 remain separate and visible |
+| Approximately 30-line precise integration | PARTIAL; thin wrappers fit, total semantic source/marker/publication instrumentation not established within target |
+| Value over pytest/FFmpeg package | NOT VERIFIED; recipe contribution retained without inventing product demand |
+| Maintainer acknowledgment and two unrelated adopters | NOT VERIFIED / not achieved; no genuine evidence recorded |
+| Windows / physical capture freshness | NOT VERIFIED; neither inferred from Fedora integration or Ubuntu CI |
+| Research process versus release | Bounded research/decision complete; broader validation and adoption incomplete; package/publication not approved |
+
+Authoritative final status and delivery:
+[FINAL_PRD_COMPLIANCE](FINAL_PRD_COMPLIANCE.md),
+[FINAL_GO_NO_GO_DECISION](FINAL_GO_NO_GO_DECISION.md),
+[FINAL_RESEARCH_REPORT](../experiments/FINAL_RESEARCH_REPORT.md).
+The overall label is **RESEARCH COMPLETE WITH EXPLICIT UNMET EXTERNAL GATES**.
