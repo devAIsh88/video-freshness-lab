@@ -6,14 +6,12 @@
   The originals are intentionally absent from Git/GitHub. A fresh checkout must
   receive owner-provided local copies before requirement-dependent implementation;
   do not invent or download substitutes when they are missing.
-- Milestones 1.1–1.8 are committed. The owner authorizes finite Milestone 1.9
-  loopback transport faults and the technical master task: audit original PRD
-  Stages 0–7, close genuine Stages 3/4/5 image/fault/RTSP evidence gaps, and deliver
-  verified meaningful milestones with isolated optional media evidence.
-  Preserve the mailbox's drain-on-close contract; closure is not epoch invalidation.
-  Stop after technical Stages 0–5 completion or a documented blocker. Do not start
-  Stage 6 behavioral audit, Stage 7 product/release work, real cameras or external
-  endpoints under this execution.
+- Technical Stages 0–5 and Milestones 1.1–1.9 are committed. The owner
+  authorizes the final execution: a bounded independent consumer audit, original
+  Stage 7 evidence-based decision, documentation and owner handover. Preserve
+  drain-on-close and the existing PIVOT unless contrary evidence warrants change.
+  Stop after this final research delivery. No further features, external posting,
+  real cameras, package publication, deployment or license selection are authorized.
 - Use Python 3.11+, a `src/video_freshness_lab` layout, readable typed code, and
   standard-library components where possible. Do not add unnecessary dependencies.
   Document dependency purpose, version, license, and source before adoption.
@@ -33,10 +31,10 @@
   scan document containers as well as text. Do not use `git add .` blindly.
 - CI only: read-only permissions, no secrets, no deployment, no package/container
   publishing, no releases or paid services. Pin actions to full commit SHAs.
-- Avoid unnecessary commits. Use one meaningful commit for each genuinely closed
-  milestone/stage after successful validation and staged review. Preserve the
-  authorized Milestone 1.9 message `test: evaluate RTSP transport fault recovery`;
-  use the technical master task's Stage 3/4/5 messages only for material gaps.
+- Avoid unnecessary commits. Final delivery permits one verified Stage 6 commit
+  `docs: record third-party video freshness audit` and one final handover commit
+  `docs: finalize video freshness research and handover`. Do not manufacture a
+  success commit for blocked or unverified acceptance criteria.
 - Do not force-push or rewrite history. Private GitHub creation and verified
   milestone pushes are authorized under the delivery policy below. Public
   visibility, publishing, deployment, and license selection remain unapproved.

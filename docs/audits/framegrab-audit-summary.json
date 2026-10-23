@@ -1,0 +1,278 @@
+{
+  "capture_closures": 1000,
+  "completed_trials": 800,
+  "eof_observations": 400,
+  "failed_trials": 0,
+  "final_native_task_remainders": 0,
+  "gstreamer_build_line": "GStreamer:                   NO",
+  "immediate_native_task_remainders": 0,
+  "initial_separate_cohort": {
+    "failed": 1,
+    "failures": [
+      {
+        "backend": "FFMPEG",
+        "captures_closed": [
+          true
+        ],
+        "decisions": [],
+        "duration_ns": 61167324,
+        "eof_observed": true,
+        "error": "cleanup invariant failed",
+        "extra_native_tasks": 1,
+        "extra_python_threads": 0,
+        "repetition": 55,
+        "scenario": "replay",
+        "status": "error"
+      }
+    ],
+    "interpretation": "Immediate native task snapshot failed; sustained leak and cause unproven. Revised bounded observation is a separate cohort.",
+    "passed": 99,
+    "raw_sha256": "551b590347b79e00e057a500fed59073a90b2d2053a2f583a00af9d9fb5a5d52",
+    "trials": 100
+  },
+  "installed": {
+    "PyYAML": "6.0.3",
+    "WSDiscovery": "2.1.2",
+    "annotated-types": "0.8.0",
+    "ascii-magic": "2.3.0",
+    "attrs": "26.1.0",
+    "certifi": "2026.10.19",
+    "charset-normalizer": "3.5.2",
+    "click": "8.1.8",
+    "colorama": "0.4.6",
+    "framegrab": "0.15.1",
+    "idna": "3.20",
+    "ifaddr": "0.2.0",
+    "imgcat": "0.5.0",
+    "isodate": "0.7.2",
+    "lxml": "6.1.3",
+    "numpy": "2.2.6",
+    "onvif_zeep": "0.2.12",
+    "opencv-python": "4.12.0.88",
+    "pillow": "13.0.0",
+    "pip": "26.0.1",
+    "platformdirs": "4.13.5",
+    "poetry-core": "2.2.1",
+    "pydantic": "2.12.3",
+    "pydantic_core": "2.41.4",
+    "pytest-runner": "4.5.1",
+    "pytz": "2026.5",
+    "requests": "2.34.2",
+    "requests-file": "3.0.1",
+    "requests-toolbelt": "1.0.0",
+    "setuptools": "80.9.0",
+    "typing-inspection": "0.4.4",
+    "typing_extensions": "4.16.0",
+    "urllib3": "2.8.0",
+    "video-freshness-lab": "0.0.0",
+    "wheel": "0.45.1",
+    "zeep": "4.3.2"
+  },
+  "open_socket_descriptors": 0,
+  "public_grab_arrays": 4800,
+  "python_thread_cleanup_failures": 0,
+  "raw_sha256": "d96bc41637353d35128d78f982f28e9851b1c61522516c72e36d957dc216c780",
+  "readable_source_markers": 4700,
+  "recorded_date": "2026-10-22",
+  "returncode": 0,
+  "runner_sha256": "2eff1e32527e73e14b370f4d73221e0b37e43bfc2192e30f686275fb737fa6e1",
+  "scenarios": {
+    "crop": {
+      "duration": {
+        "max_ms": 8.445577,
+        "median_ms": 7.2027015,
+        "min_ms": 5.961647,
+        "n": 100,
+        "p95_method": "nearest-rank",
+        "p95_ms": 8.309412
+      },
+      "epoch_rejected": 0,
+      "failed": 0,
+      "native_cleanup_observation": {
+        "max_ms": 0.310721,
+        "median_ms": 0.090765,
+        "min_ms": 0.066924,
+        "n": 100,
+        "p95_method": "nearest-rank",
+        "p95_ms": 0.170875
+      },
+      "obsolete_published": 0,
+      "passed": 100,
+      "trials": 100
+    },
+    "decimate": {
+      "duration": {
+        "max_ms": 16.310844,
+        "median_ms": 13.9289635,
+        "min_ms": 12.460963,
+        "n": 100,
+        "p95_method": "nearest-rank",
+        "p95_ms": 15.251478
+      },
+      "epoch_rejected": 0,
+      "failed": 0,
+      "native_cleanup_observation": {
+        "max_ms": 0.327843,
+        "median_ms": 0.10069800000000001,
+        "min_ms": 0.0777,
+        "n": 100,
+        "p95_method": "nearest-rank",
+        "p95_ms": 0.178247
+      },
+      "obsolete_published": 0,
+      "passed": 100,
+      "trials": 100
+    },
+    "epoch-filtered": {
+      "duration": {
+        "max_ms": 16.748921,
+        "median_ms": 14.560927,
+        "min_ms": 12.445717,
+        "n": 100,
+        "p95_method": "nearest-rank",
+        "p95_ms": 16.15577
+      },
+      "epoch_rejected": 100,
+      "failed": 0,
+      "native_cleanup_observation": {
+        "max_ms": 0.340418,
+        "median_ms": 0.0937605,
+        "min_ms": 0.078285,
+        "n": 100,
+        "p95_method": "nearest-rank",
+        "p95_ms": 0.166064
+      },
+      "obsolete_published": 0,
+      "passed": 100,
+      "trials": 100
+    },
+    "epoch-native": {
+      "duration": {
+        "max_ms": 16.610195,
+        "median_ms": 14.6722705,
+        "min_ms": 13.139102,
+        "n": 100,
+        "p95_method": "nearest-rank",
+        "p95_ms": 16.344326
+      },
+      "epoch_rejected": 0,
+      "failed": 0,
+      "native_cleanup_observation": {
+        "max_ms": 0.183293,
+        "median_ms": 0.09221950000000001,
+        "min_ms": 0.070261,
+        "n": 100,
+        "p95_method": "nearest-rank",
+        "p95_ms": 0.14135
+      },
+      "obsolete_published": 100,
+      "passed": 100,
+      "trials": 100
+    },
+    "repeated": {
+      "duration": {
+        "max_ms": 44.433838,
+        "median_ms": 39.160177000000004,
+        "min_ms": 37.296978,
+        "n": 100,
+        "p95_method": "nearest-rank",
+        "p95_ms": 41.891577
+      },
+      "epoch_rejected": 0,
+      "failed": 0,
+      "native_cleanup_observation": {
+        "max_ms": 0.31999,
+        "median_ms": 0.1073625,
+        "min_ms": 0.081301,
+        "n": 100,
+        "p95_method": "nearest-rank",
+        "p95_ms": 0.251343
+      },
+      "obsolete_published": 0,
+      "passed": 100,
+      "trials": 100
+    },
+    "replay": {
+      "duration": {
+        "max_ms": 56.524628,
+        "median_ms": 39.02492,
+        "min_ms": 35.940179,
+        "n": 100,
+        "p95_method": "nearest-rank",
+        "p95_ms": 43.235521
+      },
+      "epoch_rejected": 0,
+      "failed": 0,
+      "native_cleanup_observation": {
+        "max_ms": 0.977086,
+        "median_ms": 0.103073,
+        "min_ms": 0.078577,
+        "n": 100,
+        "p95_method": "nearest-rank",
+        "p95_ms": 0.244498
+      },
+      "obsolete_published": 0,
+      "passed": 100,
+      "trials": 100
+    },
+    "seek": {
+      "duration": {
+        "max_ms": 17.801919,
+        "median_ms": 13.7138675,
+        "min_ms": 12.479637,
+        "n": 100,
+        "p95_method": "nearest-rank",
+        "p95_ms": 15.044087
+      },
+      "epoch_rejected": 0,
+      "failed": 0,
+      "native_cleanup_observation": {
+        "max_ms": 0.319931,
+        "median_ms": 0.0988385,
+        "min_ms": 0.07788,
+        "n": 100,
+        "p95_method": "nearest-rank",
+        "p95_ms": 0.165879
+      },
+      "obsolete_published": 0,
+      "passed": 100,
+      "trials": 100
+    },
+    "static": {
+      "duration": {
+        "max_ms": 43.865353,
+        "median_ms": 39.0543205,
+        "min_ms": 37.079994,
+        "n": 100,
+        "p95_method": "nearest-rank",
+        "p95_ms": 42.211558
+      },
+      "epoch_rejected": 0,
+      "failed": 0,
+      "native_cleanup_observation": {
+        "max_ms": 0.359645,
+        "median_ms": 0.1047765,
+        "min_ms": 0.081478,
+        "n": 100,
+        "p95_method": "nearest-rank",
+        "p95_ms": 0.207833
+      },
+      "obsolete_published": 0,
+      "passed": 100,
+      "trials": 100
+    }
+  },
+  "target_commit": "17f550890b33925cbd92cf997776e64600954f87",
+  "target_module_sha256": "079bafebfdd58a00856b6380cfcb8cd222b1ffede4406e8167121a4b20800899",
+  "temporary_media_removed": true,
+  "timeouts": 0,
+  "total_trials": 800,
+  "unknown_markers": 100,
+  "upstream_readme_check_claims_gstreamer": true,
+  "versions": {
+    "framegrab": "0.15.1",
+    "numpy": "2.2.6",
+    "opencv": "4.12.0",
+    "python": "3.12.15"
+  }
+}
