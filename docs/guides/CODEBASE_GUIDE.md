@@ -39,7 +39,7 @@ not publish; a publication policy must be chosen by the application.
 | pyproject.toml | src packaging, dev pins, optional images extra and pytest discovery |
 
 The original PRDs are local owner inputs. Neither appears in Git history. The
-LICENSE file records that licensing is pending; it does not grant public reuse.
+LICENSE file grants MIT terms for the original code, tests and documentation.
 
 ## Numbered source, clock and buffers
 

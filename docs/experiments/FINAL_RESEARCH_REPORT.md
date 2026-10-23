@@ -225,3 +225,15 @@ conditional public publication of this source repository. That authorization
 is not ownership evidence or package-release approval. Current gate results are
 recorded in the [release-readiness report](../release/PUBLIC_RELEASE_READINESS.md).
 The two original PRDs remain private local inputs and are excluded from Git.
+
+### MIT source-publication authorization — 24 October 2026
+
+The owner explicitly confirmed ownership/necessary rights, approved MIT with
+`Copyright (c) 2026 devAIsh88`, and accepted disclosure of the existing Git author
+email and historical checkout path. The original repository material is now
+[MIT licensed](../../LICENSE); the earlier pending-license rows are historical.
+Publication of this original repository is authorized after final security and
+private CI verification. This resolves the source-license/public-visibility
+approval gate, without resolving adoption or approving a package/deployment.
+The original PRDs remain unchanged, untracked and excluded. See the
+[current release record](../release/PUBLIC_RELEASE_READINESS.md).

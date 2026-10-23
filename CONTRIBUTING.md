@@ -6,8 +6,9 @@ framework or package is outside the accepted scope. Read the [walkthrough](docs/
 [evidence contract](docs/architecture/frame-evidence-contract.md) and
 [final decision](docs/audits/FINAL_GO_NO_GO_DECISION.md) before proposing behavior changes.
 
-Licensing remains pending explicit ownership confirmation. Do not incorporate
-external contributions or third-party code until redistribution rights are clear.
+The original repository material is [MIT licensed](LICENSE). Contribute only
+material you have the right to share under those terms. Review and preserve
+applicable third-party notices before incorporating external code.
 See [release readiness](docs/release/PUBLIC_RELEASE_READINESS.md). The original
 PRDs are private local inputs, deliberately absent from Git; requirement-dependent
 implementation needs owner-provided copies. Routine bug fixes can be reviewed

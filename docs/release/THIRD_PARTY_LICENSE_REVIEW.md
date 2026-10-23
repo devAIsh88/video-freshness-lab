@@ -2,9 +2,10 @@
 
 Reviewed 2026-10-23 for the proposed publication of the research repository.
 This is an inventory of observed licenses and distribution boundaries, not a
-legal opinion or approval to publish. **Ownership and authority to license the
-original repository remain BLOCKED pending owner confirmation.** Dependency
-licenses do not establish those rights or choose this repository's license.
+legal opinion. On 24 October 2026 the owner explicitly confirmed ownership and
+necessary rights for the original project contributions and approved MIT with
+`Copyright (c) 2026 devAIsh88`. The prior ownership confirmation gate is resolved.
+Dependency licenses do not establish those rights or relicense third-party code.
 
 ## Scope and method
 
@@ -189,9 +190,11 @@ The inspected repository does not redistribute the third-party distributions
 listed above. No third-party code inclusion requiring removal was identified by
 this review. However, this finding does not establish copyright ownership of
 the lab's original work or permission from an employer, contributor or other
-rights holder. Owner confirmation and the approved repository license remain
-separate prerequisites before public publication. Historical privacy review,
-security review and owner consent are also independent gates.
+rights holder. The owner has now explicitly supplied the required original-work
+rights confirmation and accepted historical contact/path disclosure. The original
+repository material is MIT licensed; security and CI remain independent publication
+gates. No unresolved redistribution blocker was identified for this source-only
+release. The dependency notice limitations above still restrict any future bundling.
 
 If the project later bundles dependencies, ships binaries or containers, copies
 upstream code, or changes its supported codecs, repeat this review for that exact

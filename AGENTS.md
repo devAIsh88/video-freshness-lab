@@ -10,10 +10,11 @@
   reference recipe and reliability validation toolkit with unmet external gates.
   The owner now authorizes release preparation, security fixes, documentation,
   reviewed commits/private pushes, free GitHub security settings, and conditional
-  public visibility. MIT with attribution `Copyright (c) 2026 devAIsh88` requires
-  explicit confirmation of authority over the original material. Publication
-  additionally requires every mandatory pre-publication gate in
-  `docs/release/PUBLIC_RELEASE_READINESS.md` to pass. Do not infer legal authority from Git identity or routine continuation.
+  public visibility. The owner explicitly confirmed ownership/necessary rights,
+  approved MIT with `Copyright (c) 2026 devAIsh88`, and accepted disclosure of the
+  historical Git email and checkout path. Publication still requires every
+  mandatory pre-publication gate in `docs/release/PUBLIC_RELEASE_READINESS.md`
+  to pass; legal authority was confirmed by the owner, not inferred from Git.
   Preserve drain-on-close. No new features, external posting, real cameras,
   package publication, GitHub releases, deployment or paid services are authorized.
 - Use Python 3.11+, a `src/video_freshness_lab` layout, readable typed code, and
@@ -35,9 +36,9 @@
   scan document containers as well as text. Do not use `git add .` blindly.
 - CI only: read-only permissions, no secrets, no deployment, no package/container
   publishing, no releases or paid services. Pin actions to full commit SHAs.
-- Avoid unnecessary commits. Prefer one coherent, verified release-preparation
-  commit: `chore: prepare video freshness lab for open-source release`. A blocked
-  checkpoint must accurately state what remains unverified; it is not a release.
+- Avoid unnecessary commits. This final license delivery permits one verified
+  commit: `docs: finalize MIT license for public release`. Preserve every earlier
+  commit and milestone hash. Do not manufacture a successful release if a gate fails.
 - Do not force-push, amend commits or rewrite history. Public visibility is
   authorized only after the mandatory legal, privacy, security and CI gates pass.
 - Record uncertainty and negative results. Stop at the authorized milestone and
@@ -63,8 +64,9 @@
   connection data, media, datasets, environments, and temporary artifacts.
   `PRD.md` and `Video_Freshness_Lab_PRD_v0.1.docx` must remain unchanged and
   untracked, absent from every pushed commit. Sanitized `.env.example` is allowed.
-- Push verified commits only to the intended private remote. Confirm the remote
-  branch contains the exact SHA and review GitHub Actions status if accessible.
+- Push the final license commit to the original private origin before changing
+  visibility. Confirm the remote branch contains the exact SHA and review GitHub
+  Actions status.
   Record commit SHA, push outcome, remote verification, and CI status. If several
   verified commits accumulated locally, push the existing history once; never
   manipulate history to fabricate individual deliveries.
@@ -79,8 +81,10 @@
   paid runners, cloud provisioning, or paid infrastructure. Avoid unnecessary CI
   runs. Owner spending controls must prevent unexpected Actions overage charges;
   report any required owner configuration rather than enabling paid usage.
-- Licensing remains blocked until the explicit ownership confirmation arrives.
-  Keep private while any mandatory publication gate is FAIL, BLOCKED or NOT
-  VERIFIED. After private push and passing CI, recheck identity and remote SHA
-  before the authorized visibility change. Verify visibility independently.
-  The original PRDs are excluded regardless of repository visibility.
+- MIT licensing and historical contact/path disclosure are explicitly approved.
+  Keep private while any mandatory security or delivery gate fails or remains
+  unverified. After private push, MIT recognition and passing Python 3.11/3.12 CI,
+  recheck repository identity and remote SHA before the authorized visibility
+  change. Independently verify public visibility, MIT and preserved history.
+  The original PRDs are excluded regardless of repository visibility. Stop after
+  this release; no package publishing, deployment or subsequent work is authorized.

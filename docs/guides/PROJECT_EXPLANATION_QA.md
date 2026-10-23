@@ -183,8 +183,9 @@ release and broad camera freshness validation are not approved.
 
 20. **Why not publish a pytest package now?** Complete precise instrumentation
     is not shown to fit the approximately 30-line goal, unique value over a short
-    test is unproven, and demand gates are unmet. Licensing/publication also need
-    owner approval. A reference recipe is a legitimate PRD outcome.
+    test is unproven, and demand gates are unmet. The owner subsequently approved
+    MIT source publication; the research limits still apply. A reference recipe
+    is a legitimate PRD outcome.
 
 ## Difficult design questions
 

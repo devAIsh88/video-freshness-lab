@@ -1,7 +1,7 @@
 # Start here: understand the lab in 75 minutes
 
 Video Freshness Lab asks whether a successful video read is enough to trust the
-result produced from it. It is a private research repository and reference
+result produced from it. It is an MIT-licensed research repository and reference
 recipe, with optional local media experiments. The final decision is **PIVOT to
 native buffering plus explicit application evidence and a final epoch check**.
 A production framework or public package is not approved.

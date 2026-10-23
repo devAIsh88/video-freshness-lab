@@ -1,44 +1,65 @@
 # Public release readiness
 
-Audit performed 23 October 2026; final private checkpoint reviewed 24 October 2026.
-Scope: `devAIsh88/video-freshness-lab`, default
-branch `main`. Inspected starting revision:
-`58f2dd2661cecae27dc4b502aab8d8b03a8659a5`.
+Review updated 24 October 2026 for the original `devAIsh88/video-freshness-lab`,
+default branch `main`, repository ID `1418013124`. Starting revision:
+`355b8348280ffd97fc93785dacb4d5e113f94d5b`.
 
-**Decision: PRIVATE — PUBLICATION BLOCKED.** Release preparation does not establish
-copyright ownership. The explicit ownership confirmation and acceptance of
-existing historical personal metadata remain pending. No visibility change or
-MIT grant has been made. The PIVOT research conclusion and unmet external gates
-are unchanged; this review concerns publishing the source recipe/toolkit, not
-publishing a package or claiming production readiness.
+**Decision: MIT source publication authorized, subject to final private delivery
+verification.** The owner explicitly confirmed ownership/necessary rights,
+approved MIT with `Copyright (c) 2026 devAIsh88`, and accepted public exposure of
+the existing Git author email and historical checkout path. These confirmations
+resolve the previous ownership and disclosure blockers. They are owner statements,
+not conclusions inferred from Git metadata.
 
-This is the pre-commit review record. Post-commit SHA, remote synchronization and
-new CI results must be verified after delivery and reported with that delivery;
-this document cannot contain its own commit SHA or subsequent CI result.
+The PIVOT outcome and unmet research/adoption gates remain unchanged. This is a
+source recipe/toolkit publication, not a package release or production guarantee.
+The original PRDs remain excluded. No second repository, history rewrite, GitHub
+release, package publication, deployment or paid service is authorized.
 
-## Release checklist
+## Source readiness at commit review
 
-| Gate | Status | Evidence / remaining action |
+| Gate | Status | Evidence |
 | --- | --- | --- |
-| Exact repository/account/default branch | PASS | Authenticated `devAIsh88`; HTTPS origin is the intended repository; API says private, main, administrator access |
-| Initial Git synchronization | PASS | Local HEAD and origin/main match the starting SHA; only main advertised, no tags; original foundation retained |
-| Copyright authority | BLOCKED | Sole Git identity and no conflicting notices found, but owner has not explicitly confirmed authority over all original code, tests, documentation and assets, including contributor/employer/institution rights |
-| MIT license and packaging declaration | BLOCKED | Owner selected MIT and `Copyright (c) 2026 devAIsh88`; root LICENSE still grants no open-source license pending ownership confirmation; no MIT SPDX claim added |
-| Third-party redistribution review | PASS | No vendored source, binaries, external fixtures or media found; dependency imports/references reviewed separately in [license review](THIRD_PARTY_LICENSE_REVIEW.md); this does not resolve original ownership |
-| Current source security review | PASS | Established scanner plus targeted review; hash/pin candidates explained; no credentials or private camera connections identified |
-| Complete reachable history review | PASS | 14 commits, 132 unique blobs, all UTF-8 text, all refs and reflog commits covered; no hidden branch/tag history advertised |
-| Historical personal-data disclosure | BLOCKED | Existing author/committer contact metadata and a personal absolute checkout path would become public; owner acceptance is pending; values omitted here; no history rewriting authorized |
-| Available Actions logs/artifacts review | PASS | All 14 run attempts downloaded, 52 log files reviewed; zero retained artifacts; no unexplained credentials/personal paths found |
-| Original PRD exclusion | PASS | Both originals unchanged and untracked, absent from all historical paths and review wheel; DOCX container inspected locally without redistributing it |
-| Source/documentation review | PASS | No research-result changes; corrected private-original links, stale contribution/security guidance and current demo path; linked release status separately from historical research conclusions |
-| Dependency advisory review | PASS | Patched pytest/build tooling and optional-environment pip; final core/build and image inventories have no known advisories in this scan; scope/limits below |
-| GitHub Actions configuration | PASS | Python 3.11/3.12, read-only permissions, full action SHAs, 10-minute job timeout, no secrets/publishing/deployment; repository now allows only the two reviewed action SHAs |
-| Local mandatory checks | PASS | Ruff lint/format, 305 Python tests, pip check and diff checks passed; staged checks must also pass before commit |
-| Optional media regression checks | PASS | Images 6 methods; native 3 methods/30 cases; RTSP 3 methods/26 cases; TCP faults 2 methods/37 cases; separate from CI |
-| Editable install and local wheel | PASS | Pinned build backend succeeds; Metadata 2.4; 25 wheel members, no runtime requirements, private originals or native/media binaries; license expression deliberately absent |
-| New private push and CI | NOT VERIFIED | Pending at this pre-commit snapshot; verify exact new SHA and completed successful jobs on 3.11 and 3.12 after push |
-| Post-publication security settings and rendered pages (follow-up, not a pre-publication gate) | NOT VERIFIED | Repository remains private; private vulnerability reporting and applicable free public secret protections must be enabled/verified during any later authorized transition |
-| Public publication | BLOCKED | Ownership and historical-data decisions unresolved; do not execute the visibility command |
+| Exact repository/account/default branch | PASS | `devAIsh88` authenticated; original HTTPS origin; API confirms original ID, private visibility, main and owner administrator access |
+| Starting Git synchronization/history | PASS | Local main and origin/main match the starting SHA; all 15 original commits recorded for post-publication comparison; foundation retained |
+| Original-work rights confirmation | PASS | Owner explicitly confirmed ownership and necessary rights to release original contributions under MIT |
+| License text and packaging | PASS | Unmodified GitHub standard MIT template with approved notice; `license = "MIT"`, `license-files = ["LICENSE"]`; editable/wheel metadata verified |
+| Third-party redistribution | PASS | [Audit](THIRD_PARTY_LICENSE_REVIEW.md) identifies no blocker for this source-only distribution; no dependency source/binaries bundled; incomplete optional audit-dependency notices remain future-bundling limitations |
+| Historical personal-data disclosure | PASS | Owner explicitly accepted existing email/path visibility; no raw values added to this report; history preserved |
+| Current source and reachable history security | PASS | 15 commits/145 unique blobs reviewed; 13 scanner candidates are verified hashes/pins; no credentials, prohibited media or private camera endpoints identified |
+| Available Actions history | PASS | All 17 run attempts and 87 log files reviewed; six entropy candidates are verified Git commit/blob identities; remaining paths are expected hosted-runner/Dependabot paths; zero retained artifacts |
+| Original PRD exclusion | PASS | Both originals unchanged, untracked, absent from tracked/historical paths and review wheel; DOCX container inspected locally |
+| Dependency advisory review | PASS | Exact eight core/build/tool and three image/tool package inventories rescanned; no known vulnerabilities reported; native-code analysis is outside this scan |
+| CI configuration | PASS | Existing 3.11/3.12 matrix; SHA-pinned actions, read-only permissions, bounded jobs, pip check, no secrets/CD/publication |
+| Local checks and CLI | PASS | Ruff lint/format, 305 pytest tests, pip check, diff checks, editable install, wheel metadata and existing simulator/reconnect CLI passed |
+| Previous private delivery and CI baseline | PASS | Starting SHA pushed and synchronized; [CI run 39975199015](https://github.com/devAIsh88/video-freshness-lab/actions/runs/39975199015) completed successfully on 3.11 and 3.12 |
+
+The table records facts verifiable before this license commit. The exact new SHA,
+its subsequent CI and actual public visibility cannot be known inside that same
+commit. They are mandatory execution checks below, not preclaimed outcomes.
+The final delivery report records those independently observed results.
+
+## Mandatory execution checks after commit
+
+1. Create exactly one `docs: finalize MIT license for public release` commit.
+   Push it to the original private origin/main; confirm local, remote and API SHA
+   equality and GitHub recognition of SPDX MIT with the exact LICENSE contents.
+2. Require completed successful `checks (3.11)` and `checks (3.12)` jobs for that
+   exact SHA, and review newly available Actions logs/artifacts. Preserve all
+   previous commits and recheck source/security evidence for the new revision.
+3. Reconfirm original repository ID/name, private visibility, approved rights,
+   PRD exclusion, source-only redistribution and no unresolved security blocker.
+   A failure or unavailable required result blocks the visibility command.
+4. Only after all these gates pass, execute:
+
+   ```sh
+   gh repo edit devAIsh88/video-freshness-lab --visibility public --accept-visibility-change-consequences
+   ```
+
+5. Independently verify public API/anonymous access, MIT recognition, rendered
+   README and documentation links, default branch and every original milestone
+   SHA. Enable/verify supported free public security protections. No additional
+   source commit is needed merely to claim its own visibility or CI result.
 
 ## Security and history method
 
@@ -48,19 +69,21 @@ files, ignored-file categories, workflow, document containers and dependency
 boundaries. The original PRD hashes match their foundation record. No original
 PRD, environment, credential file, recording, archive or binary appears in the
 reachable Git blobs. The review wheel contains only first-party Python and
-package metadata, including the current no-license-grant notice. `git fsck` also
-identified four local dangling blobs: all were UTF-8 drafts/configuration text,
-not either original PRD. Targeted inspection and an additional established scan
+package metadata. The initial no-license-grant notice has now been replaced
+with the approved MIT text; the rebuilt wheel carries that exact notice.
+The initial `git fsck` identified four local dangling blobs: all were UTF-8
+drafts/configuration text, not either original PRD. Targeted inspection and an additional established scan
 found no credential candidates. These unreachable blobs are not included in a
 normal branch push; none was deleted or rewritten.
 
 Used [Yelp detect-secrets](https://github.com/Yelp/detect-secrets) 1.5.0 in an
 isolated temporary environment, with `--no-verify` so candidates were not sent
 for live credential validation. Current scan: 13 potential matches, all artifact
-hashes or pinned commits/source-integrity checks. History export: 133 files
-(132 blobs plus commit metadata), the same 13 explained candidates. Actions: all
-52 files selected, zero candidates. Targeted checks supplemented entropy scanning
-for credentials, private keys, private addresses, non-loopback RTSP endpoints,
+hashes or pinned commits/source-integrity checks. Latest committed-history export:
+146 files (145 blobs plus commit metadata), the same 13 explained candidates.
+Actions: all 87 files selected, six candidates verified against actual Git commit/blob objects;
+no credential candidates remain unexplained. Targeted checks supplemented entropy
+scanning for credentials, private keys, private addresses, non-loopback RTSP endpoints,
 embedded URL authentication, personal data and prohibited file types.
 
 An initial absolute-path scanner invocation silently selected zero exported
@@ -71,10 +94,11 @@ credential setup/cleanup only. No credential rotation was identified as necessar
 Automated scans and manual screening cannot prove that undiscovered secrets or
 ownership issues do not exist.
 
-Historical contact/path metadata is a disclosure decision, not an exposed access
-credential. Removing the current demo path does not remove the older value from
-history. The existing history has not been rewritten, and nothing has been
-removed from GitHub Actions to conceal evidence.
+Historical contact/path metadata was a disclosure decision, not an exposed access
+credential; the owner has now explicitly accepted that disclosure. Removing the
+current demo path does not remove the older value from history. The existing
+history has not been rewritten, and nothing has been removed from GitHub Actions
+to conceal evidence.
 
 ## Dependencies and changes
 
@@ -113,20 +137,21 @@ git diff --check
 git diff --cached --check
 ```
 
-Ruff: all checks passed, 40 Python files formatted. Pytest: 305 passed in 2.44 s; final pre-commit repeat: 305 passed in 1.65 s.
-No test was removed or weakened. Packaging inventory and metadata were inspected;
-MIT metadata validation remains blocked on legal confirmation. Across the tracked
-and proposed documentation, 144 relative links/heading anchors resolved inside
+Ruff: all checks passed, 40 Python files formatted. The prior preparation checkpoint
+passed all 305 tests; the MIT delivery also passed all 305 in 1.67 seconds.
+No test was removed or weakened. Packaging inventory and metadata were inspected.
+The rebuilt 25-member wheel verifies Metadata 2.4, `License-Expression: MIT`,
+`License-File: LICENSE` and the exact approved notice. Across the prior preparation
+documentation, 144 relative links/heading anchors resolved inside
 the publication tree; all 100 external source/documentation URLs returned successful
-HTTP responses. The nine repository URLs require private access, and the security
-reporting route is explicitly unavailable until enabled on a public repository.
-Rendered public pages cannot be verified before publication. The supported
-modern form, once authorized, is `license = "MIT"` with `license-files = ["LICENSE"]`.
-It is [supported by the selected backend](https://packaging.python.org/en/latest/guides/writing-pyproject-toml/).
+HTTP responses. The MIT update resolves 151 relative links/anchors. Repository
+URLs and rendered public pages are rechecked after publication, together with
+supported private vulnerability reporting.
+The modern MIT declaration is [supported by the selected backend](https://packaging.python.org/en/latest/guides/writing-pyproject-toml/).
 
-Executed the default simulation, all-suite JSON, filtered reconnect, threaded
-normal/slow/idle, stamped-image single repetition and six image integration
-methods. Also ran all existing native/RTSP/fault integration suites:
+The preparation checkpoint executed the default simulation, all-suite JSON,
+filtered reconnect, threaded normal/slow/idle, stamped-image single repetition
+and six image integration methods. Also ran all existing native/RTSP/fault integration suites:
 
 ```sh
 venv-media/bin/python -m unittest discover -s integration -p test_stamped_images.py -v
@@ -141,8 +166,9 @@ termination, owned child exit, pipeline NULL and owned listening-port release.
 A subsequent host process check found no remaining matching experiment workers.
 GstRtspServer imports through `/usr/bin/python3`; RPM is
 `gstreamer1-rtsp-server-1.28.8-1.fc44.x86_64`. This environment sees the Fedora host
-installation. No large research cohort was repeated, and these regression counts
-are not added to historical reliability denominators or claimed as physical
+installation. The MIT-only change reruns the ordinary suite, packaging and
+simulator CLI; unchanged native-suite results are prior preparation evidence.
+No large research cohort was repeated, and these regression counts are not added to historical reliability denominators or claimed as physical
 camera freshness evidence.
 
 ## GitHub settings and visibility consequences
@@ -166,30 +192,24 @@ Applied and read back:
 
 Only the owner has collaborator access; no invitations, PRs, issues, webhooks,
 deployments, environments, releases, tags or retained artifacts were found.
-Branch protection/rulesets require a paid plan or public visibility in the current
-configuration. Secret scanning/private vulnerability reporting were unavailable
-in this private configuration. No plan was upgraded. Public-only features and
-fork-workflow approval policy remain follow-up work if publication later passes.
+At the private checkpoint, branch protection/rulesets required a paid plan or
+public visibility, and public secret scanning/private vulnerability reporting
+were unavailable. No plan was upgraded. Supported free public protections are
+checked after the authorized visibility transition.
 
 [GitHub's visibility documentation](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/setting-repository-visibility)
 was evaluated: changing private to public exposes code/history and Actions logs,
 permits public forks, publishes activity, can detach private forks, erases existing
 stars/watchers, and disables push rulesets. There are currently no forks. Those
-consequences make the historical personal-data decision necessary; current-tree
-cleanup alone is insufficient. No visibility command has been executed.
+consequences were reviewed with the owner's explicit acceptance of historical
+contact/path disclosure; current-tree cleanup alone would not remove that history.
+The visibility command is gated on the exact new commit's private CI and license
+verification. This source-review record does not preclaim its execution.
 
-## Remaining release actions
+## Completion boundary
 
-1. Obtain explicit authority to apply MIT to all original material and explicit
-   acceptance of the already-identified historical contact/path disclosure.
-2. If both confirmations arrive, install the unmodified standard MIT text with
-   the selected attribution, add SPDX packaging metadata, update current status
-   documents and rebuild/review the artifact. Do not relicense dependency code.
-3. Commit only reviewed changes, push privately, verify exact remote SHA and
-   completed Python 3.11/3.12 CI, then review that new run's logs as well.
-4. Re-evaluate every mandatory pre-publication gate against the exact repository and reviewed
-   revision. If any remains FAIL, BLOCKED or NOT VERIFIED, stay private.
-5. Only when all mandatory gates pass, execute the owner's exact visibility
-   command, verify public identity/README/LICENSE/default branch and links, and
-   enable/verify supported free public security features. No package, release,
-   deployment, paid service or unrelated repository change is authorized.
+The former rights/disclosure blockers are resolved. Final publication succeeds
+only when the mandatory execution checks above are actually observed. Any new
+security/ownership issue requires keeping the repository private and reporting
+the precise blocker. Research adoption, physical-camera evidence and package
+productization remain separate unmet gates regardless of source visibility.

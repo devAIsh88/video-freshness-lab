@@ -10,9 +10,8 @@ cannot establish source authenticity or certify a clinical or industrial decisio
 
 Use this repository's **Security → Report a vulnerability** facility when enabled:
 [private report](https://github.com/devAIsh88/video-freshness-lab/security/advisories/new).
-GitHub provides this facility for public repositories; it is currently unavailable
-while this repository is private. Enabling and verifying it is part of the
-conditional publication follow-up in the [release report](docs/release/PUBLIC_RELEASE_READINESS.md).
+Private reporting and other supported free protections are checked during public
+publication; see the [release report](docs/release/PUBLIC_RELEASE_READINESS.md).
 
 If the facility is unavailable, ask the owner to arrange a private channel without
 including sensitive details. For a public repository, a minimal issue requesting

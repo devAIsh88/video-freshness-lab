@@ -9,7 +9,7 @@ publication, and exercises existing GStreamer through local synthetic RTSP.
 choice is a documented reference recipe and validation toolkit. Native buffering
 plus a small application output check was sufficient for the tested contract.
 A production RTSP framework and package publication remain out of scope.
-Public source release is being evaluated separately; see the
+The source and documentation are MIT licensed; see the
 [release-readiness report](docs/release/PUBLIC_RELEASE_READINESS.md).
 
 Start with [the 75-minute learning plan](docs/guides/START_HERE.md) or
@@ -148,11 +148,10 @@ and package advantage over a short pytest/FFmpeg recipe remain unproven.
 
 ## License and contribution status
 
-The repository remains PRIVATE while release gates are unresolved. The owner has
-selected MIT with pseudonymous attribution `Copyright (c) 2026 devAIsh88`, subject
-to confirming authority over all original material. [LICENSE](LICENSE) currently
-grants no open-source license. See the [release-readiness report](docs/release/PUBLIC_RELEASE_READINESS.md)
-for the actual legal, security and delivery status.
+Released under the [MIT License](LICENSE).
+Copyright (c) 2026 devAIsh88. Third-party dependencies retain their own licenses;
+see the [license review](docs/release/THIRD_PARTY_LICENSE_REVIEW.md).
+The original private PRDs are excluded from this release.
 
 [Contribution guidance](CONTRIBUTING.md) covers small, evidence-backed fixes and
 [security reporting](SECURITY.md) covers sensitive findings. Source publication

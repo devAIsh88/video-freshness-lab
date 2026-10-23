@@ -166,6 +166,7 @@ Keep the documented reference recipe and validation toolkit. Stop active feature
 work at this handover. A reusable pytest package is deferred: complete semantic
 instrumentation is not shown to fit the approximately 30-line goal, value over a
 short application-specific test is unproven, and no maintainer acknowledgment or
-two-developer adoption evidence exists. Licensing and public release remain owner
-decisions. Research has produced useful positive and negative evidence without
-turning unknown freshness into a success claim.
+two-developer adoption evidence exists. The owner approved MIT source publication
+following the research handover; package publication remains unapproved. Research
+has produced useful positive and negative evidence without turning unknown
+freshness into a success claim.
